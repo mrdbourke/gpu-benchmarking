@@ -1,0 +1,2847 @@
+{
+  "metadata": {
+    "hardware": {
+      "timestamp": "2026-01-28T04:26:11.498559",
+      "hostname": "spark-ff62",
+      "os": {
+        "system": "Linux",
+        "release": "6.14.0-1015-nvidia",
+        "version": "#15-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 25 18:02:16 UTC 2025"
+      },
+      "python_version": "3.12.12",
+      "cpu": {
+        "processor": "aarch64",
+        "architecture": "aarch64",
+        "physical_cores": null,
+        "total_cores": 20,
+        "model_name": null
+      },
+      "memory": {
+        "total_gb": 119.7,
+        "available_gb": 68.15,
+        "used_gb": 51.55
+      },
+      "gpu": {
+        "available": true,
+        "gpus": [],
+        "driver_version": null,
+        "cuda_version": null,
+        "error": "invalid literal for int() with base 10: '[N/A]'"
+      }
+    },
+    "benchmark_config": {
+      "dataset_path": "mrdbourke/recipe-synthetic-images-10k",
+      "num_samples": 100,
+      "random_seed": 42,
+      "max_tokens": 1000,
+      "enable_thinking": false,
+      "base_url": "http://localhost:30000"
+    },
+    "start_time": "2026-01-28T04:26:19.576966",
+    "end_time": "2026-01-28T04:32:35.879370",
+    "total_duration_seconds": 376.3
+  },
+  "summary_statistics": {
+    "total_samples": 100,
+    "successful": 99,
+    "failed": 1,
+    "success_rate": 99.0,
+    "total_duration_seconds": 376.3,
+    "avg_time_per_sample_seconds": 3.763,
+    "samples_per_minute": 15.94,
+    "total_prompt_tokens": 133650,
+    "total_predicted_tokens": 11426,
+    "total_tokens": 145076,
+    "avg_prompt_tokens_per_sample": 1350.0,
+    "avg_predicted_tokens_per_sample": 115.4,
+    "total_prompt_time_seconds": 103.86,
+    "total_generation_time_seconds": 266.31,
+    "avg_tokens_per_second": 42.94,
+    "min_tokens_per_second": 42.41,
+    "max_tokens_per_second": 43.51
+  },
+  "individual_results": [
+    {
+      "index": 0,
+      "recipe_id": 280431,
+      "recipe_name": "ground beef zucchini skillet meal",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose\u2011up first\u2011person perspective of a ground beef zucchini skillet, showcasing browned beef chunks, bright green zucchini ribbons and a glossy tomato\u2011sauce coating, with a sprinkle of melted parmesan cheese on top. The dish is served in a rustic skillet, slightly steaming, with shallow depth of field and natural soft lighting. Shot from a slightly angled, casual food\u2011photo viewpoint that emphasizes the tender, glistening texture of the vegetables and the hearty, saucy consistency of the beef mixture.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 1758,
+        "prompt_n": 64,
+        "prompt_ms": 162.737,
+        "prompt_per_token_ms": 2.542765625,
+        "prompt_per_second": 393.2725809127611,
+        "predicted_n": 131,
+        "predicted_ms": 3035.484,
+        "predicted_per_token_ms": 23.17163358778626,
+        "predicted_per_second": 43.15621495616515
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 131,
+        "prompt_tokens": 1822,
+        "total_tokens": 1953
+      }
+    },
+    {
+      "index": 1,
+      "recipe_id": 39223,
+      "recipe_name": "bev s marinated cucumber salad",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting, Bev S Marinated Cucumber Salad with crisp thin cucumber ribbons, juicy ripe tomatoes, bright green sliced green onions, glistening cider-vinegar marinade, sprinkle of fresh herbs on top, served in a clear glass bowl, vibrant summer colors, refreshing texture, light and crisp presentation\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 1065,
+        "prompt_n": 64,
+        "prompt_ms": 162.079,
+        "prompt_per_token_ms": 2.532484375,
+        "prompt_per_second": 394.8691687387015,
+        "predicted_n": 100,
+        "predicted_ms": 2306.771,
+        "predicted_per_token_ms": 23.06771,
+        "predicted_per_second": 43.35064035398399
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 100,
+        "prompt_tokens": 1129,
+        "total_tokens": 1229
+      }
+    },
+    {
+      "index": 2,
+      "recipe_id": 182485,
+      "recipe_name": "easy strawberry crisp",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot of Strawberry Crisp with vibrant red fresh strawberries glistening beneath a buttery golden crisp topping. Juicy, tender fruit base contrasts with a crisp, crumbly texture and caramelized edges from baking. Drizzled strawberry sauce pooling at the edges, topped with a scoop of vanilla ice cream melting slightly and a light dusting of powdered sugar. Warm natural lighting highlights the rich colors and textures. shallow depth of field.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 866,
+        "prompt_n": 64,
+        "prompt_ms": 158.391,
+        "prompt_per_token_ms": 2.474859375,
+        "prompt_per_second": 404.06336218598284,
+        "predicted_n": 119,
+        "predicted_ms": 2750.354,
+        "predicted_per_token_ms": 23.112218487394955,
+        "predicted_per_second": 43.267157609529534
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 119,
+        "prompt_tokens": 930,
+        "total_tokens": 1049
+      }
+    },
+    {
+      "index": 3,
+      "recipe_id": 219981,
+      "recipe_name": "reheating cooked shellfish",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nclose-up shot of steamed king crab legs on a white plate, vibrant orange-red shells glistening with steam, tender meat visible at the ends, garnished with a sprinkle of fresh chopped parsley and a pat of melting herb butter, shallow depth of field, natural window lighting, first-person casual food photo, overhead angle\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 1305,
+        "prompt_n": 64,
+        "prompt_ms": 163.334,
+        "prompt_per_token_ms": 2.55209375,
+        "prompt_per_second": 391.8351353667944,
+        "predicted_n": 84,
+        "predicted_ms": 1932.792,
+        "predicted_per_token_ms": 23.009428571428572,
+        "predicted_per_second": 43.46044478660922
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 84,
+        "prompt_tokens": 1369,
+        "total_tokens": 1453
+      }
+    },
+    {
+      "index": 4,
+      "recipe_id": 187009,
+      "recipe_name": "crispy cheese   a la shady glen",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of a golden-brown crispy cheese curl with a molten, stringy interior, glistening from a light oil sheen. Served on a simple white plate with a small side of ketchup for dipping. Shallow depth of field, natural lighting, first-person perspective. Captured from a slight overhead angle to emphasize texture and crispiness.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 1328,
+        "prompt_n": 64,
+        "prompt_ms": 159.527,
+        "prompt_per_token_ms": 2.492609375,
+        "prompt_per_second": 401.1860061306237,
+        "predicted_n": 90,
+        "predicted_ms": 2076.453,
+        "predicted_per_token_ms": 23.0717,
+        "predicted_per_second": 43.34314333144068
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 90,
+        "prompt_tokens": 1392,
+        "total_tokens": 1482
+      }
+    },
+    {
+      "index": 5,
+      "recipe_id": 288439,
+      "recipe_name": "roasted potato fennel soup",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Roasted Potato Fennel Soup in a rustic bowl, featuring golden roasted potatoes and creamy fennel texture, thick velvety soup with glistening surface, topped with crispy bacon strips and a sprinkle of melted cheese. First-person perspective, casual food photo, top-down angle, shallow depth of field, natural lighting.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 1104,
+        "prompt_n": 64,
+        "prompt_ms": 158.287,
+        "prompt_per_token_ms": 2.473234375,
+        "prompt_per_second": 404.3288457043219,
+        "predicted_n": 91,
+        "predicted_ms": 2099.929,
+        "predicted_per_token_ms": 23.07614285714286,
+        "predicted_per_second": 43.33479846223372
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 91,
+        "prompt_tokens": 1168,
+        "total_tokens": 1259
+      }
+    },
+    {
+      "index": 6,
+      "recipe_id": 142016,
+      "recipe_name": "pumpkin muffins with ginger and spice",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, close-up of pumpkin muffins with ginger and spice, golden-brown muffin tops glazed with a light caramel sheen, visible chunks of crystallized ginger and toasted walnuts peeking through, warm earthy orange hue contrasted by amber spices, moist tender crumb texture with subtle glossy finish, rustic wooden muffin tin background, soft natural window light casting gentle shadows, shallow depth of field highlighting the spiced swirl and nut topping, inviting fall comfort vibe, cozy kitchen ambiance, slight crumb reveal at cut edge showing fluffy interior\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 1176,
+        "prompt_n": 64,
+        "prompt_ms": 155.507,
+        "prompt_per_token_ms": 2.429796875,
+        "prompt_per_second": 411.55703601767124,
+        "predicted_n": 143,
+        "predicted_ms": 3311.62,
+        "predicted_per_token_ms": 23.158181818181816,
+        "predicted_per_second": 43.18128287665856
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 143,
+        "prompt_tokens": 1240,
+        "total_tokens": 1383
+      }
+    },
+    {
+      "index": 7,
+      "recipe_id": 152926,
+      "recipe_name": "bobi s scalloped oysters",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, top-down shot of Bobi S Scalloped Oysters with golden brown baked crust, creamy milky sauce glistening on tender oysters and crisp saltine crumb topping, rich butter-dotted layers, subtle hot sauce drizzle for a hint of heat. natural lighting, shallow depth of field\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 1069,
+        "prompt_n": 64,
+        "prompt_ms": 163.493,
+        "prompt_per_token_ms": 2.554578125,
+        "prompt_per_second": 391.45406836989963,
+        "predicted_n": 89,
+        "predicted_ms": 2053.717,
+        "predicted_per_token_ms": 23.07547191011236,
+        "predicted_per_second": 43.33605847348977
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 89,
+        "prompt_tokens": 1133,
+        "total_tokens": 1222
+      }
+    },
+    {
+      "index": 8,
+      "recipe_id": 358687,
+      "recipe_name": "linguine with lemon  garlic   parmesan",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, close-up of linguine with lemon garlic parmesan, bright golden pasta strands glistening with citrus-infused olive oil, vibrant lemon zest flecks and freshly grated parmesan dusting the dish, tender texture with subtle sheen, scattered chopped flat leaf parsley for color contrast, shallow depth of field highlighting the glossy noodles, natural soft lighting accentuating the fresh, zesty aroma\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 1007,
+        "prompt_n": 64,
+        "prompt_ms": 157.783,
+        "prompt_per_token_ms": 2.465359375,
+        "prompt_per_second": 405.62037735370734,
+        "predicted_n": 108,
+        "predicted_ms": 2492.312,
+        "predicted_per_token_ms": 23.076962962962963,
+        "predicted_per_second": 43.33325843634344
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 108,
+        "prompt_tokens": 1071,
+        "total_tokens": 1179
+      }
+    },
+    {
+      "index": 9,
+      "recipe_id": 47690,
+      "recipe_name": "pizza spaghetti pie",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of Pizza Spaghetti Pie with golden-brown crust and visible layers of seasoned ground beef, creamy spaghetti noodles, melted mozzarella cheese stretch, and bright green pepper rings on top. Juicy meat texture, glossy cheese surface, and tender noodle strands. Casual food photo from a slightly elevated angle, shallow depth of field, natural window lighting highlighting the cheesy pull and vibrant garnishes\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 1329,
+        "prompt_n": 64,
+        "prompt_ms": 159.275,
+        "prompt_per_token_ms": 2.488671875,
+        "prompt_per_second": 401.82075027468215,
+        "predicted_n": 104,
+        "predicted_ms": 2407.522,
+        "predicted_per_token_ms": 23.14925,
+        "predicted_per_second": 43.197943777876176
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 104,
+        "prompt_tokens": 1393,
+        "total_tokens": 1497
+      }
+    },
+    {
+      "index": 10,
+      "recipe_id": 311466,
+      "recipe_name": "honey yogurt dip",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot of honey yogurt dip with creamy vanilla yogurt base, swirled with honey and a light dusting of cinnamon, glistening surface, served in a rustic ceramic bowl, accompanied by sliced apples, strawberries, and pineapple chunks, natural lighting, shallow depth of field\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1096,
+        "prompt_ms": 864.792,
+        "prompt_per_token_ms": 0.789043795620438,
+        "prompt_per_second": 1267.3567748082776,
+        "predicted_n": 85,
+        "predicted_ms": 1961.504,
+        "predicted_per_token_ms": 23.07651764705882,
+        "predicted_per_second": 43.33409465389824
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 85,
+        "prompt_tokens": 1096,
+        "total_tokens": 1181
+      }
+    },
+    {
+      "index": 11,
+      "recipe_id": 360286,
+      "recipe_name": "tomato relish  aussie style",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot, vibrant red tomato relish glistening with a glossy sheen, chunky texture with visible specks of mustard and chili, garnished with a sprinkle of fresh chopped parsley and a drizzle of olive oil, resting in a rustic ceramic bowl on a weathered wooden board, shallow depth of field, natural soft lighting highlighting the glossy surface, Australian home kitchen vibe, slightly blurred background with hints of mason jars and dried herbs, warm inviting atmosphere, ultra\u2011realistic detail, 8k resolution\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2200,
+        "prompt_ms": 1602.389,
+        "prompt_per_token_ms": 0.7283586363636363,
+        "prompt_per_second": 1372.950014010331,
+        "predicted_n": 136,
+        "predicted_ms": 3160.639,
+        "predicted_per_token_ms": 23.239992647058823,
+        "predicted_per_second": 43.029273510831196
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 136,
+        "prompt_tokens": 2200,
+        "total_tokens": 2336
+      }
+    },
+    {
+      "index": 12,
+      "recipe_id": 188073,
+      "recipe_name": "turkey parmesan   south beach phase 1",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, close-up of Turkey Parmesan with golden crispy pignoli and Parmesan crust, juicy tender turkey cutlet, melted part-skim mozzarella cheese pull, glossy tomato sauce drizzle, subtle olive oil sheen, warm rustic plating, soft natural lighting, shallow depth of field, inviting home-cooked vibe\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1340,
+        "prompt_ms": 1054.248,
+        "prompt_per_token_ms": 0.7867522388059702,
+        "prompt_per_second": 1271.0481784172225,
+        "predicted_n": 95,
+        "predicted_ms": 2194.781,
+        "predicted_per_token_ms": 23.102957894736843,
+        "predicted_per_second": 43.284500822633326
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 95,
+        "prompt_tokens": 1340,
+        "total_tokens": 1435
+      }
+    },
+    {
+      "index": 13,
+      "recipe_id": 487111,
+      "recipe_name": "back porch bayou shrimp   corn  rsc",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, close-up overhead of Back Porch Bayou Shrimp and Corn in Reynolds Wrap, plump pink shrimp glistening with buttery sauce, golden crisp bacon bits, bright green corn kernels brushed with herb-infused compound butter, specks of red bell pepper and fresh parsley, lemon zest sparkle, shallow depth of field, natural sunlight streaming across foil packets, rustic backyard setting with wooden porch planks and distant cicada-filled trees, warm inviting glow\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2120,
+        "prompt_ms": 1496.187,
+        "prompt_per_token_ms": 0.7057485849056603,
+        "prompt_per_second": 1416.9351825674198,
+        "predicted_n": 119,
+        "predicted_ms": 2756.806,
+        "predicted_per_token_ms": 23.166436974789917,
+        "predicted_per_second": 43.16589560527654
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 119,
+        "prompt_tokens": 2120,
+        "total_tokens": 2239
+      }
+    },
+    {
+      "index": 14,
+      "recipe_id": 47060,
+      "recipe_name": "packs a wallop beef stew",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Spicy Belgian-Style Beef Stew in a rustic ceramic bowl, showcasing tender beef cubes and orange carrots with vibrant green bell pepper pieces, rich dark brown gravy glistening with a subtle sheen, steam rising gently, topped with a dollop of sour cream and a sprinkle of fresh parsley. First-person perspective, casual food photo, overhead angle, shallow depth of field, natural window lighting.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1719,
+        "prompt_ms": 1309.871,
+        "prompt_per_token_ms": 0.7619959278650379,
+        "prompt_per_second": 1312.3429711780777,
+        "predicted_n": 106,
+        "predicted_ms": 2457.143,
+        "predicted_per_token_ms": 23.18059433962264,
+        "predicted_per_second": 43.13953237560858
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 106,
+        "prompt_tokens": 1719,
+        "total_tokens": 1825
+      }
+    },
+    {
+      "index": 15,
+      "recipe_id": 279689,
+      "recipe_name": "cafe joy",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Cafe Joy with rich creamy texture, glossy coffee surface, toasted coconut topping. Whipped cream crown adds fluffy white contrast. Warm inviting glow, cozy winter evening vibe, shallow depth of field, natural soft lighting from a nearby window\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 890,
+        "prompt_ms": 747.774,
+        "prompt_per_token_ms": 0.8401955056179775,
+        "prompt_per_second": 1190.1991778264555,
+        "predicted_n": 72,
+        "predicted_ms": 1658.178,
+        "predicted_per_token_ms": 23.030250000000002,
+        "predicted_per_second": 43.42115261449615
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 72,
+        "prompt_tokens": 890,
+        "total_tokens": 962
+      }
+    },
+    {
+      "index": 16,
+      "recipe_id": 314364,
+      "recipe_name": "pineapple lemonade",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nfirst-person perspective, casual food photo of Pineapple Lemonade, crystal clear sparkling lemonade with golden hue, frothy bubbles and condensation on the glass, fresh mint leaves and thin lemon slices floating on top, served over ice in a tall glass, shallow depth of field, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1065,
+        "prompt_ms": 806.755,
+        "prompt_per_token_ms": 0.7575164319248826,
+        "prompt_per_second": 1320.1033771095315,
+        "predicted_n": 73,
+        "predicted_ms": 1677.635,
+        "predicted_per_token_ms": 22.981301369863015,
+        "predicted_per_second": 43.51363675650544
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 73,
+        "prompt_tokens": 1065,
+        "total_tokens": 1138
+      }
+    },
+    {
+      "index": 17,
+      "recipe_id": 76787,
+      "recipe_name": "chewy date bars",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of chewy date bars on a white ceramic plate, glossy caramelized tops with visible date pieces and toasted walnut chunks, golden-brown edges, soft chewy texture with a light dusting of powdered sugar, cut into neat squares, shallow depth of field, natural window lighting from above, first-person perspective, casual food photo\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 855,
+        "prompt_ms": 740.162,
+        "prompt_per_token_ms": 0.8656865497076024,
+        "prompt_per_second": 1155.152520664395,
+        "predicted_n": 87,
+        "predicted_ms": 2007.672,
+        "predicted_per_token_ms": 23.076689655172412,
+        "predicted_per_second": 43.333771651943145
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 87,
+        "prompt_tokens": 855,
+        "total_tokens": 942
+      }
+    },
+    {
+      "index": 18,
+      "recipe_id": 381349,
+      "recipe_name": "sicilian chicken thighs  crock pot",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo of Sicilian Chicken Thighs from the crock pot, golden-brown chicken thighs glistening with a rich, deep red tomato sauce, tender meat falling off the bone, visible flecks of green bell pepper and mushroom, oregano and basil speckles, finished with a light dusting of crushed red pepper flakes and a sprig of fresh parsley as garnish, shallow depth of field, natural window lighting casting soft shadows, warm kitchen ambiance, slight steam rising, captured from a low angle to emphasize the rustic crock pot setting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1168,
+        "prompt_ms": 976.823,
+        "prompt_per_token_ms": 0.8363210616438356,
+        "prompt_per_second": 1195.713041154846,
+        "predicted_n": 137,
+        "predicted_ms": 3173.941,
+        "predicted_per_token_ms": 23.167452554744525,
+        "predicted_per_second": 43.164003363641605
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 137,
+        "prompt_tokens": 1168,
+        "total_tokens": 1305
+      }
+    },
+    {
+      "index": 19,
+      "recipe_id": 458068,
+      "recipe_name": "motu picnic kabobs",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Motu Picnic Kabobs featuring plump bacon-wrapped sea scallops glistening with sticky glaze, vibrant chunks of golden pineapple, ruby-red bell pepper, and ripe mango, glossy glaze coating surfaces, grilled char marks visible, fresh cilantro garnish, casual outdoor picnic setting, first-person perspective, shallow depth of field, natural sunlight highlighting textures and juices\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1270,
+        "prompt_ms": 1030.245,
+        "prompt_per_token_ms": 0.8112165354330708,
+        "prompt_per_second": 1232.7164897669973,
+        "predicted_n": 102,
+        "predicted_ms": 2357.074,
+        "predicted_per_token_ms": 23.108568627450982,
+        "predicted_per_second": 43.27399139780932
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 102,
+        "prompt_tokens": 1270,
+        "total_tokens": 1372
+      }
+    },
+    {
+      "index": 20,
+      "recipe_id": 90001,
+      "recipe_name": "bacon cheeseburger potato pie",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose\u2011up first\u2011person perspective of a Bacon Cheeseburger Potato Pie, showing a golden, slightly crispy meat crust pressed into a 9\u2011inch pie pan, topped with glossy melted cheddar cheese, bright red tomato slices, and crumbled crisp bacon; steam curls from the fluffy, buttery mashed\u2011potato layer beneath, while green onion ribbons add a fresh pop; the texture is tender\u2011juicy meat with a creamy, slightly glossy potato topping, finished with a drizzle of melted butter that gives a subtle sheen; shallow depth of field, natural soft lighting highlights the colors and textures, casual food\u2011photo style\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3259,
+        "prompt_ms": 2268.109,
+        "prompt_per_token_ms": 0.6959524393985885,
+        "prompt_per_second": 1436.8797972231494,
+        "predicted_n": 154,
+        "predicted_ms": 3599.866,
+        "predicted_per_token_ms": 23.375753246753245,
+        "predicted_per_second": 42.77937012099895
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 154,
+        "prompt_tokens": 3259,
+        "total_tokens": 3413
+      }
+    },
+    {
+      "index": 21,
+      "recipe_id": 15893,
+      "recipe_name": "dirty rice a la kj",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Dirty Rice A La KJ with juicy, tender chicken pieces coated in a glossy, spiced tomato-infused sauce. Golden-brown rice studded with bright red and green bell pepper dice, flecks of onion and celery, and a glossy sheen from melted butter. Sprinkled with fresh chopped parsley for a pop of color. First-person perspective, casual food photo, top-down angle, shallow depth of field, natural lighting.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 994,
+        "prompt_ms": 797.914,
+        "prompt_per_token_ms": 0.8027303822937626,
+        "prompt_per_second": 1245.7482886626879,
+        "predicted_n": 112,
+        "predicted_ms": 2594.454,
+        "predicted_per_token_ms": 23.16476785714286,
+        "predicted_per_second": 43.16900588717318
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 112,
+        "prompt_tokens": 994,
+        "total_tokens": 1106
+      }
+    },
+    {
+      "index": 22,
+      "recipe_id": 43590,
+      "recipe_name": "hot pickled cucumber",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nclose-up first-person casual food photo, crisp green cucumber ribbons glistening with hot sauce, bright lemon-yellow pickling liquid with visible red pepper flecks, shallow depth of field, natural window lighting, served chilled in a clear glass bowl, tangy spicy aroma visible as steam, garnished with thin red chili slices on top, fresh herb specks, East Asian street food vibe, vibrant color contrast, juicy texture, refreshing summer side dish\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 887,
+        "prompt_ms": 748.648,
+        "prompt_per_token_ms": 0.844022547914318,
+        "prompt_per_second": 1184.802470586978,
+        "predicted_n": 112,
+        "predicted_ms": 2601.129,
+        "predicted_per_token_ms": 23.22436607142857,
+        "predicted_per_second": 43.05822587038167
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 112,
+        "prompt_tokens": 887,
+        "total_tokens": 999
+      }
+    },
+    {
+      "index": 23,
+      "recipe_id": 45123,
+      "recipe_name": "low fat chocolate fondue",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of low fat chocolate fondue with glossy, dark, chocolatey texture and subtle sheen, served in a fondue pot with warm steam rising, featuring sliced bananas and fresh strawberries arranged around the pot for dipping, natural lighting, shallow depth of field, casual food photo, first-person perspective\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1008,
+        "prompt_ms": 785.565,
+        "prompt_per_token_ms": 0.7793303571428571,
+        "prompt_per_second": 1283.1528899581829,
+        "predicted_n": 81,
+        "predicted_ms": 1876.052,
+        "predicted_per_token_ms": 23.161135802469136,
+        "predicted_per_second": 43.175775511552985
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 81,
+        "prompt_tokens": 1008,
+        "total_tokens": 1089
+      }
+    },
+    {
+      "index": 24,
+      "recipe_id": 8438,
+      "recipe_name": "tofu and scallions",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot of a vibrant tofu and scallion stir-fry, showcasing golden-brown edges on soft tofu cubes and glossy shiitake mushrooms, bright green julienned scallions and fresh ginger specks, glossy soy-sesame glaze, shallow depth of field, natural window lighting, steam rising, served in a rustic ceramic bowl with steamed white rice beside it, vegan breakfast, Asian cuisine, crispy-edged tofu texture, tender mushroom bite, clean minimalist plating, authentic Chinese comfort food vibe\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1092,
+        "prompt_ms": 855.899,
+        "prompt_per_token_ms": 0.783790293040293,
+        "prompt_per_second": 1275.8514731294229,
+        "predicted_n": 138,
+        "predicted_ms": 3204.746,
+        "predicted_per_token_ms": 23.222797101449277,
+        "predicted_per_second": 43.06113495422102
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 138,
+        "prompt_tokens": 1092,
+        "total_tokens": 1230
+      }
+    },
+    {
+      "index": 25,
+      "recipe_id": 127499,
+      "recipe_name": "jolean s hominy and sausage",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nfirst-person perspective casual food photo, shallow depth of field, natural lighting, golden-brown sausage chunks glistening with butter drippings, plump yellow hominy kernels shimmering with a light sheen, tender and slightly crispy edges, rustic skillet presentation with caramelized onion and garlic pieces peeking through, finished with a sprinkle of fresh parsley flakes and a drizzle of ketchup for color contrast, served alongside fluffy buttery biscuits brushed with honey, warm earthy tones and cozy home kitchen vibe, close-up shot emphasizing texture of sausage and hominy, soft natural window light highlighting steam and glossy surface</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1178,
+        "prompt_ms": 972.166,
+        "prompt_per_token_ms": 0.8252682512733447,
+        "prompt_per_second": 1211.7272153109652,
+        "predicted_n": 153,
+        "predicted_ms": 3562.87,
+        "predicted_per_token_ms": 23.286732026143792,
+        "predicted_per_second": 42.94290838565539
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 153,
+        "prompt_tokens": 1178,
+        "total_tokens": 1331
+      }
+    },
+    {
+      "index": 26,
+      "recipe_id": 10261,
+      "recipe_name": "summer squash pickle",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of a jar of Summer Squash Pickle with golden yellow zucchini and bright red bell pepper strips, glistening with a sweet vinegar brine, speckled with mustard seeds and turmeric, topped with a crisp cinnamon stick, shallow depth of field, natural soft lighting, first-person perspective\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1111,
+        "prompt_ms": 905.51,
+        "prompt_per_token_ms": 0.8150405040504051,
+        "prompt_per_second": 1226.932888648386,
+        "predicted_n": 83,
+        "predicted_ms": 1921.921,
+        "predicted_per_token_ms": 23.15567469879518,
+        "predicted_per_second": 43.18595821576433
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 83,
+        "prompt_tokens": 1111,
+        "total_tokens": 1194
+      }
+    },
+    {
+      "index": 27,
+      "recipe_id": 244928,
+      "recipe_name": "easy honey glazed baby carrots",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of honey-glazed baby carrots with glossy, tender texture and golden-brown glaze. Golden-brown baby carrots glazed with a glossy honey-butter-sugar coating, tender-crisp texture with slight caramelization at edges. Served in a white ceramic bowl on a rustic wooden table with scattered honey drips and a dusting of fresh parsley. First-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting from a nearby window.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1547,
+        "prompt_ms": 1124.923,
+        "prompt_per_token_ms": 0.7271641887524241,
+        "prompt_per_second": 1375.2052362695047,
+        "predicted_n": 118,
+        "predicted_ms": 2741.379,
+        "predicted_per_token_ms": 23.232025423728814,
+        "predicted_per_second": 43.04403003014176
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 118,
+        "prompt_tokens": 1547,
+        "total_tokens": 1665
+      }
+    },
+    {
+      "index": 28,
+      "recipe_id": 280408,
+      "recipe_name": "gluten free coconut macaroon",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose\u2011up shot of gluten\u2011free coconut macaroons on a lightly greased sheet, showing a batch of plump, lightly browned edges with a glossy, slightly sweet surface. Each macaroon has a crisp, toasted outer crust contrasted with a soft, chewy interior, dusted with a sprinkle of toasted almond slices and a drizzle of dark chocolate that creates a glossy ribbon across the top. The cookies are arranged in a casual first\u2011person perspective on a rustic wooden board, shallow depth of field, natural soft morning light highlighting the textures, evoking a warm, inviting homemade dessert vibe.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1704,
+        "prompt_ms": 1306.781,
+        "prompt_per_token_ms": 0.7668902582159625,
+        "prompt_per_second": 1303.9675354937056,
+        "predicted_n": 147,
+        "predicted_ms": 3420.194,
+        "predicted_per_token_ms": 23.266625850340137,
+        "predicted_per_second": 42.98001809254095
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 147,
+        "prompt_tokens": 1704,
+        "total_tokens": 1851
+      }
+    },
+    {
+      "index": 29,
+      "recipe_id": 35874,
+      "recipe_name": "atomic canuck chili",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot of a rustic cast-iron pot filled with steaming Atomic Canuck Chili, rich deep red and burgundy tones with visible flecks of colorful bell peppers, onions, mushrooms, and kidney beans. The chili appears thick, hearty, and glossy with a slightly caramelized edge from slow cooking, showing hints of beer-infused depth. Garnished with a sprinkle of fresh chopped green onions and a dollop of sour cream swirled on top. Crusty artisan bread rests beside the pot, slightly toasted with butter melting at the edges. Natural window lighting casts soft shadows, emphasizing the comforting, home-cooked vibe. Shallow depth of field highlights the bubbling surface and textures of the vegetables, evoking warmth and spice. --v 5 --ar 16:9\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1202,
+        "prompt_ms": 990.032,
+        "prompt_per_token_ms": 0.8236539101497504,
+        "prompt_per_second": 1214.102170434895,
+        "predicted_n": 195,
+        "predicted_ms": 4552.138,
+        "predicted_per_token_ms": 23.344297435897435,
+        "predicted_per_second": 42.83701416784817
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 195,
+        "prompt_tokens": 1202,
+        "total_tokens": 1397
+      }
+    },
+    {
+      "index": 30,
+      "recipe_id": 21534,
+      "recipe_name": "matzoh balls",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot of fluffy matzoh balls floating in a clear chicken broth, with visible specks of parsley garnish on top, light natural lighting, shallow depth of field\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1264,
+        "prompt_ms": 1032.198,
+        "prompt_per_token_ms": 0.8166123417721519,
+        "prompt_per_second": 1224.571254739885,
+        "predicted_n": 60,
+        "predicted_ms": 1382.076,
+        "predicted_per_token_ms": 23.0346,
+        "predicted_per_second": 43.41295268856416
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 60,
+        "prompt_tokens": 1264,
+        "total_tokens": 1324
+      }
+    },
+    {
+      "index": 31,
+      "recipe_id": 291926,
+      "recipe_name": "linguine with shrimp scampi   barefoot contessa ina garten",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nfirst-person perspective casual food photo of linguine with shrimp scampi, glistening shrimp and tender pasta coated in a buttery lemon-garlic sauce, bright lemon zest and fresh parsley garnish, shallow depth of field, natural lighting, steam rising from the dish, vibrant colors of golden pasta and pink shrimp, rustic white bowl, wooden table setting, top-down angle, soft shadows, inviting and fresh presentation\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1761,
+        "prompt_ms": 1339.156,
+        "prompt_per_token_ms": 0.7604520159000567,
+        "prompt_per_second": 1315.0073628464497,
+        "predicted_n": 102,
+        "predicted_ms": 2375.672,
+        "predicted_per_token_ms": 23.290901960784314,
+        "predicted_per_second": 42.93522001353722
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 102,
+        "prompt_tokens": 1761,
+        "total_tokens": 1863
+      }
+    },
+    {
+      "index": 32,
+      "recipe_id": 22099,
+      "recipe_name": "easy mexican layered dip",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot of Easy Mexican Layered Dip with glossy, layered textures of creamy refried beans, seasoned ground beef, melted velveeta cheese, vibrant salsa, and marbled colby-monterey jack cheese. Warm, melty cheese pull with visible cheese strings, glistening salsa surface, and a golden-brown top layer from oven baking. Finished with a sprinkle of sliced black olives and bright green jalapeno rings, plus a dollop of cool sour cream on one side. Rustic presentation in a shallow ceramic baking dish with slight browning around the edges, warm kitchen lighting highlighting the rich, inviting colors of reds, oranges, and yellows. Shallow depth of field blurring the background, natural lighting from a nearby window, capturing the dish's hearty, comforting appeal as a crowd-pleasing Tex-Mex favorite served with tortilla chips.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1423,
+        "prompt_ms": 1077.585,
+        "prompt_per_token_ms": 0.7572628250175686,
+        "prompt_per_second": 1320.5454790109366,
+        "predicted_n": 209,
+        "predicted_ms": 4867.516,
+        "predicted_per_token_ms": 23.289550239234448,
+        "predicted_per_second": 42.93771196643217
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 209,
+        "prompt_tokens": 1423,
+        "total_tokens": 1632
+      }
+    },
+    {
+      "index": 33,
+      "recipe_id": 121987,
+      "recipe_name": "roast beef in a bag",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose\u2011up, first\u2011person perspective of roast beef, showing a well\u2011marbled roast with a deep brown crust, glistening juices and tender fibers, finished with a sprinkle of golden onion soup mix and fresh parsley garnish. The dish is presented on a rustic wooden board, with shallow depth of field and natural lighting highlighting the moist, juicy texture and rich caramelized exterior.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1479,
+        "prompt_ms": 1104.984,
+        "prompt_per_token_ms": 0.7471156186612575,
+        "prompt_per_second": 1338.4809191807303,
+        "predicted_n": 101,
+        "predicted_ms": 2349.218,
+        "predicted_per_token_ms": 23.25958415841584,
+        "predicted_per_second": 42.99303002105382
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 101,
+        "prompt_tokens": 1479,
+        "total_tokens": 1580
+      }
+    },
+    {
+      "index": 34,
+      "recipe_id": 19495,
+      "recipe_name": "tasty spinach",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of a vibrant bowl of tender spinach saut\u00e9ed with caramelized onion and aromatic garlic, glossy with a hint of balsamic glaze, fresh basil leaves scattered on top, shallow depth of field, natural window lighting, casual food photo, top-down perspective\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1068,
+        "prompt_ms": 805.226,
+        "prompt_per_token_ms": 0.7539569288389513,
+        "prompt_per_second": 1326.335711961611,
+        "predicted_n": 74,
+        "predicted_ms": 1712.967,
+        "predicted_per_token_ms": 23.148202702702704,
+        "predicted_per_second": 43.199898188348044
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 74,
+        "prompt_tokens": 1068,
+        "total_tokens": 1142
+      }
+    },
+    {
+      "index": 35,
+      "recipe_id": 70566,
+      "recipe_name": "grilled onion with rosemary",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of grilled onion with rosemary, featuring tender, slightly caramelized red and yellow onion rings with a glossy honey-mustard glaze that glistens under natural lighting. The onions are skewered on rosemary stems and brushed with olive oil, showing distinct grill marks and a tender, juicy texture. Served hot on a rustic wooden board, with fresh rosemary sprigs and a drizzle of honey as garnish. First-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 869,
+        "prompt_ms": 747.392,
+        "prompt_per_token_ms": 0.860059838895282,
+        "prompt_per_second": 1162.7097961979791,
+        "predicted_n": 132,
+        "predicted_ms": 3071.414,
+        "predicted_per_token_ms": 23.26828787878788,
+        "predicted_per_second": 42.97694807668389
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 132,
+        "prompt_tokens": 869,
+        "total_tokens": 1001
+      }
+    },
+    {
+      "index": 36,
+      "recipe_id": 84249,
+      "recipe_name": "easy peach sorbet",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, top-down angle, shallow depth of field, natural lighting, of Easy Peach Sorbet with juicy peach chunks glistening in a smooth creamy texture, bright summer colors of golden peach and ivory vanilla, served in a simple white bowl with a few mint leaves garnish, refreshing frozen dessert, visible soft swirl of sorbet texture, hint of syrup glaze on surface, vibrant fruit pulp flecks, summer treat appearance, inviting fresh look, home-made vibe, creamy frozen dessert, natural light highlighting the smooth surface and subtle fruit specks, shallow focus on the sorbet with blurred background, top-down view of a bowl of peach sorbet with vanilla swirl, garnished with mint leaf, summer dessert, refreshing treat, homemade sorbet, fruit-based dessert, creamy texture, glossy surface, soft lighting, casual kitchen photo, natural lighting, shallow depth of field, top-down perspective, simple white bowl, mint leaf garnish, summer fruit dessert, easy homemade sorbet, frozen dessert, peach sorbet with vanilla, refreshing summer treat, smooth creamy texture, bright peach color, vanilla swirl, garnished with mint, shallow depth of field, natural light, casual food photography, first-person perspective, top-down angle, shallow depth of field, natural lighting, of Easy Peach Sorbet with juicy peach chunks glistening in a smooth creamy texture, bright summer colors of golden peach and ivory vanilla, served in a simple white bowl with a few mint leaves garnish, refreshing frozen dessert, visible soft swirl of sorbet texture, hint of syrup glaze on surface, vibrant fruit pulp flecks, summer treat appearance, inviting fresh look, home-made vibe, creamy frozen dessert, natural light highlighting the smooth surface and subtle fruit specks, shallow focus on the sorbet with blurred background, top-down view of a bowl of peach sorbet with vanilla swirl, garnished with mint leaf, summer dessert, refreshing treat, homemade sorbet, fruit-based dessert, creamy texture, glossy surface, soft lighting, casual kitchen photo, natural lighting, shallow depth of field, top-down perspective, simple white bowl, mint leaf garnish, summer fruit dessert, easy homemade sorbet, frozen dessert, peach sorbet with vanilla, refreshing summer treat, smooth creamy texture, bright peach color, vanilla swirl, garnished with mint, shallow depth of field, natural light, casual food photography\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 953,
+        "prompt_ms": 767.658,
+        "prompt_per_token_ms": 0.8055173137460651,
+        "prompt_per_second": 1241.4382446349805,
+        "predicted_n": 539,
+        "predicted_ms": 12598.297,
+        "predicted_per_token_ms": 23.373463821892393,
+        "predicted_per_second": 42.78356034946628
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 539,
+        "prompt_tokens": 953,
+        "total_tokens": 1492
+      }
+    },
+    {
+      "index": 37,
+      "recipe_id": 65186,
+      "recipe_name": "carrot patch bars",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, top-down angle, shallow depth of field, natural lighting, of Carrot Patch Bars, showing spicy soft cakey treats with a golden-brown crust, moist tender crumb, and glossy caramel drizzle pooling on the surface, topped with toasted pecan pieces and a light dusting of powdered sugar, warm earthy orange and caramel hues, rustic wooden cutting board backdrop, inviting home-baked look\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1310,
+        "prompt_ms": 1050.017,
+        "prompt_per_token_ms": 0.8015396946564886,
+        "prompt_per_second": 1247.5988483995973,
+        "predicted_n": 110,
+        "predicted_ms": 2555.511,
+        "predicted_per_token_ms": 23.23191818181818,
+        "predicted_per_second": 43.04422872763999
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 110,
+        "prompt_tokens": 1310,
+        "total_tokens": 1420
+      }
+    },
+    {
+      "index": 38,
+      "recipe_id": 308152,
+      "recipe_name": "grilled salmon by bobby flay  healthy",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting, grilled salmon fillet with charred edges, glossy glistening flesh, topped with vibrant corn and cherry tomato relish, fresh basil ribbons and a basil sprig garnish, bright red and golden yellow colors, juicy and tender texture, smoky charred corn kernels, glossy olive oil sheen, rustic wooden board presentation\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1203,
+        "prompt_ms": 994.248,
+        "prompt_per_token_ms": 0.8264738154613467,
+        "prompt_per_second": 1209.9596881261014,
+        "predicted_n": 106,
+        "predicted_ms": 2459.814,
+        "predicted_per_token_ms": 23.205792452830188,
+        "predicted_per_second": 43.09268912202305
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 106,
+        "prompt_tokens": 1203,
+        "total_tokens": 1309
+      }
+    },
+    {
+      "index": 39,
+      "recipe_id": 178923,
+      "recipe_name": "bean  n bacon",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of Bean & Bacon salad with glossy green beans and crisp bacon bits glistening, vibrant emerald green and caramelized brown contrast, tender crisp texture with subtle sheen, tossed in a light vinaigrette, sprinkled with fresh chopped parsley and thinly sliced red onion, served in a white ceramic bowl on a rustic wooden table, natural sunlight streaming from a nearby window, shallow depth of field, casual first-person perspective capturing the dish from slightly above the rim, soft natural lighting, warm tones, appetizing and fresh summer side dish vibe\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1041,
+        "prompt_ms": 808.683,
+        "prompt_per_token_ms": 0.7768328530259366,
+        "prompt_per_second": 1287.2782041912592,
+        "predicted_n": 133,
+        "predicted_ms": 3091.652,
+        "predicted_per_token_ms": 23.245503759398495,
+        "predicted_per_second": 43.019072004222984
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 1041,
+        "total_tokens": 1174
+      }
+    },
+    {
+      "index": 40,
+      "recipe_id": 71871,
+      "recipe_name": "ravioli with prosciutto  roma tomato and sage",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up first-person perspective of ravioli with prosciutto, roma tomato and sage, showcasing tender, pillowy ravioli coated in a glossy, creamy sauce with visible flecks of golden prosciutto, bright red tomatoes, and fresh green sage leaves, shallow depth of field, natural lighting, shallow focus on the cheese\u2011tossed pasta, rustic wooden board with a few extra sage leaves and a sprinkle of grated Romano cheese, steam gently rising, warm inviting atmosphere\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2358,
+        "prompt_ms": 1694.149,
+        "prompt_per_token_ms": 0.7184686174724342,
+        "prompt_per_second": 1391.8492411234197,
+        "predicted_n": 120,
+        "predicted_ms": 2797.379,
+        "predicted_per_token_ms": 23.311491666666665,
+        "predicted_per_second": 42.89729779196884
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 2358,
+        "total_tokens": 2478
+      }
+    },
+    {
+      "index": 41,
+      "recipe_id": 57539,
+      "recipe_name": "deep fried jalapeno slices",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of crispy golden fried jalape\u00f1o slices, each slice showing a perfectly battered, light, airy coating that glistens with a subtle oil sheen. The peppers retain their vibrant green hue with hints of red chili powder dusting, emphasizing heat and spice. Served on a rustic wooden board with a small ramekin of creamy ranch dressing for dipping, and a sprinkle of fresh parsley for contrast. Shallow depth of field, natural window lighting, first-person perspective, casual food photo, overhead angle.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1371,
+        "prompt_ms": 1063.84,
+        "prompt_per_token_ms": 0.7759591539022611,
+        "prompt_per_second": 1288.7276282147693,
+        "predicted_n": 131,
+        "predicted_ms": 3060.31,
+        "predicted_per_token_ms": 23.361145038167937,
+        "predicted_per_second": 42.80612094853136
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 131,
+        "prompt_tokens": 1371,
+        "total_tokens": 1502
+      }
+    },
+    {
+      "index": 42,
+      "recipe_id": 305776,
+      "recipe_name": "greek village salad  nick and marina makris horiatiki salad",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of Greek Village Salad with bright red tomatoes, crisp green cucumber, thinly sliced red onion, glossy black Kalamata olives, and a generous sprinkle of fresh Italian parsley over crumbled white feta cheese; drizzled lightly with golden extra-virgin olive oil that glistens on the vegetables; vibrant rustic presentation in a shallow wooden bowl; First-person perspective, casual food photo, overhead angle, shallow depth of field, natural soft lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1793,
+        "prompt_ms": 1397.511,
+        "prompt_per_token_ms": 0.7794261015058561,
+        "prompt_per_second": 1282.9952680157796,
+        "predicted_n": 115,
+        "predicted_ms": 2676.669,
+        "predicted_per_token_ms": 23.27538260869565,
+        "predicted_per_second": 42.96384797672032
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 115,
+        "prompt_tokens": 1793,
+        "total_tokens": 1908
+      }
+    },
+    {
+      "index": 43,
+      "recipe_id": 159429,
+      "recipe_name": "kittencal s blueberry pie   option for freezing",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo of Kittencal S Blueberry Pie, a golden\u2011brown flaky crust with delicate lattice edges, juicy blueberry filling glistening with a light sugary sheen, prominent deep blue and violet berries speckled with tiny specks of cinnamon, a dusting of powdered sugar on top, shallow depth of field, natural window lighting highlighting the buttery crust texture and glossy filling\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1605,
+        "prompt_ms": 1187.512,
+        "prompt_per_token_ms": 0.7398828660436136,
+        "prompt_per_second": 1351.5652894454963,
+        "predicted_n": 108,
+        "predicted_ms": 2509.036,
+        "predicted_per_token_ms": 23.231814814814815,
+        "predicted_per_second": 43.04442024745759
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 108,
+        "prompt_tokens": 1605,
+        "total_tokens": 1713
+      }
+    },
+    {
+      "index": 44,
+      "recipe_id": 51597,
+      "recipe_name": "sausage rotel dip",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up first-person shot of a steaming Sausage Rotel Dip in a rustic white serving bowl, showcasing creamy melted cheese swirled with chunky sausage and vivid red diced tomatoes from Rotel. The dip is glossy and richly textured, with melted cheese strands pulling slightly as a chip dips in, and a sprinkle of chipotle pepper powder dusted on top for a festive, smoky finish. Served with a handful of golden tortilla chips on the side, all captured in natural warm lighting with shallow depth of field, evoking a casual, inviting food photo perfect for a party spread.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2348,
+        "prompt_ms": 1700.367,
+        "prompt_per_token_ms": 0.7241767461669506,
+        "prompt_per_second": 1380.8783633180365,
+        "predicted_n": 148,
+        "predicted_ms": 3453.288,
+        "predicted_per_token_ms": 23.333027027027025,
+        "predicted_per_second": 42.85770546794823
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 148,
+        "prompt_tokens": 2348,
+        "total_tokens": 2496
+      }
+    },
+    {
+      "index": 45,
+      "recipe_id": 60645,
+      "recipe_name": "baked spinach topped tomatoes",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nfirst-person close-up shot of Baked Spinach Topped Tomatoes with vibrant deep red tomato halves stuffed with glossy green spinach filling. bright ruby tomato interiors contrasted with speckled golden breadcrumb topping, slightly crispy edges glistening with melted butter sheen. scattered fresh parsley garnish and a dusting of grated Parmesan cheese. natural window light casting soft shadows, shallow depth of field highlighting the juicy tomato flesh and tender spinach texture, casual rustic kitchen setting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1097,
+        "prompt_ms": 882.512,
+        "prompt_per_token_ms": 0.8044776663628076,
+        "prompt_per_second": 1243.042587522889,
+        "predicted_n": 119,
+        "predicted_ms": 2764.601,
+        "predicted_per_token_ms": 23.23194117647059,
+        "predicted_per_second": 43.0441861230608
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 119,
+        "prompt_tokens": 1097,
+        "total_tokens": 1216
+      }
+    },
+    {
+      "index": 46,
+      "recipe_id": 116884,
+      "recipe_name": "cheese and honey glazed carrots",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of Cheese And Honey Glazed Carrots with vibrant orange carrots glistening with honey, sprinkled with melted shredded cheese, crispy edges from broiling, garnished with a pinch of fresh parsley. First-person perspective, casual food photo, top-down angle, shallow depth of field, natural lighting.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1917,
+        "prompt_ms": 1391.87,
+        "prompt_per_token_ms": 0.7260667709963484,
+        "prompt_per_second": 1377.2837980558531,
+        "predicted_n": 84,
+        "predicted_ms": 1952.237,
+        "predicted_per_token_ms": 23.240916666666667,
+        "predicted_per_second": 43.027562739564914
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 84,
+        "prompt_tokens": 1917,
+        "total_tokens": 2001
+      }
+    },
+    {
+      "index": 47,
+      "recipe_id": 188274,
+      "recipe_name": "healthier olive garden pasta e fagioli soup",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of a steaming bowl of healthier Olive Garden Pasta e Fagioli soup in a white ceramic bowl, featuring tender ground turkey breast and al dente pasta as the main ingredients. Rich red and orange hues from diced tomatoes and carrots, with a glossy broth texture. Garnished with fresh parsley and a light sprinkle of grated Parmesan cheese. First-person perspective, casual food photo, top-down angle, shallow depth of field, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1210,
+        "prompt_ms": 1008.017,
+        "prompt_per_token_ms": 0.8330719008264463,
+        "prompt_per_second": 1200.3765809505196,
+        "predicted_n": 113,
+        "predicted_ms": 2626.319,
+        "predicted_per_token_ms": 23.241761061946903,
+        "predicted_per_second": 43.02599950729519
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 113,
+        "prompt_tokens": 1210,
+        "total_tokens": 1323
+      }
+    },
+    {
+      "index": 48,
+      "recipe_id": 35708,
+      "recipe_name": "low fat mocha frappe",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, close-up of Low Fat Mocha Frappe with creamy brown coffee foam and chocolate swirls, silky glossy texture, topped with a light dusting of cocoa powder and a sprig of mint, served in a clear glass with a straw, natural lighting, shallow depth of field, soft focus background\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 946,
+        "prompt_ms": 771.422,
+        "prompt_per_token_ms": 0.8154566596194504,
+        "prompt_per_second": 1226.3067426129926,
+        "predicted_n": 88,
+        "predicted_ms": 2039.344,
+        "predicted_per_token_ms": 23.174363636363637,
+        "predicted_per_second": 43.15113095191395
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 88,
+        "prompt_tokens": 946,
+        "total_tokens": 1034
+      }
+    },
+    {
+      "index": 49,
+      "recipe_id": 104975,
+      "recipe_name": "easy  festive chocolate holiday pretzels",
+      "success": false,
+      "error": "400 Client Error: Bad Request for url: http://localhost:30000/v1/chat/completions",
+      "response": null,
+      "timings": null,
+      "model": null
+    },
+    {
+      "index": 50,
+      "recipe_id": 122093,
+      "recipe_name": "yummy round steak with rich gravy",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of a hearty round steak stew with rich, glossy gravy coating tender meat, deep brown sauce glistening over succulent beef pieces, slow\u2011cooked to fall\u2011apart tenderness, served in a rustic 9\u00d713 baking dish with a sprinkle of fresh parsley and a side of fluffy mashed potatoes and golden rolls, captured from a slightly elevated angle with shallow depth of field, natural soft lighting highlighting the steam and sauce texture\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1168,
+        "prompt_ms": 972.935,
+        "prompt_per_token_ms": 0.8329922945205479,
+        "prompt_per_second": 1200.4912969520062,
+        "predicted_n": 114,
+        "predicted_ms": 2651.929,
+        "predicted_per_token_ms": 23.2625350877193,
+        "predicted_per_second": 42.98757621339033
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 114,
+        "prompt_tokens": 1168,
+        "total_tokens": 1282
+      }
+    },
+    {
+      "index": 51,
+      "recipe_id": 201374,
+      "recipe_name": "vegan soft sugar cookies",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting, of Vegan Soft Sugar Cookies, with soft pastel pink frosting glistening, slightly crinkled edges and tender crumb texture, hand-formed round cookies dusted with cinnamon sugar, topped with delicate pink sugar crystals and tiny edible sprinkles, cozy home kitchen setting, warm ambient glow\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1487,
+        "prompt_ms": 1096.252,
+        "prompt_per_token_ms": 0.7372239408204438,
+        "prompt_per_second": 1356.4399426409257,
+        "predicted_n": 98,
+        "predicted_ms": 2273.834,
+        "predicted_per_token_ms": 23.202387755102038,
+        "predicted_per_second": 43.09901250487063
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 98,
+        "prompt_tokens": 1487,
+        "total_tokens": 1585
+      }
+    },
+    {
+      "index": 52,
+      "recipe_id": 307536,
+      "recipe_name": "beef   chimichurri sauce",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Argentine grilled top sirloin steak with vibrant chimichurri sauce glistening, featuring fresh parsley and cilantro flecks, bright green and emerald hues contrasting with seared char marks, juicy tender interior with glossy herbaceous coating, served in a rustic glass baking dish with drizzled sauce remnants, topped with thin lime wedges and microgreens, natural backlit summer lighting, shallow depth of field capturing steam rising, first-person perspective, casual food photo, overhead angle, warm tones\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1298,
+        "prompt_ms": 1047.153,
+        "prompt_per_token_ms": 0.8067434514637905,
+        "prompt_per_second": 1239.5514313572135,
+        "predicted_n": 127,
+        "predicted_ms": 2955.355,
+        "predicted_per_token_ms": 23.27051181102362,
+        "predicted_per_second": 42.972840826228996
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 127,
+        "prompt_tokens": 1298,
+        "total_tokens": 1425
+      }
+    },
+    {
+      "index": 53,
+      "recipe_id": 94355,
+      "recipe_name": "cheesy spaghetti squash",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose\u2011up shot of Cheesy Spaghetti Squash with bright golden strands of tender, slightly caramelized squash tossed in melted parmesan and reduced\u2011fat mozzarella, speckled with diced pimientos, fresh parsley, and a light dusting of grated cheese, served in a reserved half\u2011shell. First\u2011person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1859,
+        "prompt_ms": 1380.252,
+        "prompt_per_token_ms": 0.7424701452393759,
+        "prompt_per_second": 1346.855501748956,
+        "predicted_n": 106,
+        "predicted_ms": 2463.016,
+        "predicted_per_token_ms": 23.236,
+        "predicted_per_second": 43.036667240488896
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 106,
+        "prompt_tokens": 1859,
+        "total_tokens": 1965
+      }
+    },
+    {
+      "index": 54,
+      "recipe_id": 256378,
+      "recipe_name": "betty bars",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nclose-up shot of Betty Bars with glossy semi-sweet chocolate swirl and butterscotch topping, golden peanut butter oat crust dotted with chopped peanuts, soft and chewy texture, glossy finish, rustic bar shape, first-person perspective, casual food photo, top-down angle, shallow depth of field, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1087,
+        "prompt_ms": 819.425,
+        "prompt_per_token_ms": 0.7538408463661453,
+        "prompt_per_second": 1326.5399517954663,
+        "predicted_n": 86,
+        "predicted_ms": 1995.74,
+        "predicted_per_token_ms": 23.206279069767444,
+        "predicted_per_second": 43.09178550312165
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 86,
+        "prompt_tokens": 1087,
+        "total_tokens": 1173
+      }
+    },
+    {
+      "index": 55,
+      "recipe_id": 171410,
+      "recipe_name": "agua de tamarindo",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of Agua de Tamarindo with a glistening amber liquid, highlighting the tangy-sweet pulp texture and subtle sediment swirl. Served in a rustic glass jar on a wooden table, with a sprig of fresh mint and a lime wedge for contrast. Soft natural light, shallow depth of field, first-person perspective, casual food photo\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1011,
+        "prompt_ms": 797.33,
+        "prompt_per_token_ms": 0.7886547972304649,
+        "prompt_per_second": 1267.9818895563944,
+        "predicted_n": 90,
+        "predicted_ms": 2089.882,
+        "predicted_per_token_ms": 23.22091111111111,
+        "predicted_per_second": 43.06463235723356
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 90,
+        "prompt_tokens": 1011,
+        "total_tokens": 1101
+      }
+    },
+    {
+      "index": 56,
+      "recipe_id": 77113,
+      "recipe_name": "creamed brussels sprouts",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of Creamed Brussels Sprouts with caramelized bacon bits and golden onion flecks, rich green sprouts glistening with creamy sour cream sauce, warm rustic plating on a wooden board, shallow depth of field, soft natural window light, first-person perspective, casual food photo, slight overhead angle\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 766,
+        "prompt_ms": 705.204,
+        "prompt_per_token_ms": 0.9206318537859007,
+        "prompt_per_second": 1086.2105149715544,
+        "predicted_n": 81,
+        "predicted_ms": 1877.103,
+        "predicted_per_token_ms": 23.174111111111113,
+        "predicted_per_second": 43.151601164134306
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 81,
+        "prompt_tokens": 766,
+        "total_tokens": 847
+      }
+    },
+    {
+      "index": 57,
+      "recipe_id": 251131,
+      "recipe_name": "brazilian black bean soup",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of Brazilian black bean soup in a rustic bowl, dark glossy beans with orange hue, tender texture, glistening broth, artful swirl of sour cream, fresh cilantro leaves and bright salsa topping, shallow depth of field, natural light, first-person perspective, casual food photo, overhead angle\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1615,
+        "prompt_ms": 1221.16,
+        "prompt_per_token_ms": 0.7561362229102168,
+        "prompt_per_second": 1322.5130204068262,
+        "predicted_n": 83,
+        "predicted_ms": 1925.689,
+        "predicted_per_token_ms": 23.201072289156627,
+        "predicted_per_second": 43.101456154134965
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 83,
+        "prompt_tokens": 1615,
+        "total_tokens": 1698
+      }
+    },
+    {
+      "index": 58,
+      "recipe_id": 268957,
+      "recipe_name": "dinner rolls in one hour",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting, golden-brown rolls glistening with melted butter, soft and fluffy texture, tender interior visible at a split edge, arranged tightly packed in an 8-inch round cake pan, dusted lightly with flour, with a small pat of butter melting on the side, rustic wooden board background, warm inviting atmosphere, high detail, photorealistic, shot with a DSLR, 85mm lens, f/1.8 aperture, soft shadows, cozy home kitchen vibe\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2187,
+        "prompt_ms": 1620.203,
+        "prompt_per_token_ms": 0.7408335619570188,
+        "prompt_per_second": 1349.8308545287225,
+        "predicted_n": 133,
+        "predicted_ms": 3104.931,
+        "predicted_per_token_ms": 23.345345864661656,
+        "predicted_per_second": 42.83509037720967
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 2187,
+        "total_tokens": 2320
+      }
+    },
+    {
+      "index": 59,
+      "recipe_id": 12696,
+      "recipe_name": "empanadas",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, top-down angle, shallow depth of field, natural lighting, golden-brown empanadas with flaky pastry crust, juicy seasoned pork filling glistening with a slight sheen, visible tender meat texture and specks of dark raisins and toasted almond slivers, garnished with a dusting of fresh parsley and a wedge of lime, rustic wooden board background, warm inviting tones, crisp edges and steam rising\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1623,
+        "prompt_ms": 1246.861,
+        "prompt_per_token_ms": 0.7682446087492298,
+        "prompt_per_second": 1301.6687505664222,
+        "predicted_n": 114,
+        "predicted_ms": 2655.435,
+        "predicted_per_token_ms": 23.29328947368421,
+        "predicted_per_second": 42.93081924430461
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 114,
+        "prompt_tokens": 1623,
+        "total_tokens": 1737
+      }
+    },
+    {
+      "index": 60,
+      "recipe_id": 241455,
+      "recipe_name": "ginger glazed mahi",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of ginger glazed mahi mahi fillet with glossy caramelized honey-soy balsamic glaze, golden-brown sear marks and charred edges from skillet searing, glistening surface with sesame oil sheen, garnished with toasted sesame seeds and sliced green onions, juicy tender texture, served on a white ceramic plate with shallow depth of field, casual food photo, overhead angle, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3035,
+        "prompt_ms": 2087.262,
+        "prompt_per_token_ms": 0.6877304777594728,
+        "prompt_per_second": 1454.0579955942283,
+        "predicted_n": 109,
+        "predicted_ms": 2566.025,
+        "predicted_per_token_ms": 23.54151376146789,
+        "predicted_per_second": 42.47815200553385
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 3035,
+        "total_tokens": 3144
+      }
+    },
+    {
+      "index": 61,
+      "recipe_id": 126113,
+      "recipe_name": "polynesian meatballs  for party trays",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, close-up of glossy mahogany mahogany meatballs glazed with a sticky amber sauce, juicy interior with visible flecks of toasted cornflake crust, arranged on a rustic wooden platter with a sprinkle of fresh green scallions, shallow depth of field, natural window lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1394,
+        "prompt_ms": 1085.975,
+        "prompt_per_token_ms": 0.779035150645624,
+        "prompt_per_second": 1283.6391261308963,
+        "predicted_n": 88,
+        "predicted_ms": 2053.973,
+        "predicted_per_token_ms": 23.34060227272727,
+        "predicted_per_second": 42.84379590189355
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 88,
+        "prompt_tokens": 1394,
+        "total_tokens": 1482
+      }
+    },
+    {
+      "index": 62,
+      "recipe_id": 400409,
+      "recipe_name": "pakistani style turai ka salan  courgettes curry",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose\u2011up of a rustic bowl of Pakistani Turai Ka Salan featuring tender green courgettes immersed in a rich, orange\u2011red gravy, glossy and slightly glistening from the oil, with a sprinkle of golden garam masala and a few bright green slits of green chili on top, finished with a few drops of lemon juice that create subtle sheen. The dish is presented on a warm, textured wooden table, shallow depth of field, first\u2011person perspective, natural soft lighting, casual food\u2011photo style, slight overhead angle.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1225,
+        "prompt_ms": 1019.576,
+        "prompt_per_token_ms": 0.8323069387755102,
+        "prompt_per_second": 1201.47983083164,
+        "predicted_n": 133,
+        "predicted_ms": 3114.102,
+        "predicted_per_token_ms": 23.414300751879697,
+        "predicted_per_second": 42.70894145406927
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 1225,
+        "total_tokens": 1358
+      }
+    },
+    {
+      "index": 63,
+      "recipe_id": 421986,
+      "recipe_name": "how to properly clean and toast quinoa",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of golden toasted quinoa in a shallow bowl, bright yellow grains with a glossy, slightly crisp texture and nutty sheen, lightly glistening from residual oil, sprinkled with a few toasted sesame seeds for garnish, first-person perspective, casual food photo, top-down angle, shallow depth of field, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1415,
+        "prompt_ms": 1087.841,
+        "prompt_per_token_ms": 0.7687922261484098,
+        "prompt_per_second": 1300.7415605773272,
+        "predicted_n": 88,
+        "predicted_ms": 2060.001,
+        "predicted_per_token_ms": 23.409102272727274,
+        "predicted_per_second": 42.71842586484181
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 88,
+        "prompt_tokens": 1415,
+        "total_tokens": 1503
+      }
+    },
+    {
+      "index": 64,
+      "recipe_id": 422807,
+      "recipe_name": "oil pulling",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, close-up of a clear glass cup filled with oil pulling swish, a spoon resting beside it, natural morning light, shallow depth of field, emphasizing the translucent liquid, subtle oil droplets on the rim, soft focus on background, gentle pastel tones\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1974,
+        "prompt_ms": 1430.273,
+        "prompt_per_token_ms": 0.7245557244174265,
+        "prompt_per_second": 1380.1560960739664,
+        "predicted_n": 75,
+        "predicted_ms": 1755.009,
+        "predicted_per_token_ms": 23.40012,
+        "predicted_per_second": 42.73482358210129
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 75,
+        "prompt_tokens": 1974,
+        "total_tokens": 2049
+      }
+    },
+    {
+      "index": 65,
+      "recipe_id": 183617,
+      "recipe_name": "crock pot southwest chicken",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose\u2011up, first\u2011person perspective of shredded Southwest Crock\u2011Pot Chicken served in a bowl, glossy juicy shreds with a hint of melted mozzarella cheese, a dollop of sour cream, and a sprinkle of fresh cilantro; vibrant reds from tomatoes and green chilies contrast with the golden chicken, slightly charred edges, shallow depth of field, natural soft lighting, casual food photo, overhead angle\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1201,
+        "prompt_ms": 1000.246,
+        "prompt_per_token_ms": 0.8328442964196503,
+        "prompt_per_second": 1200.704626661841,
+        "predicted_n": 107,
+        "predicted_ms": 2500.282,
+        "predicted_per_token_ms": 23.367121495327105,
+        "predicted_per_second": 42.795172704518926
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 107,
+        "prompt_tokens": 1201,
+        "total_tokens": 1308
+      }
+    },
+    {
+      "index": 66,
+      "recipe_id": 278160,
+      "recipe_name": "specialty soup substitutes   cream",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose\u2011up of Specialty Soup Substitutes Cream with golden, velvety texture, glossy finish, creamy off\u2011white hue, flecks of saut\u00e9ed onion, celery, and mushroom, sprinkled with fresh parsley and a light dusting of paprika, shallow depth of field, natural soft lighting, first\u2011person perspective, casual food photo, top\u2011down angle\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3041,
+        "prompt_ms": 2096.219,
+        "prompt_per_token_ms": 0.6893189740217034,
+        "prompt_per_second": 1450.70720187156,
+        "predicted_n": 98,
+        "predicted_ms": 2304.032,
+        "predicted_per_token_ms": 23.5105306122449,
+        "predicted_per_second": 42.53413147039624
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 98,
+        "prompt_tokens": 3041,
+        "total_tokens": 3139
+      }
+    },
+    {
+      "index": 67,
+      "recipe_id": 24720,
+      "recipe_name": "chocolate nut cranberry espresso biscotti",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot of chocolate nut cranberry espresso biscotti with prominent dark chocolate chips, glossy cranberries, toasted walnut pieces, and subtle cinnamon speckles, rich mahogany brown and deep burgundy tones, crisp-edged, slightly glossy surface with visible cracks, resting on a rustic wooden board with coffee stains, shallow depth of field, natural morning light, warm and inviting mood\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1300,
+        "prompt_ms": 1061.129,
+        "prompt_per_token_ms": 0.8162530769230768,
+        "prompt_per_second": 1225.1102363614605,
+        "predicted_n": 109,
+        "predicted_ms": 2553.161,
+        "predicted_per_token_ms": 23.423495412844037,
+        "predicted_per_second": 42.6921764824075
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 1300,
+        "total_tokens": 1409
+      }
+    },
+    {
+      "index": 68,
+      "recipe_id": 254925,
+      "recipe_name": "merm s potato cheese soup with green chilies",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective casual food photo, shallow depth of field, natural lighting, of Merm S Potato Cheese Soup With Green Chilies, featuring creamy, velvety soup with a rich golden hue, tender chunks of potato, melted Monterey Jack and shredded cheddar cheese swirls, smooth glistening texture, subtle specks of roasted green chilies, served in a warm ceramic bowl, garnished with a sprinkle of fresh cilantro and a drizzle of cream, topped with a few roasted chile strips for color contrast\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1208,
+        "prompt_ms": 1008.263,
+        "prompt_per_token_ms": 0.8346548013245033,
+        "prompt_per_second": 1198.1000988829303,
+        "predicted_n": 133,
+        "predicted_ms": 3123.604,
+        "predicted_per_token_ms": 23.485744360902252,
+        "predicted_per_second": 42.57902090021655
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 133,
+        "prompt_tokens": 1208,
+        "total_tokens": 1341
+      }
+    },
+    {
+      "index": 69,
+      "recipe_id": 62125,
+      "recipe_name": "gingerbread apple flan with apple custard",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, close-up shot of Gingerbread Apple Flan with Apple Custard, showing a golden-brown gingerbread crust with tender apple slices arranged in concentric circles, glossy amber custard gently set and shimmering on top, warm spice aromas implied by visible ginger dusting, rustic wooden table background, soft natural window lighting, shallow depth of field highlighting the glossy texture and caramelized edges, no garnish, warm inviting tones\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 928,
+        "prompt_ms": 776.418,
+        "prompt_per_token_ms": 0.8366573275862069,
+        "prompt_per_second": 1195.232464986644,
+        "predicted_n": 114,
+        "predicted_ms": 2674.766,
+        "predicted_per_token_ms": 23.46285964912281,
+        "predicted_per_second": 42.62055073228836
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 114,
+        "prompt_tokens": 928,
+        "total_tokens": 1042
+      }
+    },
+    {
+      "index": 70,
+      "recipe_id": 57930,
+      "recipe_name": "my mother  in law s 7 layer salad",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective casual food photo of My Mother In Law's 7 Layer Salad, bright green lettuce, crisp celery, tender hard\u2011boiled eggs, sweet frozen peas, colorful diced green pepper, glossy mayonnaise\u2011sugar dressing that glistens, shredded cheddar cheese, crispy bacon bits, layered in a clear glass bowl to showcase the vibrant layers, shallow depth of field, natural soft lighting, overhead angle, vibrant colors, inviting presentation\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1126,
+        "prompt_ms": 933.815,
+        "prompt_per_token_ms": 0.8293206039076377,
+        "prompt_per_second": 1205.8062892542953,
+        "predicted_n": 115,
+        "predicted_ms": 2697.811,
+        "predicted_per_token_ms": 23.459226086956523,
+        "predicted_per_second": 42.62715216151169
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 115,
+        "prompt_tokens": 1126,
+        "total_tokens": 1241
+      }
+    },
+    {
+      "index": 71,
+      "recipe_id": 148535,
+      "recipe_name": "so easy banana caramel cream pie  no bake",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nclose-up of Banana Caramel Cream Pie with glossy caramel drizzle over sliced bananas, creamy whipped topping swirled decoratively, golden Skor candy bar pieces scattered on top, rich amber caramel sheen, tender banana layers, smooth velvety texture, elegant no-bake presentation with crisp vanilla wafer crust base, first-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1141,
+        "prompt_ms": 958.423,
+        "prompt_per_token_ms": 0.8399851007887817,
+        "prompt_per_second": 1190.4973065128863,
+        "predicted_n": 104,
+        "predicted_ms": 2438.674,
+        "predicted_per_token_ms": 23.448788461538463,
+        "predicted_per_second": 42.6461265425391
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 104,
+        "prompt_tokens": 1141,
+        "total_tokens": 1245
+      }
+    },
+    {
+      "index": 72,
+      "recipe_id": 283059,
+      "recipe_name": "fluffy citrus scented pancakes",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nclose-up of Fluffy Citrus Scented Pancakes with blood orange segments and golden-brown edges, vibrant orange zest speckles, glossy citrus-maple glaze dripping over stack, buttery melt, light and airy texture with slight crisp on surface, garnished with fresh mint leaves and orange zest curls, first-person perspective, casual food photo, overhead angle, shallow depth of field, natural morning sunlight\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1417,
+        "prompt_ms": 1102.676,
+        "prompt_per_token_ms": 0.7781764290755115,
+        "prompt_per_second": 1285.055628307862,
+        "predicted_n": 100,
+        "predicted_ms": 2343.739,
+        "predicted_per_token_ms": 23.43739,
+        "predicted_per_second": 42.666866916495394
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 100,
+        "prompt_tokens": 1417,
+        "total_tokens": 1517
+      }
+    },
+    {
+      "index": 73,
+      "recipe_id": 25667,
+      "recipe_name": "ground beef and cabbage stew",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Ground Beef and Cabbage Stew with glossy, tender chunks of beef and bright green cabbage, rich mahogany broth glistening, steam rising, chunky carrots and onions visible. Hearty comfort food presentation in a rustic ceramic bowl. Garnished with fresh parsley and a sprinkle of black pepper. First-person perspective, casual food photo, slightly angled from above, shallow depth of field, natural window lighting.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1407,
+        "prompt_ms": 1092.855,
+        "prompt_per_token_ms": 0.776727078891258,
+        "prompt_per_second": 1287.4535048107937,
+        "predicted_n": 109,
+        "predicted_ms": 2561.766,
+        "predicted_per_token_ms": 23.50244036697248,
+        "predicted_per_second": 42.548772994879315
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 1407,
+        "total_tokens": 1516
+      }
+    },
+    {
+      "index": 74,
+      "recipe_id": 92865,
+      "recipe_name": "south beach steak diane",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nclose-up shot of South Beach Steak Diane on a white plate, glossy beef tenderloin slices with caramelized edges, rich brown mushroom sauce glistening, bright green chives sprinkled on top, vibrant red pepper accents from optional crushed red pepper, juicy tender texture, shallow depth of field, natural window lighting, casual food photo, overhead angle\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1027,
+        "prompt_ms": 817.264,
+        "prompt_per_token_ms": 0.795777994157741,
+        "prompt_per_second": 1256.6318839444782,
+        "predicted_n": 90,
+        "predicted_ms": 2107.049,
+        "predicted_per_token_ms": 23.411655555555555,
+        "predicted_per_second": 42.71376697931562
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 90,
+        "prompt_tokens": 1027,
+        "total_tokens": 1117
+      }
+    },
+    {
+      "index": 75,
+      "recipe_id": 66932,
+      "recipe_name": "healthy  fried rice",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, shallow depth of field, natural lighting, overhead shot of Healthy Fried Rice in a white bowl, featuring fluffy brown rice with vibrant peas, orange carrot ribbons, bright green broccoli florets, earthy sliced mushrooms, golden egg ribbons glistening with a subtle sheen, lightly browned edges on the egg, soy sauce drizzle adding a glossy finish, topped with a sprinkle of toasted sesame seeds and a few fresh green onion scallions, rustic wooden table surface with soft morning light streaming from a nearby window, warm inviting atmosphere, vibrant colors, high detail, food photography style, appetizing presentation\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1288,
+        "prompt_ms": 1058.886,
+        "prompt_per_token_ms": 0.8221164596273292,
+        "prompt_per_second": 1216.3726784564155,
+        "predicted_n": 155,
+        "predicted_ms": 3642.54,
+        "predicted_per_token_ms": 23.500258064516128,
+        "predicted_per_second": 42.55272419794978
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 155,
+        "prompt_tokens": 1288,
+        "total_tokens": 1443
+      }
+    },
+    {
+      "index": 76,
+      "recipe_id": 359559,
+      "recipe_name": "penne san remo  inspired by buca di beppo",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective casual food photo of Penne San Remo, tender chicken breast pieces with crisp golden edges and juicy interior, vibrant artichoke hearts, sun-dried tomatoes, and bright green peas, creamy white wine cream sauce glistening and coating pasta, topped with grated parmesan and a sprinkle of fresh parsley, shallow depth of field, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1945,
+        "prompt_ms": 1431.557,
+        "prompt_per_token_ms": 0.7360190231362468,
+        "prompt_per_second": 1358.660535347178,
+        "predicted_n": 93,
+        "predicted_ms": 2176.538,
+        "predicted_per_token_ms": 23.40363440860215,
+        "predicted_per_second": 42.7284063039561
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 93,
+        "prompt_tokens": 1945,
+        "total_tokens": 2038
+      }
+    },
+    {
+      "index": 77,
+      "recipe_id": 34741,
+      "recipe_name": "baked   bread machine  focaccia with the works",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective casual food photo of Baked Bread Machine Focaccia With The Works, showcasing a golden-brown focaccia loaf with crispy edges and soft, airy crumb, topped with olive oil glisten, oregano, garlic powder, a generous sprinkle of parmesan cheese, sliced green onions, diced tomatoes, black olives, mushrooms, green peppers, jalape\u00f1os, crisp bacon strips, and shredded cheddar cheese. The star ingredient is the fluffy, tender focaccia dough with visible herb-infused crust. Natural lighting highlights the glossy olive oil sheen and melted cheese texture. Shallow depth of field emphasizes the bubbling cheese and colorful vegetable toppings on the pan's rim.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1948,
+        "prompt_ms": 1431.771,
+        "prompt_per_token_ms": 0.7349953798767966,
+        "prompt_per_second": 1360.5527699611182,
+        "predicted_n": 169,
+        "predicted_ms": 3985.232,
+        "predicted_per_token_ms": 23.581254437869823,
+        "predicted_per_second": 42.40656503812074
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 169,
+        "prompt_tokens": 1948,
+        "total_tokens": 2117
+      }
+    },
+    {
+      "index": 78,
+      "recipe_id": 236964,
+      "recipe_name": "basic high altitude french bread for welbilt breadmaker",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up first-person perspective casual food photo of Basic High Altitude French Bread from Welbilt Breadmaker. Show the star of the dish: a tall, crusty golden-brown loaf with visible air pockets and a slightly glossy, tender crumb interior. The bread is freshly sliced, revealing a soft, fluffy interior with delicate holes and a light dusting of flour. Natural lighting highlights the crisp crust texture and subtle butter sheen. Simple wooden cutting board presentation with a few scattered flour specks. Shallow depth of field focuses on the bread's surface details. Warm, inviting tones emphasizing the rustic homemade quality.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1359,
+        "prompt_ms": 1091.247,
+        "prompt_per_token_ms": 0.8029779249448125,
+        "prompt_per_second": 1245.3642484240506,
+        "predicted_n": 142,
+        "predicted_ms": 3338.615,
+        "predicted_per_token_ms": 23.51137323943662,
+        "predicted_per_second": 42.53260708407529
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 142,
+        "prompt_tokens": 1359,
+        "total_tokens": 1501
+      }
+    },
+    {
+      "index": 79,
+      "recipe_id": 222156,
+      "recipe_name": "cranberry and feta salad",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nA close-up of a vibrant cranberry and feta salad featuring crisp romaine and spinach leaves tossed with glossy red cranberries, golden pine nuts, and crumbled white feta cheese. The salad is lightly drizzled with a shimmering maple vinaigrette that glistens on the greens. Rustic wooden bowl, garnished with toasted almond slices and a sprig of fresh herbs. Bright, natural lighting, shallow depth of field, casual first-person perspective, warm and inviting atmosphere.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1913,
+        "prompt_ms": 1530.499,
+        "prompt_per_token_ms": 0.8000517511761631,
+        "prompt_per_second": 1249.9191440177353,
+        "predicted_n": 122,
+        "predicted_ms": 2861.45,
+        "predicted_per_token_ms": 23.45450819672131,
+        "predicted_per_second": 42.63572664208706
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 122,
+        "prompt_tokens": 1913,
+        "total_tokens": 2035
+      }
+    },
+    {
+      "index": 80,
+      "recipe_id": 136204,
+      "recipe_name": "easy bavarian cream",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Bavarian cream filling on a chocolate cake layer, creamy ivory filling with glossy finish, speckled chocolate crumbs and glossy chocolate ganache drips, topped with glossy chocolate drizzle, fresh strawberry halves arranged around the rim, soft pastel lighting, shallow depth of field, first-person perspective, casual food photo, slightly angled from above\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1665,
+        "prompt_ms": 1291.992,
+        "prompt_per_token_ms": 0.7759711711711712,
+        "prompt_per_second": 1288.7076700165328,
+        "predicted_n": 94,
+        "predicted_ms": 2209.186,
+        "predicted_per_token_ms": 23.501978723404257,
+        "predicted_per_second": 42.54960876992702
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 94,
+        "prompt_tokens": 1665,
+        "total_tokens": 1759
+      }
+    },
+    {
+      "index": 81,
+      "recipe_id": 42014,
+      "recipe_name": "sara s veggie stromboli from scratch  using your bread machine",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting, of a golden brown baked veggie stromboli on a rustic wooden board, with melted mozzarella and parmesan stretching as it's sliced, visible layers of colorful vegetables including zucchini, bell pepper, onion, black olives, and tomatoes inside, glistening cheese finish, dusted with dried herbs, rustic kitchen setting, warm inviting vibe\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1923,
+        "prompt_ms": 1413.358,
+        "prompt_per_token_ms": 0.7349755590223609,
+        "prompt_per_second": 1360.5894614103433,
+        "predicted_n": 111,
+        "predicted_ms": 2607.614,
+        "predicted_per_token_ms": 23.49201801801802,
+        "predicted_per_second": 42.56764996659782
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 111,
+        "prompt_tokens": 1923,
+        "total_tokens": 2034
+      }
+    },
+    {
+      "index": 82,
+      "recipe_id": 264107,
+      "recipe_name": "pomegranate persimmon salad with warm goat cheese",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of Pomegranate Persimmon Salad with Warm Goat Cheese, vibrant ruby pomegranate arils and glossy orange persimmon slices glistening over peppery spinach, creamy warm goat cheese balls dusted with ground walnuts and cracked black pepper, drizzled with glossy walnut oil and balsamic reduction, finished with fresh basil leaves and toasted walnut crumbs, soft natural light, shallow depth of field, first-person perspective, casual food photo, overhead angle\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1374,
+        "prompt_ms": 1079.985,
+        "prompt_per_token_ms": 0.7860152838427947,
+        "prompt_per_second": 1272.2398922207253,
+        "predicted_n": 125,
+        "predicted_ms": 2936.04,
+        "predicted_per_token_ms": 23.488319999999998,
+        "predicted_per_second": 42.574351848067465
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 125,
+        "prompt_tokens": 1374,
+        "total_tokens": 1499
+      }
+    },
+    {
+      "index": 83,
+      "recipe_id": 449638,
+      "recipe_name": "chicken in yogurt and almond curry",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, close-up of Chicken In Yogurt And Almond Curry, featuring tender boneless chicken pieces coated in a rich, creamy orange-brown sauce with visible glistening almond pieces and a smooth yogurt sheen, garnished with toasted almond slivers and a light dusting of garam masala, vibrant golden hue from turmeric and red chili, glossy sauce texture, shallow depth of field, natural window lighting, warm inviting tones\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1297,
+        "prompt_ms": 1069.898,
+        "prompt_per_token_ms": 0.8249020817270624,
+        "prompt_per_second": 1212.2650944295624,
+        "predicted_n": 118,
+        "predicted_ms": 2771.817,
+        "predicted_per_token_ms": 23.489974576271187,
+        "predicted_per_second": 42.571353015007844
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 118,
+        "prompt_tokens": 1297,
+        "total_tokens": 1415
+      }
+    },
+    {
+      "index": 84,
+      "recipe_id": 147186,
+      "recipe_name": "spicy black beans with yellow rice",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot of Spicy Black Beans with Yellow Rice, vibrant black beans glistening with sauce and flecks of red bell pepper, fluffy golden yellow rice speckled with turmeric, garnished with a sprinkle of fresh cilantro and a wedge of lime, shallow depth of field, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1013,
+        "prompt_ms": 810.581,
+        "prompt_per_token_ms": 0.8001786771964462,
+        "prompt_per_second": 1249.7208792212007,
+        "predicted_n": 89,
+        "predicted_ms": 2083.862,
+        "predicted_per_token_ms": 23.4141797752809,
+        "predicted_per_second": 42.70916212301966
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 89,
+        "prompt_tokens": 1013,
+        "total_tokens": 1102
+      }
+    },
+    {
+      "index": 85,
+      "recipe_id": 225023,
+      "recipe_name": "nonstick cooking spray",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nShot of homemade cooking spray bottle filled with translucent amber liquid, featuring a sprig of rosemary and a few droplets of oil on the glass surface. Natural lighting, shallow depth of field, casual food photo, overhead angle\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1198,
+        "prompt_ms": 1011.803,
+        "prompt_per_token_ms": 0.8445767946577629,
+        "prompt_per_second": 1184.0249534741447,
+        "predicted_n": 63,
+        "predicted_ms": 1470.057,
+        "predicted_per_token_ms": 23.334238095238096,
+        "predicted_per_second": 42.85548111399762
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 63,
+        "prompt_tokens": 1198,
+        "total_tokens": 1261
+      }
+    },
+    {
+      "index": 86,
+      "recipe_id": 26155,
+      "recipe_name": "pumpkin ginger praline pie",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up of Pumpkin Ginger Praline Pie on a rustic wooden table, showing caramelized ginger praline layer bubbling at crust edges, glossy deep orange pumpkin filling with slight jiggle in center, warm golden-brown crust texture, toasted pecan garnish on top, shallow depth of field, natural window lighting, first-person perspective, casual food photo, overhead angle\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1105,
+        "prompt_ms": 911.054,
+        "prompt_per_token_ms": 0.824483257918552,
+        "prompt_per_second": 1212.8809049737997,
+        "predicted_n": 96,
+        "predicted_ms": 2249.429,
+        "predicted_per_token_ms": 23.431552083333333,
+        "predicted_per_second": 42.67749726708422
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 96,
+        "prompt_tokens": 1105,
+        "total_tokens": 1201
+      }
+    },
+    {
+      "index": 87,
+      "recipe_id": 368427,
+      "recipe_name": "how to cook a spaghetti squash",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of spaghetti squash strands gently pulled apart with a fork, bright golden-yellow flesh with subtle green edge, tender and slightly glossy texture, served in a rustic ceramic bowl with a sprinkle of grated Parmesan cheese and a few fresh basil leaves, natural daylight from a nearby window, shallow depth of field, first-person perspective, casual food photo, overhead angle, vibrant colors, mouth\u2011watering appearance\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1989,
+        "prompt_ms": 1455.692,
+        "prompt_per_token_ms": 0.7318712921065862,
+        "prompt_per_second": 1366.3604663623898,
+        "predicted_n": 105,
+        "predicted_ms": 2459.211,
+        "predicted_per_token_ms": 23.42105714285714,
+        "predicted_per_second": 42.6966209894149
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 105,
+        "prompt_tokens": 1989,
+        "total_tokens": 2094
+      }
+    },
+    {
+      "index": 88,
+      "recipe_id": 163677,
+      "recipe_name": "overnight oatmeal  muesli",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo of Overnight Oatmeal Muesli with plump raisins and orange zest glistening, showing tender soaked oats and visible apple cubes, topped with a sprinkle of raw sunflower seeds and a dusting of cinnamon, shallow depth of field, natural morning light\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1322,
+        "prompt_ms": 1059.343,
+        "prompt_per_token_ms": 0.8013184568835099,
+        "prompt_per_second": 1247.9433007061923,
+        "predicted_n": 82,
+        "predicted_ms": 1922.026,
+        "predicted_per_token_ms": 23.439341463414635,
+        "predicted_per_second": 42.66331464818894
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 82,
+        "prompt_tokens": 1322,
+        "total_tokens": 1404
+      }
+    },
+    {
+      "index": 89,
+      "recipe_id": 287533,
+      "recipe_name": "get your man chicken   the neelys",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, medium close-up of Get Your Man Chicken, glossy, braised chicken thighs with deep mahogany color, glistening sauce, tender and juicy texture, speckled with bright green fresh parsley garnish, subtle hints of dried herbs de provence visible, rich amber broth coating each piece, shallow depth of field, natural window lighting, rustic wooden table setting, soft focus background, appetizing presentation over buttered rice, warm inviting tones, high detail, realistic photography\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1549,
+        "prompt_ms": 1140.75,
+        "prompt_per_token_ms": 0.736442866365397,
+        "prompt_per_second": 1357.8785886478195,
+        "predicted_n": 123,
+        "predicted_ms": 2890.662,
+        "predicted_per_token_ms": 23.50131707317073,
+        "predicted_per_second": 42.550806701025586
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 123,
+        "prompt_tokens": 1549,
+        "total_tokens": 1672
+      }
+    },
+    {
+      "index": 90,
+      "recipe_id": 384760,
+      "recipe_name": "sourdough cinnamon rolls",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting. A towering stack of golden-brown sourdough cinnamon rolls fresh out of the oven, their surface glistening with a creamy powdered sugar glaze that drips slightly over the edges. Each roll reveals a soft, tender crumb filled with a rich swirl of cinnamon, brown sugar, and flecks of dried cranberries and toasted pecans. The rolls are arranged in a rustic 9x12 inch baking pan, slightly uneven to show their handmade charm, with a few cranberries and nuts peeking out from the sides. Warm, inviting tones dominate \u2014 amber, caramel, and cream \u2014 with subtle shadows emphasizing the pillowy texture. Close-up detail on the glaze\u2019s sheen and the filling\u2019s intricate swirl. Soft morning light streaming from the side, casting gentle highlights on the glaze and crust. Rustic wooden table background with a hint of flour dusting for authenticity.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2118,
+        "prompt_ms": 1530.906,
+        "prompt_per_token_ms": 0.7228073654390934,
+        "prompt_per_second": 1383.4944797394485,
+        "predicted_n": 224,
+        "predicted_ms": 5275.671,
+        "predicted_per_token_ms": 23.55210267857143,
+        "predicted_per_second": 42.459054023649315
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 224,
+        "prompt_tokens": 2118,
+        "total_tokens": 2342
+      }
+    },
+    {
+      "index": 91,
+      "recipe_id": 326740,
+      "recipe_name": "southern fried tofu",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Southern Fried Tofu on a wooden plate, golden crispy coating glistening with a light sheen, deep golden-brown edges, vibrant yellow paprika specks visible on the surface. Shallow depth of field, natural window lighting from above, first-person perspective. Sprinkled with fresh chopped parsley and thyme, served with lemon wedges on the side.\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1621,
+        "prompt_ms": 1237.138,
+        "prompt_per_token_ms": 0.7631943244910548,
+        "prompt_per_second": 1310.2822805539884,
+        "predicted_n": 95,
+        "predicted_ms": 2229.559,
+        "predicted_per_token_ms": 23.46904210526316,
+        "predicted_per_second": 42.60932318902527
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 95,
+        "prompt_tokens": 1621,
+        "total_tokens": 1716
+      }
+    },
+    {
+      "index": 92,
+      "recipe_id": 174041,
+      "recipe_name": "island pork tenderloin  optional salad",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead angle, shallow depth of field, natural lighting of Island Pork Tenderloin with sliced pork tenderloin arranged on a bed of baby spinach, napa cabbage, red bell pepper, golden raisins, and avocado slices, bright orange citrus segments glistening, glaze drizzled over pork creating a sweet\u2011spicy sheen, vibrant colors of orange, green, and red, tender juicy texture with crispy spice\u2011rubbed edges, garnished with fresh lime wedges and a sprinkle of cilantro, plated on a rustic wooden platter, warm inviting presentation, shallow focus highlighting the glossy glaze and fresh vegetables\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 5572,
+        "prompt_ms": 3716.809,
+        "prompt_per_token_ms": 0.6670511486001436,
+        "prompt_per_second": 1499.1354142760629,
+        "predicted_n": 164,
+        "predicted_ms": 3861.317,
+        "predicted_per_token_ms": 23.544615853658538,
+        "predicted_per_second": 42.47255534834358
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 164,
+        "prompt_tokens": 5572,
+        "total_tokens": 5736
+      }
+    },
+    {
+      "index": 93,
+      "recipe_id": 243373,
+      "recipe_name": "paradise s sensual salad",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo of Paradise Sensual Salad with crisp apple slices and glistening feta cheese, vibrant green romaine lettuce, toasted sweet and spicy pecans glistening with a light honey sheen, colorful golden raisins and optional fresh figs scattered on top, light drizzle of creamy tangy dressing, shallow depth of field, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1272,
+        "prompt_ms": 1033.989,
+        "prompt_per_token_ms": 0.8128844339622642,
+        "prompt_per_second": 1230.1871683354464,
+        "predicted_n": 96,
+        "predicted_ms": 2231.977,
+        "predicted_per_token_ms": 23.249760416666664,
+        "predicted_per_second": 43.01119590390044
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 96,
+        "prompt_tokens": 1272,
+        "total_tokens": 1368
+      }
+    },
+    {
+      "index": 94,
+      "recipe_id": 180220,
+      "recipe_name": "orange cranberry muffins for diabetics",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective casual food photo, close-up shot of Orange Cranberry Muffins for Diabetics with vibrant orange and ruby cranberry colors, tender crumb texture, glossy orange glaze speckled with tiny cranberry bursts, delicate powdered sugar dusting, fresh orange zest garnish, shallow depth of field, natural soft lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1209,
+        "prompt_ms": 1008.191,
+        "prompt_per_token_ms": 0.8339048800661704,
+        "prompt_per_second": 1199.1775367961031,
+        "predicted_n": 86,
+        "predicted_ms": 1999.855,
+        "predicted_per_token_ms": 23.254127906976745,
+        "predicted_per_second": 43.003117726035136
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 86,
+        "prompt_tokens": 1209,
+        "total_tokens": 1295
+      }
+    },
+    {
+      "index": 95,
+      "recipe_id": 128125,
+      "recipe_name": "penne with roasted tofu  peppers and spinach in garlic sauce",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, overhead shot of Penne With Roasted Tofu, Peppers And Spinach In Garlic Sauce with golden-brown crispy tofu cubes glistening in a glossy garlic sauce, bright red and orange roasted bell peppers adding vibrant color, fresh deep green wilted spinach flecks, tender al dente penne pasta coated in a light sheen of sauce, subtle sprinkle of grated parmesan cheese, warm natural lighting highlighting the textures, shallow depth of field emphasizing the dish's rich layers and inviting presentation\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1194,
+        "prompt_ms": 989.203,
+        "prompt_per_token_ms": 0.8284782244556114,
+        "prompt_per_second": 1207.0323280459115,
+        "predicted_n": 135,
+        "predicted_ms": 3146.765,
+        "predicted_per_token_ms": 23.30937037037037,
+        "predicted_per_second": 42.90120171032791
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 135,
+        "prompt_tokens": 1194,
+        "total_tokens": 1329
+      }
+    },
+    {
+      "index": 96,
+      "recipe_id": 261718,
+      "recipe_name": "witch s bubbly brewed punch   halloween",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nFirst-person perspective, casual food photo, wide shot of Witch's Bubbly Brewed Punch with vibrant orange hue and creamy swirls of vanilla ice cream floating on top, playful bubbling effect and pastel glow, garnished with floating gummy bugs and tiny candy eyeballs, set on a Halloween-themed table with flickering candlelight, shallow depth of field, natural lighting --ar 16:9 --v 5\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1363,
+        "prompt_ms": 1070.828,
+        "prompt_per_token_ms": 0.7856404988994864,
+        "prompt_per_second": 1272.8468063965456,
+        "predicted_n": 106,
+        "predicted_ms": 2468.804,
+        "predicted_per_token_ms": 23.290603773584905,
+        "predicted_per_second": 42.93576970873346
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 106,
+        "prompt_tokens": 1363,
+        "total_tokens": 1469
+      }
+    },
+    {
+      "index": 97,
+      "recipe_id": 23577,
+      "recipe_name": "fusilli with no cook fresh tomato   mozzarella sauce",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of Fusilli with fresh tomato mozzarella sauce on a white ceramic bowl, bright red and orange plum tomatoes and creamy mozzarella cubes glistening with olive oil, fresh basil leaves scattered on top, light natural window light, shallow depth of field, casual food photo, first-person perspective, soft focus background\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1536,
+        "prompt_ms": 1117.437,
+        "prompt_per_token_ms": 0.727498046875,
+        "prompt_per_second": 1374.5741370654455,
+        "predicted_n": 85,
+        "predicted_ms": 1978.715,
+        "predicted_per_token_ms": 23.279,
+        "predicted_per_second": 42.95717169981529
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 85,
+        "prompt_tokens": 1536,
+        "total_tokens": 1621
+      }
+    },
+    {
+      "index": 98,
+      "recipe_id": 45652,
+      "recipe_name": "brandied sweet potatoes",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of brandied sweet potato casserole with caramelized brown sugar pecan topping, glossy buttery glaze, deep amber-orange hues, tender flaky texture, elegant shallow depth of field, natural window lighting, first-person perspective, casual food photo, side angle, shallow depth of field, natural lighting\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1227,
+        "prompt_ms": 1021.956,
+        "prompt_per_token_ms": 0.8328899755501222,
+        "prompt_per_second": 1200.6387750548947,
+        "predicted_n": 84,
+        "predicted_ms": 1952.174,
+        "predicted_per_token_ms": 23.240166666666667,
+        "predicted_per_second": 43.02895131274159
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 84,
+        "prompt_tokens": 1227,
+        "total_tokens": 1311
+      }
+    },
+    {
+      "index": 99,
+      "recipe_id": 22219,
+      "recipe_name": "cod chowder for two",
+      "success": true,
+      "error": null,
+      "response": {
+        "content": "<recipe_generation_prompt>\nClose-up shot of cod chowder in a rustic bowl with steam rising, creamy white broth featuring golden potatoes, bright green peas, and tender white cod chunks glistening with butter, fresh parsley garnish, rustic wooden spoon resting on the rim, shallow depth of field, natural soft lighting from a kitchen window, first-person perspective, casual food photo, slightly overhead angle, cozy home-cooked comfort vibe\n</recipe_generation_prompt>",
+        "finish_reason": "stop"
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 1349,
+        "prompt_ms": 1070.88,
+        "prompt_per_token_ms": 0.7938324684951817,
+        "prompt_per_second": 1259.7116390258477,
+        "predicted_n": 104,
+        "predicted_ms": 2421.656,
+        "predicted_per_token_ms": 23.285153846153847,
+        "predicted_per_second": 42.9458188941782
+      },
+      "model": "Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf",
+      "usage": {
+        "completion_tokens": 104,
+        "prompt_tokens": 1349,
+        "total_tokens": 1453
+      }
+    }
+  ]
+}

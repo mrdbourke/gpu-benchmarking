@@ -1,0 +1,33 @@
+metric,value,unit
+device,NVIDIA GB10,
+device_sanitized,NVIDIA_GB10,
+model,Qwen/Qwen3-VL-32B-Instruct-FP8,
+timestamp,20260129_051228,
+num_prompts,100,
+max_concurrency,10,
+num_warmups,10,
+input_len,1000,tokens
+output_len,300,tokens
+range_ratio,0.3,
+seed,42,
+images_per_request,1,
+image_bucket,"512x512(20%) 720x1280(30%) 1024x1024(20%) 1080x1920(30%)",
+successful_requests,N/A,
+failed_requests,N/A,
+benchmark_duration,670.01,s
+total_input_tokens,N/A,tokens
+total_generated_tokens,N/A,tokens
+request_throughput,0.15,req/s
+output_token_throughput,62.00,tok/s
+peak_output_throughput,62.00,tok/s
+peak_concurrent_requests,N/A,
+total_token_throughput,196.18,tok/s
+ttft_mean,1877.67,ms
+ttft_median,1490.49,ms
+ttft_p99,8219.50,ms
+tpot_mean,210.39,ms
+tpot_median,212.55,ms
+tpot_p99,229.61,ms
+itl_mean,209.71,ms
+itl_median,182.11,ms
+itl_p99,1443.98,ms

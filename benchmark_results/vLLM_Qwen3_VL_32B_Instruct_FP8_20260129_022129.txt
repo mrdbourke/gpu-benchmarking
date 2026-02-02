@@ -1,0 +1,208 @@
+##############################################################
+# vLLM BENCHMARK RESULTS
+##############################################################
+
+SOURCE
+------
+Benchmark CLI Documentation:
+https://docs.vllm.ai/en/stable/benchmarking/cli/#synthetic-random-images-random-mm
+
+METADATA
+--------
+Date:            Thu Jan 29 02:21:29 AM UTC 2026
+Hostname:        spark-ff62
+Model:           Qwen/Qwen3-VL-32B-Instruct-FP8
+Num Prompts:     100
+Max Concurrency: 10
+Num Warmups:     10
+Input Length:    1000 (±0.3)
+Output Length:   220 (±0.3)
+Seed:            42
+Image Bucket:    512x512 (20%), 720x1280 (30%), 1024x1024 (20%), 1080x1920 (30%)
+
+SYSTEM INFO
+-----------
+NVIDIA GB10, [N/A], 580.95.05
+
+##############################################################
+# TEST RESULTS
+##############################################################
+
+============================================================
+TEST: Text-Only (0 images)
+Images per request: 0
+Started: Thu Jan 29 02:21:29 AM UTC 2026
+============================================================
+
+
+==========
+== vLLM ==
+==========
+
+NVIDIA Release 25.12.post1 (build 247811356)
+vLLM Version 0.12.0+35a9f223
+Container image Copyright (c) 2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
+and the Product-Specific Terms for NVIDIA AI Products
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+NOTE: The SHMEM allocation limit is set to the default of 64MB.  This may be
+   insufficient for vLLM.  NVIDIA recommends the use of the following flags:
+   docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 ...
+
+/usr/local/lib/python3.12/dist-packages/torchvision/io/image.py:14: UserWarning: Failed to load image Python extension: 'Could not load this library: /usr/local/lib/python3.12/dist-packages/torchvision/image.so'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+[32mINFO[0m [90m01-29 02:21:32[0m [90m[importing.py:44][0m Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+[32mINFO[0m [90m01-29 02:21:32[0m [90m[importing.py:68][0m Triton not installed or not compatible; certain GPU-related functions will not be available.
+[33mWARNING[0m [90m01-29 02:21:32[0m [90m[interface.py:221][0m Failed to import from vllm._C: ImportError('libcuda.so.1: cannot open shared object file: No such file or directory')
+[32mINFO[0m [90m01-29 02:21:33[0m [90m[main.py:47][0m Unspecified platform detected, switching to CPU Platform instead.
+Namespace(subparser='bench', bench_type='serve', dispatch_function=<function BenchmarkServingSubcommand.cmd at 0xf12b9655ce00>, seed=42, num_prompts=100, dataset_name='random-mm', no_stream=False, dataset_path=None, no_oversample=False, skip_chat_template=False, disable_shuffle=False, custom_output_len=256, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, blazedit_min_distance=0.0, blazedit_max_distance=1.0, random_input_len=1000, random_output_len=220, random_range_ratio=0.3, random_prefix_len=0, random_batch_size=1, no_reranker=False, random_mm_base_items_per_request=0, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 1, 'video': 0}, random_mm_bucket_config={(512, 512, 1): 0.2, (720, 1280, 1): 0.3, (1024, 1024, 1): 0.2, (1080, 1920, 1): 0.3}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, label=None, backend='openai-chat', base_url='http://localhost:8000', host='127.0.0.1', port=8000, endpoint='/v1/chat/completions', header=None, max_concurrency=10, model='Qwen/Qwen3-VL-32B-Instruct-FP8', tokenizer=None, use_beam_search=False, logprobs=None, request_rate=inf, burstiness=1.0, trust_remote_code=False, disable_tqdm=False, num_warmups=10, profile=False, save_result=False, save_detailed=False, append_result=False, metadata=None, result_dir=None, result_filename=None, ignore_eos=True, percentile_metrics=None, metric_percentiles='99', goodput=None, request_id_prefix='bench-336c07c1-', top_p=None, top_k=None, min_p=None, temperature=None, frequency_penalty=None, presence_penalty=None, repetition_penalty=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None, ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=600, extra_body=None)
+tokenizer_config.json: 0.00B [00:00, ?B/s]tokenizer_config.json: 10.9kB [00:00, 45.1MB/s]
+vocab.json: 0.00B [00:00, ?B/s]vocab.json: 4.96MB [00:00, 63.1MB/s]
+tokenizer.json:   0% 0.00/10.2M [00:00<?, ?B/s]tokenizer.json: 100% 10.2M/10.2M [00:00<00:00, 54.9MB/s]tokenizer.json: 100% 10.2M/10.2M [00:00<00:00, 53.8MB/s]
+[32mINFO[0m [90m01-29 02:21:36[0m [90m[datasets.py:613][0m Sampling input_len from [700, 1300] and output_len from [154, 286]
+[32mINFO[0m [90m01-29 02:21:36[0m [90m[datasets.py:970][0m Normalized bucket config: {(512, 512, 1): 0.2, (720, 1280, 1): 0.3, (1024, 1024, 1): 0.2, (1080, 1920, 1): 0.3}
+[32mINFO[0m [90m01-29 02:21:36[0m [90m[datasets.py:982][0m Updated mm-limit-per-prompt: {'image': 1}
+[32mINFO[0m [90m01-29 02:21:36[0m [90m[datasets.py:1004][0m Sampling number of multimodal items from [0, 0]
+Starting initial single prompt test run...
+Waiting for endpoint to become up in 600 seconds
+  0% 0/600 [00:00<?, ?s/s]  0% 0.0009503329638391733/600 [00:00<00:05, 110.72s/s]  0% 0.0009503329638391733/600 [00:46<8087:52:37, 48527.34s/s]
+Initial test run completed.
+Warming up with 10 requests...
+  0% 0/10 [00:00<?, ?it/s] 10% 1/10 [00:41<06:17, 41.92s/it] 20% 2/10 [00:42<02:18, 17.36s/it]100% 10/10 [00:42<00:00,  4.21s/it]
+Warmup run completed.
+Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 10
+  0% 0/100 [00:00<?, ?it/s]  1% 1/100 [00:30<49:58, 30.29s/it]  2% 2/100 [00:35<25:16, 15.48s/it]  3% 3/100 [00:42<18:29, 11.44s/it]  4% 4/100 [00:46<14:08,  8.84s/it]  5% 5/100 [00:48<09:49,  6.20s/it]  6% 6/100 [00:50<07:22,  4.71s/it]  7% 7/100 [00:50<04:59,  3.22s/it]  9% 9/100 [00:50<02:36,  1.72s/it] 10% 10/100 [00:52<02:34,  1.72s/it] 11% 11/100 [01:07<07:47,  5.26s/it] 12% 12/100 [01:19<10:43,  7.31s/it] 13% 13/100 [01:22<08:43,  6.01s/it] 15% 15/100 [01:25<05:28,  3.86s/it] 16% 16/100 [01:26<04:36,  3.30s/it] 17% 17/100 [01:26<03:26,  2.49s/it] 18% 18/100 [01:29<03:35,  2.63s/it] 19% 19/100 [01:32<03:30,  2.60s/it] 20% 20/100 [01:35<03:39,  2.75s/it] 21% 21/100 [01:47<07:13,  5.49s/it] 22% 22/100 [01:57<08:37,  6.64s/it] 23% 23/100 [02:03<08:28,  6.61s/it] 24% 24/100 [02:05<06:45,  5.33s/it] 25% 25/100 [02:08<05:43,  4.58s/it] 26% 26/100 [02:08<04:01,  3.26s/it] 27% 27/100 [02:14<04:42,  3.87s/it] 28% 28/100 [02:15<03:44,  3.12s/it] 29% 29/100 [02:17<03:14,  2.74s/it] 30% 30/100 [02:19<02:59,  2.57s/it] 31% 31/100 [02:30<05:46,  5.03s/it] 32% 32/100 [02:35<05:40,  5.01s/it] 33% 33/100 [02:39<05:25,  4.86s/it] 34% 34/100 [02:44<05:23,  4.90s/it] 35% 35/100 [02:45<04:03,  3.75s/it] 36% 36/100 [02:49<03:53,  3.65s/it] 37% 37/100 [02:54<04:17,  4.09s/it] 38% 38/100 [02:57<04:01,  3.89s/it] 39% 39/100 [02:58<03:05,  3.04s/it] 40% 40/100 [02:59<02:14,  2.24s/it] 41% 41/100 [03:10<04:46,  4.86s/it] 42% 42/100 [03:16<04:59,  5.16s/it] 43% 43/100 [03:23<05:31,  5.82s/it] 44% 44/100 [03:24<04:02,  4.33s/it] 46% 46/100 [03:29<03:13,  3.58s/it] 47% 47/100 [03:33<03:07,  3.54s/it] 48% 48/100 [03:39<03:45,  4.35s/it] 50% 50/100 [03:48<03:33,  4.27s/it] 51% 51/100 [03:52<03:27,  4.24s/it] 52% 52/100 [04:00<04:07,  5.15s/it] 53% 53/100 [04:01<03:10,  4.06s/it] 54% 54/100 [04:04<02:58,  3.88s/it] 55% 55/100 [04:05<02:21,  3.14s/it] 56% 56/100 [04:14<03:35,  4.89s/it] 57% 57/100 [04:16<02:44,  3.82s/it] 58% 58/100 [04:21<03:02,  4.33s/it] 59% 59/100 [04:23<02:24,  3.51s/it] 60% 60/100 [04:35<04:09,  6.23s/it] 61% 61/100 [04:39<03:32,  5.44s/it] 62% 62/100 [04:43<03:05,  4.88s/it] 63% 63/100 [04:44<02:19,  3.76s/it] 64% 64/100 [04:45<01:53,  3.15s/it] 66% 66/100 [04:53<01:53,  3.33s/it] 67% 67/100 [04:55<01:39,  3.01s/it] 68% 68/100 [05:00<01:54,  3.58s/it] 69% 69/100 [05:04<01:54,  3.69s/it] 70% 70/100 [05:06<01:38,  3.29s/it] 71% 71/100 [05:12<01:53,  3.91s/it] 72% 72/100 [05:15<01:42,  3.67s/it] 73% 73/100 [05:31<03:17,  7.31s/it] 74% 74/100 [05:31<02:16,  5.26s/it] 75% 75/100 [05:32<01:37,  3.89s/it] 76% 76/100 [05:32<01:10,  2.93s/it] 77% 77/100 [05:33<00:48,  2.12s/it] 78% 78/100 [05:41<01:28,  4.03s/it] 79% 79/100 [05:47<01:35,  4.53s/it] 80% 80/100 [05:47<01:04,  3.23s/it] 81% 81/100 [05:55<01:28,  4.68s/it] 82% 82/100 [06:03<01:42,  5.70s/it] 83% 83/100 [06:06<01:21,  4.80s/it] 84% 84/100 [06:12<01:25,  5.33s/it] 85% 85/100 [06:13<00:57,  3.84s/it] 86% 86/100 [06:14<00:43,  3.11s/it] 87% 87/100 [06:19<00:45,  3.53s/it] 88% 88/100 [06:20<00:34,  2.87s/it] 89% 89/100 [06:23<00:30,  2.80s/it] 90% 90/100 [06:25<00:26,  2.60s/it] 91% 91/100 [06:40<00:58,  6.53s/it] 92% 92/100 [06:44<00:44,  5.62s/it] 93% 93/100 [06:47<00:33,  4.82s/it] 94% 94/100 [06:49<00:23,  3.87s/it] 95% 95/100 [06:49<00:14,  2.90s/it] 96% 96/100 [06:50<00:08,  2.17s/it] 97% 97/100 [06:54<00:07,  2.67s/it] 98% 98/100 [06:57<00:05,  2.76s/it] 99% 99/100 [07:02<00:03,  3.57s/it]100% 100/100 [07:11<00:00,  5.18s/it]100% 100/100 [07:11<00:00,  4.31s/it]
+tip: install termplotlib and gnuplot to plot the metrics
+============ Serving Benchmark Result ============
+Successful requests:                     100       
+Failed requests:                         0         
+Maximum request concurrency:             10        
+Benchmark duration (s):                  431.40    
+Total input tokens:                      101603    
+Total generated tokens:                  21883     
+Request throughput (req/s):              0.23      
+Output token throughput (tok/s):         50.73     
+Peak output token throughput (tok/s):    70.00     
+Peak concurrent requests:                14.00     
+Total Token throughput (tok/s):          286.25    
+---------------Time to First Token----------------
+Mean TTFT (ms):                          1316.05   
+Median TTFT (ms):                        1005.41   
+P99 TTFT (ms):                           4978.62   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          183.32    
+Median TPOT (ms):                        183.86    
+P99 TPOT (ms):                           195.54    
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           182.57    
+Median ITL (ms):                         166.58    
+P99 ITL (ms):                            639.73    
+==================================================
+
+Completed: Thu Jan 29 02:30:17 AM UTC 2026
+
+
+============================================================
+TEST: Single Image (1 image)
+Images per request: 1
+Started: Thu Jan 29 02:30:17 AM UTC 2026
+============================================================
+
+
+==========
+== vLLM ==
+==========
+
+NVIDIA Release 25.12.post1 (build 247811356)
+vLLM Version 0.12.0+35a9f223
+Container image Copyright (c) 2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
+and the Product-Specific Terms for NVIDIA AI Products
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+NOTE: The SHMEM allocation limit is set to the default of 64MB.  This may be
+   insufficient for vLLM.  NVIDIA recommends the use of the following flags:
+   docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 ...
+
+/usr/local/lib/python3.12/dist-packages/torchvision/io/image.py:14: UserWarning: Failed to load image Python extension: 'Could not load this library: /usr/local/lib/python3.12/dist-packages/torchvision/image.so'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+[32mINFO[0m [90m01-29 02:30:19[0m [90m[importing.py:44][0m Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+[32mINFO[0m [90m01-29 02:30:19[0m [90m[importing.py:68][0m Triton not installed or not compatible; certain GPU-related functions will not be available.
+[33mWARNING[0m [90m01-29 02:30:19[0m [90m[interface.py:221][0m Failed to import from vllm._C: ImportError('libcuda.so.1: cannot open shared object file: No such file or directory')
+[32mINFO[0m [90m01-29 02:30:20[0m [90m[main.py:47][0m Unspecified platform detected, switching to CPU Platform instead.
+Namespace(subparser='bench', bench_type='serve', dispatch_function=<function BenchmarkServingSubcommand.cmd at 0xf8040a150e00>, seed=42, num_prompts=100, dataset_name='random-mm', no_stream=False, dataset_path=None, no_oversample=False, skip_chat_template=False, disable_shuffle=False, custom_output_len=256, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, blazedit_min_distance=0.0, blazedit_max_distance=1.0, random_input_len=1000, random_output_len=220, random_range_ratio=0.3, random_prefix_len=0, random_batch_size=1, no_reranker=False, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 1, 'video': 0}, random_mm_bucket_config={(512, 512, 1): 0.2, (720, 1280, 1): 0.3, (1024, 1024, 1): 0.2, (1080, 1920, 1): 0.3}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, label=None, backend='openai-chat', base_url='http://localhost:8000', host='127.0.0.1', port=8000, endpoint='/v1/chat/completions', header=None, max_concurrency=10, model='Qwen/Qwen3-VL-32B-Instruct-FP8', tokenizer=None, use_beam_search=False, logprobs=None, request_rate=inf, burstiness=1.0, trust_remote_code=False, disable_tqdm=False, num_warmups=10, profile=False, save_result=False, save_detailed=False, append_result=False, metadata=None, result_dir=None, result_filename=None, ignore_eos=True, percentile_metrics=None, metric_percentiles='99', goodput=None, request_id_prefix='bench-1997723f-', top_p=None, top_k=None, min_p=None, temperature=None, frequency_penalty=None, presence_penalty=None, repetition_penalty=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None, ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=600, extra_body=None)
+tokenizer_config.json: 0.00B [00:00, ?B/s]tokenizer_config.json: 10.9kB [00:00, 88.0MB/s]
+vocab.json: 0.00B [00:00, ?B/s]vocab.json: 4.96MB [00:00, 63.3MB/s]
+tokenizer.json:   0% 0.00/10.2M [00:00<?, ?B/s]tokenizer.json: 100% 10.2M/10.2M [00:00<00:00, 48.3MB/s]tokenizer.json: 100% 10.2M/10.2M [00:00<00:00, 47.5MB/s]
+[32mINFO[0m [90m01-29 02:30:23[0m [90m[datasets.py:613][0m Sampling input_len from [700, 1300] and output_len from [154, 286]
+[32mINFO[0m [90m01-29 02:30:23[0m [90m[datasets.py:970][0m Normalized bucket config: {(512, 512, 1): 0.2, (720, 1280, 1): 0.3, (1024, 1024, 1): 0.2, (1080, 1920, 1): 0.3}
+[32mINFO[0m [90m01-29 02:30:23[0m [90m[datasets.py:982][0m Updated mm-limit-per-prompt: {'image': 1}
+[32mINFO[0m [90m01-29 02:30:23[0m [90m[datasets.py:1004][0m Sampling number of multimodal items from [1, 1]
+Starting initial single prompt test run...
+Waiting for endpoint to become up in 600 seconds
+  0% 0/600 [00:00<?, ?s/s]  0% 0.0009286529384553432/600 [00:00<00:04, 129.84s/s]  0% 0.0009286529384553432/600 [00:51<9327:33:19, 55965.42s/s]
+Initial test run completed.
+Warming up with 10 requests...
+  0% 0/10 [00:00<?, ?it/s] 10% 1/10 [00:43<06:34, 43.87s/it] 20% 2/10 [00:44<02:26, 18.26s/it]100% 10/10 [00:44<00:00,  4.42s/it]
+Warmup run completed.
+Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 10
+  0% 0/100 [00:00<?, ?it/s]  1% 1/100 [00:34<57:11, 34.66s/it]  2% 2/100 [00:40<29:00, 17.76s/it]  3% 3/100 [00:46<20:19, 12.57s/it]  4% 4/100 [00:51<14:50,  9.28s/it]  5% 5/100 [00:52<10:17,  6.50s/it]  6% 6/100 [00:55<08:16,  5.28s/it]  7% 7/100 [00:56<05:44,  3.70s/it]  8% 8/100 [00:57<04:18,  2.81s/it]  9% 9/100 [00:58<03:30,  2.31s/it] 10% 10/100 [00:59<02:58,  1.99s/it] 11% 11/100 [01:15<09:15,  6.24s/it] 12% 12/100 [01:28<12:24,  8.46s/it] 13% 13/100 [01:33<10:21,  7.15s/it] 14% 14/100 [01:33<07:22,  5.14s/it] 15% 15/100 [01:36<06:29,  4.58s/it] 16% 16/100 [01:37<04:54,  3.50s/it] 17% 17/100 [01:38<03:27,  2.50s/it] 18% 18/100 [01:41<03:58,  2.91s/it] 19% 19/100 [01:45<04:19,  3.20s/it] 20% 20/100 [01:50<04:40,  3.51s/it] 21% 21/100 [02:03<08:35,  6.52s/it] 22% 22/100 [02:15<10:43,  8.25s/it] 23% 23/100 [02:23<10:22,  8.08s/it] 24% 24/100 [02:25<07:58,  6.30s/it] 25% 25/100 [02:29<06:59,  5.59s/it] 26% 26/100 [02:30<05:01,  4.07s/it] 27% 27/100 [02:35<05:32,  4.56s/it] 28% 28/100 [02:37<04:30,  3.75s/it] 29% 29/100 [02:39<03:38,  3.08s/it] 30% 30/100 [02:41<03:11,  2.73s/it] 31% 31/100 [02:53<06:18,  5.48s/it] 32% 32/100 [02:59<06:33,  5.78s/it] 33% 33/100 [03:03<06:00,  5.39s/it] 34% 34/100 [03:08<05:46,  5.25s/it] 35% 35/100 [03:09<04:19,  3.99s/it] 36% 36/100 [03:14<04:17,  4.02s/it] 37% 37/100 [03:18<04:29,  4.28s/it] 38% 38/100 [03:22<04:19,  4.19s/it] 39% 39/100 [03:25<03:39,  3.59s/it] 41% 41/100 [03:40<05:18,  5.39s/it] 42% 42/100 [03:47<05:36,  5.80s/it] 43% 43/100 [03:54<05:58,  6.29s/it] 44% 44/100 [03:56<04:48,  5.15s/it] 45% 45/100 [03:58<03:40,  4.02s/it] 46% 46/100 [04:02<03:49,  4.26s/it] 47% 47/100 [04:08<04:03,  4.60s/it] 48% 48/100 [04:15<04:41,  5.41s/it] 49% 49/100 [04:15<03:17,  3.87s/it] 50% 50/100 [04:25<04:39,  5.60s/it] 51% 51/100 [04:31<04:33,  5.57s/it] 52% 52/100 [04:40<05:25,  6.78s/it] 53% 53/100 [04:41<03:59,  5.10s/it] 54% 54/100 [04:46<03:51,  5.04s/it] 55% 55/100 [04:47<02:48,  3.74s/it] 56% 56/100 [04:58<04:22,  5.95s/it] 57% 57/100 [05:00<03:19,  4.63s/it] 58% 58/100 [05:07<03:48,  5.43s/it] 59% 59/100 [05:09<02:58,  4.36s/it] 60% 60/100 [05:24<05:07,  7.70s/it] 61% 61/100 [05:29<04:24,  6.78s/it] 62% 62/100 [05:33<03:43,  5.89s/it] 63% 63/100 [05:35<02:55,  4.75s/it] 64% 64/100 [05:38<02:36,  4.36s/it] 65% 65/100 [05:38<01:48,  3.11s/it] 66% 66/100 [05:46<02:34,  4.56s/it] 67% 67/100 [05:50<02:16,  4.13s/it] 68% 68/100 [05:56<02:33,  4.81s/it] 69% 69/100 [06:00<02:25,  4.70s/it] 70% 70/100 [06:04<02:11,  4.37s/it] 71% 71/100 [06:11<02:27,  5.09s/it] 72% 72/100 [06:15<02:13,  4.77s/it] 73% 73/100 [06:33<03:57,  8.79s/it] 74% 74/100 [06:33<02:43,  6.31s/it] 75% 75/100 [06:34<01:57,  4.70s/it] 76% 76/100 [06:35<01:23,  3.46s/it] 77% 77/100 [06:36<01:05,  2.84s/it] 78% 78/100 [06:49<02:09,  5.90s/it] 79% 79/100 [06:56<02:06,  6.02s/it] 80% 80/100 [06:57<01:34,  4.74s/it] 81% 81/100 [07:05<01:46,  5.60s/it] 82% 82/100 [07:15<02:01,  6.77s/it] 83% 83/100 [07:18<01:38,  5.79s/it] 84% 84/100 [07:27<01:46,  6.66s/it] 85% 85/100 [07:27<01:10,  4.71s/it] 86% 86/100 [07:29<00:56,  4.06s/it] 87% 87/100 [07:36<01:02,  4.80s/it] 88% 88/100 [07:37<00:44,  3.72s/it] 89% 89/100 [07:42<00:43,  3.94s/it] 90% 90/100 [07:46<00:39,  3.98s/it] 91% 91/100 [08:02<01:09,  7.69s/it] 92% 92/100 [08:07<00:54,  6.79s/it] 93% 93/100 [08:10<00:39,  5.69s/it] 94% 94/100 [08:11<00:26,  4.45s/it] 95% 95/100 [08:12<00:16,  3.32s/it] 96% 96/100 [08:12<00:09,  2.42s/it] 97% 97/100 [08:17<00:08,  2.94s/it] 98% 98/100 [08:20<00:05,  2.98s/it] 99% 99/100 [08:25<00:03,  3.74s/it]100% 100/100 [08:34<00:00,  5.30s/it]100% 100/100 [08:34<00:00,  5.15s/it]
+tip: install termplotlib and gnuplot to plot the metrics
+============ Serving Benchmark Result ============
+Successful requests:                     100       
+Failed requests:                         0         
+Maximum request concurrency:             10        
+Benchmark duration (s):                  514.58    
+Total input tokens:                      101603    
+Total generated tokens:                  21883     
+Request throughput (req/s):              0.19      
+Output token throughput (tok/s):         42.53     
+Peak output token throughput (tok/s):    62.00     
+Peak concurrent requests:                12.00     
+Total Token throughput (tok/s):          239.97    
+---------------Time to First Token----------------
+Mean TTFT (ms):                          2087.50   
+Median TTFT (ms):                        1702.58   
+P99 TTFT (ms):                           7600.90   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          217.84    
+Median TPOT (ms):                        220.35    
+P99 TPOT (ms):                           243.42    
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           216.88    
+Median ITL (ms):                         181.02    
+P99 ITL (ms):                            1241.41   
+==================================================
+
+Completed: Thu Jan 29 02:40:35 AM UTC 2026
+
+
+##############################################################
+# vLLM BENCHMARK COMPLETE
+##############################################################
+
+Source: https://docs.vllm.ai/en/stable/benchmarking/cli/#synthetic-random-images-random-mm
+Results saved to: ./benchmark_results/vLLM_Qwen3_VL_32B_Instruct_FP8_20260129_022129.txt

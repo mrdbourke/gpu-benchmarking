@@ -1,0 +1,19 @@
+metric,value,unit
+device,CUDA - NVIDIA GB10,
+device_sanitized,NVIDIA_GB10,
+model_name,PekingU/rtdetr_v2_r50vd,
+dataset_name,mrdbourke/trashify_manual_labelled_images,
+timestamp,20260130_032302,
+test_type,object_detection_training,
+num_epochs,10,
+batch_size,8,
+learning_rate,0.0001,
+weight_decay,0.01,
+warmup_ratio,0.1,
+image_size,640,pixels
+test_split,0.2,
+fp16,False,
+seed,42,
+total_train_time,807.05,seconds
+total_train_time_minutes,13.45,minutes
+samples_per_second,0.08,samples/s

@@ -1,0 +1,27 @@
+metric,value,unit
+device,NVIDIA GB10,
+device_sanitized,NVIDIA_GB10,
+vram_gb,0,GB
+model_id,Tongyi-MAI/Z-Image-Turbo,
+timestamp,20260130_023407,
+test_type,image_generation,
+num_images,100,
+warmup_runs,10,
+inference_steps,9,
+dit_forwards_per_image,8,
+resolution,1024x1024,pixels
+guidance_scale,0.0,
+dtype,bf16,
+attention_backend,sdpa,
+seed,42,
+total_images,100,images
+total_time,1671.94,seconds
+images_per_second,0.0598,img/s
+seconds_per_image,16.7194,s/img
+min_time,16.6886,seconds
+max_time,16.7485,seconds
+median_time,16.7201,seconds
+total_steps,900,steps
+steps_per_second,0.54,steps/s
+total_dit_forwards,800,forwards
+dit_forwards_per_second,0.48,forwards/s

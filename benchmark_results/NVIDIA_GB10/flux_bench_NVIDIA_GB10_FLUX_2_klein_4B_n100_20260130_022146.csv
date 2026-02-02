@@ -1,0 +1,23 @@
+metric,value,unit
+device,NVIDIA GB10,
+device_sanitized,NVIDIA_GB10,
+vram_gb,0,GB
+model_id,black-forest-labs/FLUX.2-klein-4B,
+timestamp,20260130_022146,
+test_type,image_generation,
+num_images,100,
+warmup_runs,5,
+inference_steps,4,
+resolution,1024x1024,pixels
+guidance_scale,1.0,
+dtype,bf16,
+seed,42,
+total_images,100,images
+total_time,420.12,seconds
+images_per_second,0.2380,img/s
+seconds_per_image,4.2012,s/img
+min_time,4.1230,seconds
+max_time,4.2602,seconds
+median_time,4.1914,seconds
+total_steps,400,steps
+steps_per_second,0.95,steps/s
