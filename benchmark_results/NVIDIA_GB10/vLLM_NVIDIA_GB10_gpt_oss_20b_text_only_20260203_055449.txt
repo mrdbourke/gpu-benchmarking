@@ -1,0 +1,119 @@
+##############################################################
+# vLLM TEXT-ONLY BENCHMARK RESULTS
+##############################################################
+
+DEVICE INFO
+-----------
+Device (raw):       NVIDIA GB10
+Device (sanitized): NVIDIA_GB10
+NVIDIA GB10, [N/A], 580.95.05, 12.1
+
+METADATA
+--------
+Date:            Tue Feb  3 05:54:49 AM UTC 2026
+Hostname:        spark-ff62
+Model:           openai/gpt-oss-20b
+Test Type:       Text-Only
+Thinking Mode:   Default
+Num Prompts:     100
+Max Concurrency: 10
+Num Warmups:     10
+Input Length:    1000 (±0.3)
+Output Length:   300 (±0.3)
+Seed:            42
+
+##############################################################
+# TEST RESULTS
+##############################################################
+
+============================================================
+TEST: Text-Only Benchmark
+Started: Tue Feb  3 05:54:49 AM UTC 2026
+============================================================
+
+Script started on 2026-02-03 05:54:49+00:00 [COMMAND="bash /tmp/tmp.06vGoNzeN0" TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="138" LINES="15"]
+
+==========
+== vLLM ==
+==========
+
+NVIDIA Release 25.12.post1 (build 247811356)
+vLLM Version 0.12.0+35a9f223
+Container image Copyright (c) 2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
+and the Product-Specific Terms for NVIDIA AI Products
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+NOTE: The SHMEM allocation limit is set to the default of 64MB.  This may be
+   insufficient for vLLM.  NVIDIA recommends the use of the following flags:
+   docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 ...
+
+/usr/local/lib/python3.12/dist-packages/torchvision/io/image.py:14: UserWarning: Failed to load image Python extension: 'Could not load this library: /usr/local/lib/python3.12/dist-packages/torchvision/image.so'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+INFO 02-03 05:54:52 [importing.py:44] Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+INFO 02-03 05:54:52 [importing.py:68] Triton not installed or not compatible; certain GPU-related functions will not be available.
+WARNING 02-03 05:54:52 [interface.py:221] Failed to import from vllm._C: ImportError('libcuda.so.1: cannot open shared object file: No such file or directory')
+INFO 02-03 05:54:53 [main.py:47] Unspecified platform detected, switching to CPU Platform instead.
+Namespace(subparser='bench', bench_type='serve', dispatch_function=<function BenchmarkServingSubcommand.cmd at 0xfdfb680f8e00>, seed=42, num_prompts=100, dataset_name='random', no_stream=False, dataset_path=None, no_oversample=False, skip_chat_template=False, disable_shuffle=False, custom_output_len=256, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, blazedit_min_distance=0.0, blazedit_max_distance=1.0, random_input_len=1000, random_output_len=300, random_range_ratio=0.3, random_prefix_len=0, random_batch_size=1, no_reranker=False, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 255, 'video': 1}, random_mm_bucket_config={(256, 256, 1): 0.5, (720, 1280, 1): 0.5, (720, 1280, 16): 0.0}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, label=None, backend='openai-chat', base_url='http://localhost:8000', host='127.0.0.1', port=8000, endpoint='/v1/chat/completions', header=None, max_concurrency=10, model='openai/gpt-oss-20b', tokenizer=None, use_beam_search=False, logprobs=None, request_rate=inf, burstiness=1.0, trust_remote_code=False, disable_tqdm=False, num_warmups=10, profile=False, save_result=False, save_detailed=False, append_result=False, metadata=None, result_dir=None, result_filename=None, ignore_eos=True, percentile_metrics=None, metric_percentiles='99', goodput=None, request_id_prefix='bench-fe4c6525-', top_p=None, top_k=None, min_p=None, temperature=None, frequency_penalty=None, presence_penalty=None, repetition_penalty=None, tokenizer_mode='auto', served_model_name=None, lora_modules=None, ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=600, extra_body=None)
+tokenizer_config.json: 0.00B [00:00, ?B/s]tokenizer_config.json: 4.20kB [00:00, 22.5MB/s]
+tokenizer.json:   0%|                                                                                         | 0.00/27.9M [00:00<?, ?B/s]tokenizer.json: 100%|████████████████████████████████████████████████████████████████████████████████| 27.9M/27.9M [00:01<00:00, 19.7MB/s]tokenizer.json: 100%|████████████████████████████████████████████████████████████████████████████████| 27.9M/27.9M [00:01<00:00, 19.7MB/s]
+special_tokens_map.json:   0%|                                                                                 | 0.00/98.0 [00:00<?, ?B/s]special_tokens_map.json: 100%|█████████████████████████████████████████████████████████████████████████| 98.0/98.0 [00:00<00:00, 1.06MB/s]
+chat_template.jinja: 0.00B [00:00, ?B/s]chat_template.jinja: 16.7kB [00:00, 74.4MB/s]
+INFO 02-03 05:54:58 [datasets.py:613] Sampling input_len from [700, 1300] and output_len from [210, 390]
+Starting initial single prompt test run...
+Waiting for endpoint to become up in 600 seconds
+ |                                                                                                            | 00:00 elapsed, ? remaining |                                                                                                        | 00:00 elapsed, 00:04 remaining |                                                                                                    | 00:02 elapsed, 470:33:08 remaining
+Initial test run completed.
+Warming up with 10 requests...
+  0%|                                                                                                              | 0/10 [00:00<?, ?it/s] 10%|██████████▏                                                                                           | 1/10 [00:02<00:26,  3.00s/it] 40%|████████████████████████████████████████▊                                                             | 4/10 [00:03<00:03,  1.59it/s]100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:03<00:00,  4.40it/s]100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:03<00:00,  2.82it/s]
+Warmup run completed.
+Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 10
+  0%|                                                                                                             | 0/100 [00:00<?, ?it/s]  1%|█                                                                                                    | 1/100 [00:04<06:44,  4.08s/it]  2%|██                                                                                                   | 2/100 [00:04<03:32,  2.17s/it]  3%|███                                                                                                  | 3/100 [00:05<02:16,  1.41s/it]  6%|██████                                                                                               | 6/100 [00:05<00:55,  1.71it/s]  7%|███████                                                                                              | 7/100 [00:06<00:49,  1.89it/s]  8%|████████                                                                                             | 8/100 [00:06<00:43,  2.14it/s]  9%|█████████                                                                                            | 9/100 [00:06<00:38,  2.35it/s] 10%|██████████                                                                                          | 10/100 [00:07<00:44,  2.03it/s] 11%|███████████                                                                                         | 11/100 [00:10<01:43,  1.17s/it] 13%|█████████████                                                                                       | 13/100 [00:10<01:07,  1.30it/s] 15%|███████████████                                                                                     | 15/100 [00:11<00:42,  1.98it/s] 16%|████████████████                                                                                    | 16/100 [00:11<00:36,  2.31it/s] 17%|█████████████████                                                                                   | 17/100 [00:11<00:30,  2.70it/s] 18%|██████████████████                                                                                  | 18/100 [00:11<00:26,  3.15it/s] 19%|███████████████████                                                                                 | 19/100 [00:12<00:34,  2.36it/s] 20%|████████████████████                                                                                | 20/100 [00:14<01:02,  1.27it/s] 21%|█████████████████████                                                                               | 21/100 [00:15<01:13,  1.07it/s] 22%|██████████████████████                                                                              | 22/100 [00:15<00:57,  1.36it/s] 23%|███████████████████████                                                                             | 23/100 [00:16<00:57,  1.35it/s] 24%|████████████████████████                                                                            | 24/100 [00:16<00:45,  1.66it/s] 26%|██████████████████████████                                                                          | 26/100 [00:17<00:32,  2.25it/s] 28%|████████████████████████████                                                                        | 28/100 [00:17<00:21,  3.32it/s] 29%|████████████████████████████▉                                                                       | 29/100 [00:17<00:24,  2.84it/s] 30%|██████████████████████████████                                                                      | 30/100 [00:19<00:43,  1.61it/s] 31%|███████████████████████████████                                                                     | 31/100 [00:20<00:45,  1.53it/s] 32%|████████████████████████████████                                                                    | 32/100 [00:20<00:39,  1.74it/s] 33%|█████████████████████████████████                                                                   | 33/100 [00:21<00:45,  1.48it/s] 34%|██████████████████████████████████                                                                  | 34/100 [00:21<00:36,  1.79it/s] 35%|███████████████████████████████████                                                                 | 35/100 [00:22<00:46,  1.40it/s] 36%|████████████████████████████████████                                                                | 36/100 [00:23<00:37,  1.71it/s] 38%|██████████████████████████████████████                                                              | 38/100 [00:23<00:26,  2.35it/s] 40%|████████████████████████████████████████                                                            | 40/100 [00:26<00:52,  1.15it/s] 41%|█████████████████████████████████████████                                                           | 41/100 [00:26<00:44,  1.34it/s] 42%|██████████████████████████████████████████                                                          | 42/100 [00:27<00:35,  1.62it/s] 43%|███████████████████████████████████████████                                                         | 43/100 [00:27<00:32,  1.74it/s] 44%|████████████████████████████████████████████                                                        | 44/100 [00:27<00:26,  2.12it/s] 45%|█████████████████████████████████████████████                                                       | 45/100 [00:28<00:29,  1.88it/s] 46%|██████████████████████████████████████████████                                                      | 46/100 [00:28<00:26,  2.05it/s] 47%|███████████████████████████████████████████████                                                     | 47/100 [00:29<00:21,  2.45it/s] 48%|████████████████████████████████████████████████                                                    | 48/100 [00:31<00:50,  1.03it/s] 49%|█████████████████████████████████████████████████                                                   | 49/100 [00:32<00:44,  1.14it/s] 50%|██████████████████████████████████████████████████                                                  | 50/100 [00:32<00:34,  1.44it/s] 52%|████████████████████████████████████████████████████                                                | 52/100 [00:32<00:22,  2.10it/s] 53%|█████████████████████████████████████████████████████                                               | 53/100 [00:33<00:27,  1.73it/s] 54%|██████████████████████████████████████████████████████                                              | 54/100 [00:33<00:22,  2.00it/s] 55%|███████████████████████████████████████████████████████                                             | 55/100 [00:34<00:19,  2.28it/s] 56%|████████████████████████████████████████████████████████                                            | 56/100 [00:34<00:22,  1.98it/s] 57%|████████████████████████████████████████████████████████▉                                           | 57/100 [00:35<00:28,  1.50it/s] 58%|█████████████████████████████████████████████████████████▉                                          | 58/100 [00:36<00:32,  1.30it/s] 60%|████████████████████████████████████████████████████████████                                        | 60/100 [00:37<00:24,  1.63it/s] 61%|█████████████████████████████████████████████████████████████                                       | 61/100 [00:37<00:19,  1.96it/s] 62%|██████████████████████████████████████████████████████████████                                      | 62/100 [00:38<00:17,  2.13it/s] 63%|███████████████████████████████████████████████████████████████                                     | 63/100 [00:39<00:21,  1.74it/s] 64%|████████████████████████████████████████████████████████████████                                    | 64/100 [00:39<00:17,  2.08it/s] 65%|█████████████████████████████████████████████████████████████████                                   | 65/100 [00:39<00:13,  2.54it/s] 66%|██████████████████████████████████████████████████████████████████                                  | 66/100 [00:41<00:30,  1.13it/s] 67%|███████████████████████████████████████████████████████████████████                                 | 67/100 [00:42<00:25,  1.31it/s] 68%|████████████████████████████████████████████████████████████████████                                | 68/100 [00:42<00:24,  1.29it/s] 70%|██████████████████████████████████████████████████████████████████████                              | 70/100 [00:43<00:15,  1.89it/s] 71%|███████████████████████████████████████████████████████████████████████                             | 71/100 [00:43<00:14,  1.98it/s] 73%|█████████████████████████████████████████████████████████████████████████                           | 73/100 [00:44<00:12,  2.18it/s] 74%|██████████████████████████████████████████████████████████████████████████                          | 74/100 [00:44<00:10,  2.41it/s] 75%|███████████████████████████████████████████████████████████████████████████                         | 75/100 [00:46<00:15,  1.59it/s] 76%|████████████████████████████████████████████████████████████████████████████                        | 76/100 [00:48<00:22,  1.05it/s] 77%|█████████████████████████████████████████████████████████████████████████████                       | 77/100 [00:48<00:17,  1.33it/s] 78%|██████████████████████████████████████████████████████████████████████████████                      | 78/100 [00:49<00:16,  1.31it/s] 79%|███████████████████████████████████████████████████████████████████████████████                     | 79/100 [00:49<00:13,  1.54it/s] 81%|█████████████████████████████████████████████████████████████████████████████████                   | 81/100 [00:49<00:08,  2.14it/s] 82%|██████████████████████████████████████████████████████████████████████████████████                  | 82/100 [00:50<00:07,  2.50it/s] 83%|███████████████████████████████████████████████████████████████████████████████████                 | 83/100 [00:51<00:10,  1.62it/s] 84%|████████████████████████████████████████████████████████████████████████████████████                | 84/100 [00:51<00:08,  1.87it/s] 85%|█████████████████████████████████████████████████████████████████████████████████████               | 85/100 [00:53<00:14,  1.04it/s] 86%|██████████████████████████████████████████████████████████████████████████████████████              | 86/100 [00:54<00:12,  1.09it/s] 87%|███████████████████████████████████████████████████████████████████████████████████████             | 87/100 [00:54<00:09,  1.37it/s] 89%|█████████████████████████████████████████████████████████████████████████████████████████           | 89/100 [00:55<00:05,  1.89it/s] 91%|███████████████████████████████████████████████████████████████████████████████████████████         | 91/100 [00:55<00:03,  2.52it/s] 92%|████████████████████████████████████████████████████████████████████████████████████████████        | 92/100 [00:56<00:04,  1.94it/s] 93%|█████████████████████████████████████████████████████████████████████████████████████████████       | 93/100 [00:57<00:03,  1.94it/s] 94%|██████████████████████████████████████████████████████████████████████████████████████████████      | 94/100 [00:57<00:02,  2.23it/s] 95%|███████████████████████████████████████████████████████████████████████████████████████████████     | 95/100 [00:58<00:02,  1.68it/s] 96%|████████████████████████████████████████████████████████████████████████████████████████████████    | 96/100 [00:58<00:01,  2.17it/s] 97%|█████████████████████████████████████████████████████████████████████████████████████████████████   | 97/100 [00:58<00:01,  2.46it/s] 99%|███████████████████████████████████████████████████████████████████████████████████████████████████ | 99/100 [00:59<00:00,  3.94it/s]100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:59<00:00,  3.87it/s]100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:59<00:00,  1.69it/s]
+tip: install termplotlib and gnuplot to plot the metrics
+============ Serving Benchmark Result ============
+Successful requests:                     100       
+Failed requests:                         0         
+Maximum request concurrency:             10        
+Benchmark duration (s):                  59.28     
+Total input tokens:                      101603    
+Total generated tokens:                  3234      
+Request throughput (req/s):              1.69      
+Output token throughput (tok/s):         54.55     
+Peak output token throughput (tok/s):    230.00    
+Peak concurrent requests:                15.00     
+Total Token throughput (tok/s):          1768.38   
+---------------Time to First Token----------------
+Mean TTFT (ms):                          282.53    
+Median TTFT (ms):                        209.42    
+P99 TTFT (ms):                           1182.31   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          183.54    
+Median TPOT (ms):                        169.45    
+P99 TPOT (ms):                           386.07    
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           55.56     
+Median ITL (ms):                         44.59     
+P99 ITL (ms):                            263.96    
+==================================================
+
+Script done on 2026-02-03 05:56:05+00:00 [COMMAND_EXIT_CODE="0"]
+CSV saved to: ./benchmark_results/NVIDIA_GB10/vLLM_NVIDIA_GB10_gpt_oss_20b_text_only_samples_100_20260203_055449.csv
+
+Completed: Tue Feb  3 05:56:05 AM UTC 2026
+
+
+##############################################################
+# vLLM TEXT-ONLY BENCHMARK COMPLETE
+##############################################################
+Results saved to: ./benchmark_results/NVIDIA_GB10/vLLM_NVIDIA_GB10_gpt_oss_20b_text_only_20260203_055449.txt
