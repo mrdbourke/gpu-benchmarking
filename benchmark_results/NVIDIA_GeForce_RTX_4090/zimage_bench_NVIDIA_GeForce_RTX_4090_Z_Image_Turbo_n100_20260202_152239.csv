@@ -1,0 +1,27 @@
+metric,value,unit
+device,NVIDIA GeForce RTX 4090,
+device_sanitized,NVIDIA_GeForce_RTX_4090,
+vram_gb,24.0,GB
+model_id,Tongyi-MAI/Z-Image-Turbo,
+timestamp,20260202_152239,
+test_type,image_generation,
+num_images,100,
+warmup_runs,10,
+inference_steps,9,
+dit_forwards_per_image,8,
+resolution,1024x1024,pixels
+guidance_scale,0.0,
+dtype,bf16,
+attention_backend,sdpa,
+seed,42,
+total_images,100,images
+total_time,487.13,seconds
+images_per_second,0.2053,img/s
+seconds_per_image,4.8713,s/img
+min_time,4.8443,seconds
+max_time,4.8843,seconds
+median_time,4.8740,seconds
+total_steps,900,steps
+steps_per_second,1.85,steps/s
+total_dit_forwards,800,forwards
+dit_forwards_per_second,1.64,forwards/s

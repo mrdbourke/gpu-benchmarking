@@ -1,0 +1,33 @@
+metric,value,unit
+device,NVIDIA GeForce RTX 4090,
+device_sanitized,NVIDIA_GeForce_RTX_4090,
+model,Qwen/Qwen3-VL-8B-Instruct-FP8,
+timestamp,20260203_151544,
+num_prompts,100,
+max_concurrency,10,
+num_warmups,10,
+input_len,1000,tokens
+output_len,300,tokens
+range_ratio,0.3,
+seed,42,
+images_per_request,1,
+image_bucket,"512x512(20%) 720x1280(30%) 1024x1024(20%) 1080x1920(30%)",
+successful_requests,N/A,
+failed_requests,N/A,
+benchmark_duration,114.87,s
+total_input_tokens,N/A,tokens
+total_generated_tokens,N/A,tokens
+request_throughput,0.87,req/s
+output_token_throughput,392.00,tok/s
+peak_output_throughput,392.00,tok/s
+peak_concurrent_requests,N/A,
+total_token_throughput,1144.26,tok/s
+ttft_mean,4644.34,ms
+ttft_median,5066.41,ms
+ttft_p99,8355.46,ms
+tpot_mean,21.13,ms
+tpot_median,21.13,ms
+tpot_p99,24.95,ms
+itl_mean,21.10,ms
+itl_median,17.93,ms
+itl_p99,174.91,ms

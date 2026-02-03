@@ -2,6 +2,11 @@
 
 Goal: Run several ML tasks and measure performance on each, then collate the results into a report.
 
+## Requirements
+
+* Install `llama.cpp` - https://github.com/ggml-org/llama.cpp/blob/master/docs/install.md 
+* Install vLLM - https://docs.vllm.ai/en/stable/getting_started/installation/gpu/ 
+
 Tests:
 
 * LLM inference (tok/s)
@@ -113,9 +118,9 @@ Steps:
 * Run benchmarks via vLLM: https://docs.vllm.ai/en/stable/benchmarking/cli/#multi-modal-benchmark 
 
 > [!NOTE]
-> All tests done with NVIDIA vLLM container version: [25.12.post1-py3](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/vllm?version=25.12.post1-py3)
+> All tests done with NVIDIA vLLM container version: [25.12.post1-py3](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/vllm?version=25.12.post1-py3), this requires a [docker installation](https://docs.docker.com/engine/install/). 
 >
-> So you can use: `export LATEST_LLM_VERSION=25.12.post1-py3`
+> So you can use: `export LATEST_VLLM_VERSION=25.12.post1-py3`
 
 ```
 docker run -it --gpus all -p 8000:8000 nvcr.io/nvidia/vllm:${LATEST_VLLM_VERSION} vllm serve "MODEL_NAME" --gpu-memory-utilization 0.8 --max_model_len 32000
@@ -199,13 +204,27 @@ Benchmark:
 Start server: 
 
 ```
-docker run -it --gpus all -p 8000:8000 nvcr.io/nvidia/vllm:${LATEST_VLLM_VERSION} vllm serve "Qwen/Qwen3-VL-8B-Instruct-FP8" --gpu-memory-utilization 0.8 --max_model_len 32000
+docker run -it --gpus all -p 8000:8000 nvcr.io/nvidia/vllm:${LATEST_VLLM_VERSION} vllm serve "Qwen/Qwen3-VL-8B-Instruct-FP8" --gpu-memory-utilization 0.8 --max_model_len 8000
 ```
 
 Benchmark:
 
 ```
 ./vllm_image_and_text_testing.sh Qwen/Qwen3-VL-8B-Instruct-FP8
+```
+
+* openai/gpt-oss-20b (RTX 4090 & DGX Spark)
+    * 0 images
+
+```
+docker run -it --gpus all -p 8000:8000 nvcr.io/nvidia/vllm:25.12.post1-py3 \
+bash -c "pip install openai-harmony && vllm serve 'openai/gpt-oss-20b' --gpu-memory-utilization 0.8 --max_model_len 8000"
+```
+
+Benchmark:
+
+```
+./vllm_text_only_testing.sh openai/gpt-oss-20b
 ```
 
 * openai/gpt-oss-120b
@@ -224,13 +243,93 @@ Benchmark:
 ./vllm_text_only_testing.sh openai/gpt-oss-120b
 ```
 
-
-
 ### Llamma.cpp running in a server
 
-See the guide: https://build.nvidia.com/spark/nemotron/instructions 
+* See the guide for creating a llama.cpp server on DGX Spark: https://build.nvidia.com/spark/nemotron/instructions 
+* See the docs for llama.cpp HTTP Server: https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md 
+
+**gpt-oss-20b**
+
+Link: https://huggingface.co/unsloth/gpt-oss-20b-GGUF/blob/main/gpt-oss-20b-UD-Q4_K_XL.gguf 
+
+Download model:
+
+```
+hf download unsloth/gpt-oss-20b-GGUF gpt-oss-20b-UD-Q4_K_XL.gguf --local-dir ~/models/gpt-oss-20b-gguf/
+```
+
+Run a server:
+
+```
+./bin/llama-server \
+  --model ~/models/gpt-oss-20b-gguf/gpt-oss-20b-UD-Q4_K_XL.gguf \
+  --host 0.0.0.0 \
+  --port 30000 \
+  --n-gpu-layers 99 \
+  --ctx-size 16384 \
+  --threads 8 \
+  --jinja \
+  --temp 1.0 \
+  --top-p 1.0 \
+  --top-k 0
+```
+
+**Qwen3-VL-8B-GGUF**
+
+Download a model:
+
+```
+hf download unsloth/Qwen3-VL-8B-Instruct-GGUF \Qwen3-VL-8B-Instruct-UD-Q4_K_XL.gguf --local-dir ~/models/
+qwen3-vl-8b-gguf/
+```
+
+For multimodal, download the multimodal projector:
+
+```
+hf download unsloth/Qwen3-VL-8B-Instruct-GGUF \mmproj-BF16.gguf --local-dir ~/models/
+qwen3-vl-8b-gguf/
+```
+
+Run a server (with multimodal capabilities):
+
+```
+./bin/llama-server \
+    --model ~/models/qwen3-vl-8b-gguf/Qwen3-VL-8B-Instruct-UD-Q4_K_XL.gguf \
+    --mmproj ~/models/qwen3-vl-8b-gguf/mmproj-BF16.gguf \
+    --n-gpu-layers 99 \
+    --jinja \
+    --top-p 0.8 \
+    --top-k 20 \
+    --temp 0.7 \
+    --min-p 0.0 \
+    --presence-penalty 1.5 \
+    --ctx-size 8192 \
+    --host 0.0.0.0 \
+    --port 30000
+```
+
+With flash attention on:
+
+```
+./bin/llama-server \
+    --model ~/models/qwen3-vl-8b-gguf/Qwen3-VL-8B-Instruct-UD-Q4_K_XL.gguf \
+    --mmproj ~/models/qwen3-vl-8b-gguf/mmproj-BF16.gguf \
+    --n-gpu-layers 99 \
+    --jinja \
+    --top-p 0.8 \
+    --top-k 20 \
+    --temp 0.7 \
+    --min-p 0.0 \
+    --flash-attn auto \
+    --presence-penalty 1.5 \
+    --ctx-size 8192 \
+    --host 0.0.0.0 \
+    --port 30000
+```
 
 **Nemotron-3-Nano**
+
+> **Note:** Requires 40GB download for Q8 model.
 
 Download a model:
 
@@ -316,6 +415,7 @@ See: `train_object_detection_model.py`
 
 ## Notes
 
+* Analogy for DGX Spark vs RTX 4090 = RTX 4090 is a Ferrari, fast but not much storage. DGX Spark is like a minivan, plenty of storage, not that fast.
 * Does Docker slow down inference? (e.g. using NVIDIA's approaved/signed Docker container but does this make things slower?), hat tip: @ibrahimadiallo7444
     * Using this container: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/vllm?version=25.12.post1-py3 
 * Check these docs for possible improvements: https://docs.vllm.ai/en/stable/configuration/optimization/#configuration 
