@@ -10,7 +10,9 @@ But the tests could easily be extended to other GPUs.
 
 Most of the analysis in `benchmark_analysis/` was performed by GPT-Codex simply to compare the results in `benchmark_results/` (this holds the ground truth for a series of tests in `.csv` files). 
 
-These benchmarks are mostly targeted at simple single user usage rather than multiple users at the same time. For example, a single developer/researcher working on their own machine.
+These benchmarks are mostly targeted at simple single user usage rather than multiple users at the same time. 
+
+For example, a single developer/researcher working on their own machine.
 
 None of these tests assess the *quality* of the outputs created by the models. They are only focused on speed.
 
@@ -20,6 +22,8 @@ None of these tests assess the *quality* of the outputs created by the models. T
 * **LLM training** - Compare LLM full fine-tuning training speed with a relatively small LLM ([Gemma-3-270M](https://huggingface.co/google/gemma-3-270m-it)).
 * **Image generation** - Compare image generation speeds with [Flux.2-klein-4B](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B) and [Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo).
 * **Object detection** - Fine-tune an object detection model.
+
+**Results:** See the results in [`benchmark_analysis/README.md`](https://github.com/mrdbourke/gpu-benchmarking/tree/main/benchmark_analysis#gpu-benchmark-report). 
 
 ## Summary
 
