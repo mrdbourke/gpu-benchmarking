@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GPU Benchmark Report</title>
+<style>
+  :root {
+    --bg: #f7f7f7;
+    --panel: #ffffff;
+    --text: #111111;
+    --muted: #5a5a5a;
+    --grid: #e4e4e4;
+    --accent: #1f77b4;
+    --shadow: rgba(0,0,0,0.08);
+    --border: #d8d8d8;
+  }
+  body {
+    margin: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    padding: 28px 32px 10px 32px;
+    background: linear-gradient(120deg, #fcfcfc, #f1f1f1);
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+  }
+  header p {
+    margin: 4px 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  .legend-swatch {
+    width: 16px;
+    height: 10px;
+    border-radius: 3px;
+  }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 32px 60px 32px;
+  }
+  section {
+    margin: 32px 0;
+  }
+  section h2 {
+    margin: 0 0 18px 0;
+    font-size: 22px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 6px;
+  }
+  .benchmark-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px 16px 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    margin-bottom: 22px;
+  }
+  .benchmark-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+  }
+  .benchmark-meta {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .benchmark-note {
+    margin: 8px 0 0 0;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .benchmark-note span {
+    font-weight: 700;
+    color: var(--text);
+  }
+  .metric-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .metric-label {
+    font-size: 13px;
+    color: var(--text);
+  }
+  .metric-label span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .chart {
+    position: relative;
+    padding: 8px 12px 10px 12px;
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 54px,
+      var(--grid) 54px,
+      var(--grid) 55px
+    );
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+  }
+  .bars {
+    display: grid;
+    gap: 8px;
+  }
+  .bar {
+    position: relative;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    min-width: 30px;
+  }
+  .bar.best {
+    outline: 2px solid rgba(0,0,0,0.35);
+  }
+  .bar-label {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    color: rgba(0,0,0,0.7);
+  }
+  .missing-note {
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  @media (max-width: 900px) {
+    .metric-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>GPU Benchmark Report</h1>
+  <p>Generated: 2026-02-04 10:25:57</p>
+  <p>Missing results are shown as NA and assumed to be unavailable because the model did not fit or could not be run on that GPU.</p>
+  <div class="legend" id="legend"></div>
+</header>
+<main id="content"></main>
+<script>
+const data = {"meta": {"generated": "2026-02-04 10:25:57"}, "gpus": ["NVIDIA_GB10", "NVIDIA_GeForce_RTX_4090"], "sections": [{"name": "LLM/VLM Inference", "benchmarks": [{"id": "llama_server_gpt_oss_20b_UD_Q4_K_XL_gguf_samples_100", "family": "llama_server", "config": "model_name=gpt-oss-20b-UD-Q4_K_XL.gguf, test_type=text_only, num_prompts=100, input_token_range=50-1000, output_token_range=50-1000", "metrics": [{"name": "true_prompt_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "2703.36", "NVIDIA_GeForce_RTX_4090": "6035.78"}, "numbers": {"NVIDIA_GB10": 2703.36, "NVIDIA_GeForce_RTX_4090": 6035.78}, "lower_better": false}, {"name": "true_gen_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "88.04", "NVIDIA_GeForce_RTX_4090": "242.54"}, "numbers": {"NVIDIA_GB10": 88.04, "NVIDIA_GeForce_RTX_4090": 242.54}, "lower_better": false}, {"name": "avg_prompt_speed", "unit": "tok/s", "values": {"NVIDIA_GB10": "2515.66", "NVIDIA_GeForce_RTX_4090": "5609.64"}, "numbers": {"NVIDIA_GB10": 2515.66, "NVIDIA_GeForce_RTX_4090": 5609.64}, "lower_better": false}, {"name": "avg_gen_speed", "unit": "tok/s", "values": {"NVIDIA_GB10": "88.19", "NVIDIA_GeForce_RTX_4090": "243.19"}, "numbers": {"NVIDIA_GB10": 88.19, "NVIDIA_GeForce_RTX_4090": 243.19}, "lower_better": false}, {"name": "total_runtime", "unit": "seconds", "values": {"NVIDIA_GB10": "586.25", "NVIDIA_GeForce_RTX_4090": "215.43"}, "numbers": {"NVIDIA_GB10": 586.25, "NVIDIA_GeForce_RTX_4090": 215.43}, "lower_better": true}]}, {"id": "llama_server_Nemotron_3_Nano_30B_A3B_UD_Q8_K_XL_gguf_samples_100", "family": "llama_server", "config": "model_name=Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf, test_type=text_only, num_prompts=100, input_token_range=50-1000, output_token_range=50-1000", "metrics": [{"name": "true_prompt_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "1037.78", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 1037.78, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "true_gen_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "47.56", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 47.56, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "avg_prompt_speed", "unit": "tok/s", "values": {"NVIDIA_GB10": "963.99", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 963.99, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "avg_gen_speed", "unit": "tok/s", "values": {"NVIDIA_GB10": "47.66", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 47.66, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}]}, {"id": "llama_server_Qwen3_VL_8B_Instruct_UD_Q4_K_XL_gguf_multimodal_samples_100", "family": "llama_server", "config": "model_name=Qwen3-VL-8B-Instruct-UD-Q4_K_XL.gguf, test_type=multimodal, prompt_type=mixed, num_prompts=100, output_token_range=50-1000, avg_images_per_request=1.00, mm_bucket_config={(2556; 1179; 1): 0.25; (1080; 1920; 1): 0.25; (1080; 1080; 1): 0.25; (4032; 3024; 1): 0.25}", "metrics": [{"name": "true_prompt_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "799.44", "NVIDIA_GeForce_RTX_4090": "2459.23"}, "numbers": {"NVIDIA_GB10": 799.44, "NVIDIA_GeForce_RTX_4090": 2459.23}, "lower_better": false}, {"name": "true_gen_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "33.07", "NVIDIA_GeForce_RTX_4090": "122.83"}, "numbers": {"NVIDIA_GB10": 33.07, "NVIDIA_GeForce_RTX_4090": 122.83}, "lower_better": false}, {"name": "avg_prompt_speed", "unit": "tok/s", "values": {"NVIDIA_GB10": "561.41", "NVIDIA_GeForce_RTX_4090": "1702.90"}, "numbers": {"NVIDIA_GB10": 561.41, "NVIDIA_GeForce_RTX_4090": 1702.9}, "lower_better": false}, {"name": "avg_gen_speed", "unit": "tok/s", "values": {"NVIDIA_GB10": "20.94", "NVIDIA_GeForce_RTX_4090": "78.08"}, "numbers": {"NVIDIA_GB10": 20.94, "NVIDIA_GeForce_RTX_4090": 78.08}, "lower_better": false}, {"name": "total_runtime", "unit": "seconds", "values": {"NVIDIA_GB10": "389.80", "NVIDIA_GeForce_RTX_4090": "115.33"}, "numbers": {"NVIDIA_GB10": 389.8, "NVIDIA_GeForce_RTX_4090": 115.33}, "lower_better": true}]}, {"id": "llama_server_Qwen3_VL_8B_Instruct_UD_Q4_K_XL_gguf_samples_100", "family": "llama_server", "config": "model_name=Qwen3-VL-8B-Instruct-UD-Q4_K_XL.gguf, test_type=text_only, num_prompts=100, input_token_range=50-1000, output_token_range=50-1000", "metrics": [{"name": "true_prompt_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "2478.36", "NVIDIA_GeForce_RTX_4090": "8414.23"}, "numbers": {"NVIDIA_GB10": 2478.36, "NVIDIA_GeForce_RTX_4090": 8414.23}, "lower_better": false}, {"name": "true_gen_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "35.48", "NVIDIA_GeForce_RTX_4090": "132.22"}, "numbers": {"NVIDIA_GB10": 35.48, "NVIDIA_GeForce_RTX_4090": 132.22}, "lower_better": false}, {"name": "avg_prompt_speed", "unit": "tok/s", "values": {"NVIDIA_GB10": "2373.85", "NVIDIA_GeForce_RTX_4090": "7911.93"}, "numbers": {"NVIDIA_GB10": 2373.85, "NVIDIA_GeForce_RTX_4090": 7911.93}, "lower_better": false}, {"name": "avg_gen_speed", "unit": "tok/s", "values": {"NVIDIA_GB10": "35.57", "NVIDIA_GeForce_RTX_4090": "132.46"}, "numbers": {"NVIDIA_GB10": 35.57, "NVIDIA_GeForce_RTX_4090": 132.46}, "lower_better": false}, {"name": "total_runtime", "unit": "seconds", "values": {"NVIDIA_GB10": "1388.77", "NVIDIA_GeForce_RTX_4090": "383.06"}, "numbers": {"NVIDIA_GB10": 1388.77, "NVIDIA_GeForce_RTX_4090": 383.06}, "lower_better": true}]}, {"id": "vLLM_gpt_oss_20b_text_only_samples_100", "family": "vLLM", "config": "model=openai/gpt-oss-20b, test_type=text_only, num_prompts=100, max_concurrency=10, input_len=1000, output_len=300, range_ratio=0.3, thinking_disabled=false", "metrics": [{"name": "output_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "230.00", "NVIDIA_GeForce_RTX_4090": "584.00"}, "numbers": {"NVIDIA_GB10": 230.0, "NVIDIA_GeForce_RTX_4090": 584.0}, "lower_better": false}, {"name": "request_throughput", "unit": "req/s", "values": {"NVIDIA_GB10": "1.69", "NVIDIA_GeForce_RTX_4090": "5.18"}, "numbers": {"NVIDIA_GB10": 1.69, "NVIDIA_GeForce_RTX_4090": 5.18}, "lower_better": false}, {"name": "total_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "1768.38", "NVIDIA_GeForce_RTX_4090": "5432.70"}, "numbers": {"NVIDIA_GB10": 1768.38, "NVIDIA_GeForce_RTX_4090": 5432.7}, "lower_better": false}, {"name": "ttft_mean", "unit": "ms", "values": {"NVIDIA_GB10": "282.53", "NVIDIA_GeForce_RTX_4090": "113.54"}, "numbers": {"NVIDIA_GB10": 282.53, "NVIDIA_GeForce_RTX_4090": 113.54}, "lower_better": true}, {"name": "tpot_mean", "unit": "ms", "values": {"NVIDIA_GB10": "183.54", "NVIDIA_GeForce_RTX_4090": "59.23"}, "numbers": {"NVIDIA_GB10": 183.54, "NVIDIA_GeForce_RTX_4090": 59.23}, "lower_better": true}, {"name": "itl_mean", "unit": "ms", "values": {"NVIDIA_GB10": "55.56", "NVIDIA_GeForce_RTX_4090": "17.95"}, "numbers": {"NVIDIA_GB10": 55.56, "NVIDIA_GeForce_RTX_4090": 17.95}, "lower_better": true}, {"name": "benchmark_duration", "unit": "s", "values": {"NVIDIA_GB10": "59.28", "NVIDIA_GeForce_RTX_4090": "19.29"}, "numbers": {"NVIDIA_GB10": 59.28, "NVIDIA_GeForce_RTX_4090": 19.29}, "lower_better": true}]}, {"id": "vLLM_gpt_oss_120b_text_only_samples_100", "family": "vLLM", "config": "model=openai/gpt-oss-120b, test_type=text_only, num_prompts=100, max_concurrency=10, input_len=1000, output_len=300, range_ratio=0.3", "metrics": [{"name": "output_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "116.00", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 116.0, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "request_throughput", "unit": "req/s", "values": {"NVIDIA_GB10": "0.71", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 0.71, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "total_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "744.40", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 744.4, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "ttft_mean", "unit": "ms", "values": {"NVIDIA_GB10": "577.98", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 577.98, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "tpot_mean", "unit": "ms", "values": {"NVIDIA_GB10": "459.91", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 459.91, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "itl_mean", "unit": "ms", "values": {"NVIDIA_GB10": "124.75", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 124.75, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "benchmark_duration", "unit": "s", "values": {"NVIDIA_GB10": "140.81", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 140.81, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}]}, {"id": "vLLM_NVIDIA_Nemotron_3_Nano_30B_A3B_FP8_text_only_samples_100", "family": "vLLM", "config": "model=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8, test_type=text_only, num_prompts=100, max_concurrency=10, input_len=1000, output_len=300, range_ratio=0.3, thinking_disabled=true", "metrics": [{"name": "output_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "230.00", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 230.0, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "request_throughput", "unit": "req/s", "values": {"NVIDIA_GB10": "0.49", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 0.49, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "total_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "643.34", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 643.34, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "ttft_mean", "unit": "ms", "values": {"NVIDIA_GB10": "610.81", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 610.81, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "tpot_mean", "unit": "ms", "values": {"NVIDIA_GB10": "65.30", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 65.3, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "itl_mean", "unit": "ms", "values": {"NVIDIA_GB10": "65.06", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 65.06, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "benchmark_duration", "unit": "s", "values": {"NVIDIA_GB10": "204.32", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 204.32, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}]}, {"id": "vLLM_Qwen3_VL_8B_Instruct_FP8_samples_100_images_0", "family": "vLLM", "config": "model=Qwen/Qwen3-VL-8B-Instruct-FP8, num_prompts=100, max_concurrency=10, input_len=1000, output_len=300, images_per_request=0, image_bucket=512x512(20%) 720x1280(30%) 1024x1024(20%) 1080x1920(30%), range_ratio=0.3", "metrics": [{"name": "output_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "220.00", "NVIDIA_GeForce_RTX_4090": "580.00"}, "numbers": {"NVIDIA_GB10": 220.0, "NVIDIA_GeForce_RTX_4090": 580.0}, "lower_better": false}, {"name": "request_throughput", "unit": "req/s", "values": {"NVIDIA_GB10": "0.63", "NVIDIA_GeForce_RTX_4090": "1.64"}, "numbers": {"NVIDIA_GB10": 0.63, "NVIDIA_GeForce_RTX_4090": 1.64}, "lower_better": false}, {"name": "total_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "830.73", "NVIDIA_GeForce_RTX_4090": "2155.83"}, "numbers": {"NVIDIA_GB10": 830.73, "NVIDIA_GeForce_RTX_4090": 2155.83}, "lower_better": false}, {"name": "ttft_mean", "unit": "ms", "values": {"NVIDIA_GB10": "273.10", "NVIDIA_GeForce_RTX_4090": "124.11"}, "numbers": {"NVIDIA_GB10": 273.1, "NVIDIA_GeForce_RTX_4090": 124.11}, "lower_better": true}, {"name": "tpot_mean", "unit": "ms", "values": {"NVIDIA_GB10": "50.01", "NVIDIA_GeForce_RTX_4090": "19.15"}, "numbers": {"NVIDIA_GB10": 50.01, "NVIDIA_GeForce_RTX_4090": 19.15}, "lower_better": true}, {"name": "itl_mean", "unit": "ms", "values": {"NVIDIA_GB10": "49.85", "NVIDIA_GeForce_RTX_4090": "19.09"}, "numbers": {"NVIDIA_GB10": 49.85, "NVIDIA_GeForce_RTX_4090": 19.09}, "lower_better": true}, {"name": "benchmark_duration", "unit": "s", "values": {"NVIDIA_GB10": "158.23", "NVIDIA_GeForce_RTX_4090": "60.97"}, "numbers": {"NVIDIA_GB10": 158.23, "NVIDIA_GeForce_RTX_4090": 60.97}, "lower_better": true}]}, {"id": "vLLM_Qwen3_VL_8B_Instruct_FP8_samples_100_images_1", "family": "vLLM", "config": "model=Qwen/Qwen3-VL-8B-Instruct-FP8, num_prompts=100, max_concurrency=10, input_len=1000, output_len=300, images_per_request=1, image_bucket=512x512(20%) 720x1280(30%) 1024x1024(20%) 1080x1920(30%), range_ratio=0.3", "metrics": [{"name": "output_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "191.00", "NVIDIA_GeForce_RTX_4090": "392.00"}, "numbers": {"NVIDIA_GB10": 191.0, "NVIDIA_GeForce_RTX_4090": 392.0}, "lower_better": false}, {"name": "request_throughput", "unit": "req/s", "values": {"NVIDIA_GB10": "0.49", "NVIDIA_GeForce_RTX_4090": "0.87"}, "numbers": {"NVIDIA_GB10": 0.49, "NVIDIA_GeForce_RTX_4090": 0.87}, "lower_better": false}, {"name": "total_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "642.77", "NVIDIA_GeForce_RTX_4090": "1144.26"}, "numbers": {"NVIDIA_GB10": 642.77, "NVIDIA_GeForce_RTX_4090": 1144.26}, "lower_better": false}, {"name": "ttft_mean", "unit": "ms", "values": {"NVIDIA_GB10": "714.11", "NVIDIA_GeForce_RTX_4090": "4644.34"}, "numbers": {"NVIDIA_GB10": 714.11, "NVIDIA_GeForce_RTX_4090": 4644.34}, "lower_better": true}, {"name": "tpot_mean", "unit": "ms", "values": {"NVIDIA_GB10": "64.00", "NVIDIA_GeForce_RTX_4090": "21.13"}, "numbers": {"NVIDIA_GB10": 64.0, "NVIDIA_GeForce_RTX_4090": 21.13}, "lower_better": true}, {"name": "itl_mean", "unit": "ms", "values": {"NVIDIA_GB10": "63.90", "NVIDIA_GeForce_RTX_4090": "21.10"}, "numbers": {"NVIDIA_GB10": 63.9, "NVIDIA_GeForce_RTX_4090": 21.1}, "lower_better": true}, {"name": "benchmark_duration", "unit": "s", "values": {"NVIDIA_GB10": "204.50", "NVIDIA_GeForce_RTX_4090": "114.87"}, "numbers": {"NVIDIA_GB10": 204.5, "NVIDIA_GeForce_RTX_4090": 114.87}, "lower_better": true}]}, {"id": "vLLM_Qwen3_VL_30B_A3B_Instruct_FP8_samples_100_images_0", "family": "vLLM", "config": "model=Qwen/Qwen3-VL-30B-A3B-Instruct-FP8, num_prompts=100, max_concurrency=10, input_len=1000, output_len=300, images_per_request=0, image_bucket=512x512(20%) 720x1280(30%) 1024x1024(20%) 1080x1920(30%), range_ratio=0.3", "metrics": [{"name": "output_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "150.00", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 150.0, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "request_throughput", "unit": "req/s", "values": {"NVIDIA_GB10": "0.40", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 0.4, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "total_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "519.84", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 519.84, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "ttft_mean", "unit": "ms", "values": {"NVIDIA_GB10": "338.31", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 338.31, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "tpot_mean", "unit": "ms", "values": {"NVIDIA_GB10": "82.34", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 82.34, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "itl_mean", "unit": "ms", "values": {"NVIDIA_GB10": "82.00", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 82.0, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "benchmark_duration", "unit": "s", "values": {"NVIDIA_GB10": "252.86", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 252.86, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}]}, {"id": "vLLM_Qwen3_VL_30B_A3B_Instruct_FP8_samples_100_images_1", "family": "vLLM", "config": "model=Qwen/Qwen3-VL-30B-A3B-Instruct-FP8, num_prompts=100, max_concurrency=10, input_len=1000, output_len=300, images_per_request=1, image_bucket=512x512(20%) 720x1280(30%) 1024x1024(20%) 1080x1920(30%), range_ratio=0.3", "metrics": [{"name": "output_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "130.00", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 130.0, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "request_throughput", "unit": "req/s", "values": {"NVIDIA_GB10": "0.34", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 0.34, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "total_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "446.02", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 446.02, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "ttft_mean", "unit": "ms", "values": {"NVIDIA_GB10": "766.03", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 766.03, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "tpot_mean", "unit": "ms", "values": {"NVIDIA_GB10": "94.84", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 94.84, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "itl_mean", "unit": "ms", "values": {"NVIDIA_GB10": "94.51", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 94.51, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "benchmark_duration", "unit": "s", "values": {"NVIDIA_GB10": "294.71", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 294.71, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}]}, {"id": "vLLM_Qwen3_VL_32B_Instruct_FP8_samples_100_images_0", "family": "vLLM", "config": "model=Qwen/Qwen3-VL-32B-Instruct-FP8, num_prompts=100, max_concurrency=10, input_len=1000, output_len=300, images_per_request=0, image_bucket=512x512(20%) 720x1280(30%) 1024x1024(20%) 1080x1920(30%), range_ratio=0.3", "metrics": [{"name": "output_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "65.00", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 65.0, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "request_throughput", "unit": "req/s", "values": {"NVIDIA_GB10": "0.18", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 0.18, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "total_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "231.20", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 231.2, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "ttft_mean", "unit": "ms", "values": {"NVIDIA_GB10": "1036.98", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 1036.98, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "tpot_mean", "unit": "ms", "values": {"NVIDIA_GB10": "179.14", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 179.14, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "itl_mean", "unit": "ms", "values": {"NVIDIA_GB10": "178.57", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 178.57, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "benchmark_duration", "unit": "s", "values": {"NVIDIA_GB10": "568.53", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 568.53, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}]}, {"id": "vLLM_Qwen3_VL_32B_Instruct_FP8_samples_100_images_1", "family": "vLLM", "config": "model=Qwen/Qwen3-VL-32B-Instruct-FP8, num_prompts=100, max_concurrency=10, input_len=1000, output_len=300, images_per_request=1, image_bucket=512x512(20%) 720x1280(30%) 1024x1024(20%) 1080x1920(30%), range_ratio=0.3", "metrics": [{"name": "output_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "62.00", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 62.0, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "request_throughput", "unit": "req/s", "values": {"NVIDIA_GB10": "0.15", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 0.15, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "total_token_throughput", "unit": "tok/s", "values": {"NVIDIA_GB10": "196.18", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 196.18, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": false}, {"name": "ttft_mean", "unit": "ms", "values": {"NVIDIA_GB10": "1877.67", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 1877.67, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "tpot_mean", "unit": "ms", "values": {"NVIDIA_GB10": "210.39", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 210.39, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "itl_mean", "unit": "ms", "values": {"NVIDIA_GB10": "209.71", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 209.71, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}, {"name": "benchmark_duration", "unit": "s", "values": {"NVIDIA_GB10": "670.01", "NVIDIA_GeForce_RTX_4090": "NA"}, "numbers": {"NVIDIA_GB10": 670.01, "NVIDIA_GeForce_RTX_4090": null}, "lower_better": true}]}]}, {"name": "LLM Training", "benchmarks": [{"id": "llm_finetune_bench_gemma_3_270m_it_epochs_3", "family": "llm_finetune_bench", "config": "model_name=google/gemma-3-270m-it, dataset_name=mrdbourke/FoodExtract-1k, num_epochs=3, batch_size=8, max_length=512, gradient_checkpointing=False", "metrics": [{"name": "total_train_time", "unit": "seconds", "values": {"NVIDIA_GB10": "343.20", "NVIDIA_GeForce_RTX_4090": "81.59"}, "numbers": {"NVIDIA_GB10": 343.2, "NVIDIA_GeForce_RTX_4090": 81.59}, "lower_better": true}, {"name": "total_train_time_minutes", "unit": "minutes", "values": {"NVIDIA_GB10": "5.72", "NVIDIA_GeForce_RTX_4090": "1.36"}, "numbers": {"NVIDIA_GB10": 5.72, "NVIDIA_GeForce_RTX_4090": 1.36}, "lower_better": true}, {"name": "inference_samples_per_second", "unit": "samples/s", "values": {"NVIDIA_GB10": "1.87", "NVIDIA_GeForce_RTX_4090": "3.39"}, "numbers": {"NVIDIA_GB10": 1.87, "NVIDIA_GeForce_RTX_4090": 3.39}, "lower_better": false}, {"name": "inference_tokens_per_second", "unit": "tokens/s", "values": {"NVIDIA_GB10": "67.79", "NVIDIA_GeForce_RTX_4090": "106.15"}, "numbers": {"NVIDIA_GB10": 67.79, "NVIDIA_GeForce_RTX_4090": 106.15}, "lower_better": false}]}]}, {"name": "Image Generation", "benchmarks": [{"id": "flux_bench_FLUX_2_klein_4B_n100", "family": "flux_bench", "config": "model_id=black-forest-labs/FLUX.2-klein-4B, num_images=100, inference_steps=4, resolution=1024x1024, guidance_scale=1.0, dtype=bf16", "metrics": [{"name": "images_per_second", "unit": "img/s", "values": {"NVIDIA_GB10": "0.2380", "NVIDIA_GeForce_RTX_4090": "0.7764"}, "numbers": {"NVIDIA_GB10": 0.238, "NVIDIA_GeForce_RTX_4090": 0.7764}, "lower_better": false}, {"name": "seconds_per_image", "unit": "s/img", "values": {"NVIDIA_GB10": "4.2012", "NVIDIA_GeForce_RTX_4090": "1.2880"}, "numbers": {"NVIDIA_GB10": 4.2012, "NVIDIA_GeForce_RTX_4090": 1.288}, "lower_better": true}, {"name": "total_time", "unit": "seconds", "values": {"NVIDIA_GB10": "420.12", "NVIDIA_GeForce_RTX_4090": "128.80"}, "numbers": {"NVIDIA_GB10": 420.12, "NVIDIA_GeForce_RTX_4090": 128.8}, "lower_better": true}, {"name": "steps_per_second", "unit": "steps/s", "values": {"NVIDIA_GB10": "0.95", "NVIDIA_GeForce_RTX_4090": "3.11"}, "numbers": {"NVIDIA_GB10": 0.95, "NVIDIA_GeForce_RTX_4090": 3.11}, "lower_better": false}]}, {"id": "zimage_bench_Z_Image_Turbo_n100", "family": "zimage_bench", "config": "model_id=Tongyi-MAI/Z-Image-Turbo, num_images=100, inference_steps=9, dit_forwards_per_image=8, resolution=1024x1024, guidance_scale=0.0, dtype=bf16, attention_backend=sdpa", "metrics": [{"name": "images_per_second", "unit": "img/s", "values": {"NVIDIA_GB10": "0.0598", "NVIDIA_GeForce_RTX_4090": "0.2053"}, "numbers": {"NVIDIA_GB10": 0.0598, "NVIDIA_GeForce_RTX_4090": 0.2053}, "lower_better": false}, {"name": "seconds_per_image", "unit": "s/img", "values": {"NVIDIA_GB10": "16.7194", "NVIDIA_GeForce_RTX_4090": "4.8713"}, "numbers": {"NVIDIA_GB10": 16.7194, "NVIDIA_GeForce_RTX_4090": 4.8713}, "lower_better": true}, {"name": "total_time", "unit": "seconds", "values": {"NVIDIA_GB10": "1671.94", "NVIDIA_GeForce_RTX_4090": "487.13"}, "numbers": {"NVIDIA_GB10": 1671.94, "NVIDIA_GeForce_RTX_4090": 487.13}, "lower_better": true}, {"name": "steps_per_second", "unit": "steps/s", "values": {"NVIDIA_GB10": "0.54", "NVIDIA_GeForce_RTX_4090": "1.85"}, "numbers": {"NVIDIA_GB10": 0.54, "NVIDIA_GeForce_RTX_4090": 1.85}, "lower_better": false}, {"name": "dit_forwards_per_second", "unit": "forwards/s", "values": {"NVIDIA_GB10": "0.48", "NVIDIA_GeForce_RTX_4090": "1.64"}, "numbers": {"NVIDIA_GB10": 0.48, "NVIDIA_GeForce_RTX_4090": 1.64}, "lower_better": false}]}]}, {"name": "Object Detection", "benchmarks": [{"id": "object_detection_bench_rtdetr_v2_r50vd_epochs_10", "family": "object_detection_bench", "config": "model_name=PekingU/rtdetr_v2_r50vd, dataset_name=mrdbourke/trashify_manual_labelled_images, num_epochs=10, batch_size=8, image_size=640, fp16=False", "metrics": [{"name": "samples_per_second", "unit": "samples/s", "values": {"NVIDIA_GB10": "0.08", "NVIDIA_GeForce_RTX_4090": "0.29"}, "numbers": {"NVIDIA_GB10": 0.08, "NVIDIA_GeForce_RTX_4090": 0.29}, "lower_better": false}, {"name": "total_train_time", "unit": "seconds", "values": {"NVIDIA_GB10": "807.05", "NVIDIA_GeForce_RTX_4090": "222.36"}, "numbers": {"NVIDIA_GB10": 807.05, "NVIDIA_GeForce_RTX_4090": 222.36}, "lower_better": true}, {"name": "total_train_time_minutes", "unit": "minutes", "values": {"NVIDIA_GB10": "13.45", "NVIDIA_GeForce_RTX_4090": "3.71"}, "numbers": {"NVIDIA_GB10": 13.45, "NVIDIA_GeForce_RTX_4090": 3.71}, "lower_better": true}]}]}]};
+
+const colors = [
+  '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
+  '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
+];
+
+function createLegend(gpus) {
+  const legend = document.getElementById('legend');
+  gpus.forEach((gpu, idx) => {
+    const item = document.createElement('div');
+    item.className = 'legend-item';
+    const swatch = document.createElement('span');
+    swatch.className = 'legend-swatch';
+    swatch.style.background = colors[idx % colors.length];
+    const label = document.createElement('span');
+    label.textContent = gpu;
+    item.appendChild(swatch);
+    item.appendChild(label);
+    legend.appendChild(item);
+  });
+}
+
+function render() {
+  const container = document.getElementById('content');
+  createLegend(data.gpus);
+
+  data.sections.forEach(section => {
+    if (!section.benchmarks || section.benchmarks.length === 0) {
+      return;
+    }
+    const sectionEl = document.createElement('section');
+    const heading = document.createElement('h2');
+    heading.textContent = section.name;
+    sectionEl.appendChild(heading);
+
+    section.benchmarks.forEach(benchmark => {
+      const card = document.createElement('div');
+      card.className = 'benchmark-card';
+      const title = document.createElement('h3');
+      title.textContent = benchmark.id;
+      card.appendChild(title);
+
+      if (benchmark.family) {
+        const family = document.createElement('p');
+        family.className = 'benchmark-meta';
+        family.textContent = `Family: ${benchmark.family}`;
+        card.appendChild(family);
+      }
+
+      if (benchmark.config) {
+        const config = document.createElement('p');
+        config.className = 'benchmark-meta';
+        config.textContent = `Config: ${benchmark.config}`;
+        card.appendChild(config);
+      }
+
+      const note = document.createElement('p');
+      note.className = 'benchmark-note';
+      note.innerHTML = 'Higher is better (<span>&uarr;</span>) for throughput/rate metrics. Lower is better (<span>&darr;</span>) for time/latency metrics.';
+      card.appendChild(note);
+
+      benchmark.metrics.forEach(metric => {
+        const row = document.createElement('div');
+        row.className = 'metric-row';
+
+        const label = document.createElement('div');
+        label.className = 'metric-label';
+        label.textContent = metric.name;
+        const unit = document.createElement('span');
+        unit.textContent = metric.unit ? `Unit: ${metric.unit}` : 'Unit: n/a';
+        label.appendChild(unit);
+        row.appendChild(label);
+
+        const chart = document.createElement('div');
+        chart.className = 'chart';
+        const bars = document.createElement('div');
+        bars.className = 'bars';
+
+        const values = data.gpus.map(gpu => metric.numbers[gpu]);
+        const maxValue = Math.max(...values.filter(v => v !== null), 0);
+        const lowerBetter = metric.lower_better;
+        let bestValue = null;
+        values.forEach(value => {
+          if (value === null) return;
+          if (bestValue === null) {
+            bestValue = value;
+          } else if (lowerBetter && value < bestValue) {
+            bestValue = value;
+          } else if (!lowerBetter && value > bestValue) {
+            bestValue = value;
+          }
+        });
+
+        const missing = [];
+
+        data.gpus.forEach((gpu, idx) => {
+          const value = metric.values[gpu] ?? 'NA';
+          const numeric = metric.numbers[gpu];
+          if (numeric === null) {
+            missing.push(gpu);
+            return;
+          }
+
+          const bar = document.createElement('div');
+          bar.className = 'bar';
+          const width = maxValue === 0 ? 0 : Math.max((numeric / maxValue) * 100, 4);
+          bar.style.width = `${width}%`;
+          bar.style.background = colors[idx % colors.length];
+          bar.title = `${gpu}: ${value}${metric.unit ? ' ' + metric.unit : ''}`;
+
+          bar.textContent = `${gpu}`;
+          const valueLabel = document.createElement('span');
+          valueLabel.className = 'bar-label';
+          valueLabel.textContent = value;
+          bar.appendChild(valueLabel);
+
+          if (bestValue !== null && numeric === bestValue) {
+            bar.classList.add('best');
+          }
+
+          bars.appendChild(bar);
+        });
+
+        chart.appendChild(bars);
+        if (missing.length) {
+          const missingNote = document.createElement('div');
+          missingNote.className = 'missing-note';
+          missingNote.textContent = `Missing: ${missing.join(', ')}`;
+          chart.appendChild(missingNote);
+        }
+        row.appendChild(chart);
+        card.appendChild(row);
+      });
+
+      sectionEl.appendChild(card);
+    });
+
+    container.appendChild(sectionEl);
+  });
+}
+
+render();
+</script>
+</body>
+</html>

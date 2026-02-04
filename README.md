@@ -1,5 +1,44 @@
 # Comapre GPUs on different tasks
 
+The main goal of this repo is to benchmark the NVIDIA DGX Spark against the NVIDIA RTX 4090 on a series of ML/AI tasks.
+
+Why these two GPUs? 
+
+They are the two GPUs I own.
+
+But the tests could easily be extended to other GPUs.
+
+Most of the analysis in `benchmark_analysis/` was performed by GPT-Codex simply to compare the results in `benchmark_results/` (this holds the ground truth for a series of tests in `.csv` files). 
+
+## Summary
+
+**One line:** RTX 4090 faster on training and inference by ~3-4x but cannot run larger models like the DGX Spark (24GB VRAM vs 128GB VRAM).
+
+### Performance
+
+The NVIDIA DGX Spark is a like a minivan.
+
+Whereas the NVIDIA RTX 4090 is like Ferrari.
+
+What I mean by this is that for any compute intensive task, the RTX 4090 is generally *faster* (on training and inference) than the DGX Spark on an order of 3-4x.
+
+However, there are several benchmarks (e.g. running `gpt-oss-120b`) where the RTX 4090 simply can't because it doesn't have enough space (VRAM).
+
+So the DGX Spark while generally slower than the RTX 4090 can run much larger models.
+
+### Getting started and machine footprint
+
+DGX Spark is one plug and play. Go from unboxing to running models in ~30 mins. Especially with the [NVIDIA DGX Spark website tutorials](https://build.nvidia.com/spark).
+
+RTX 4090 requires a custom built PC (this took me and my friend ~3-4 hours) as well as software setup (~2-3 hours with the help of AIs).
+
+The DGX Spark also has a small footprint, similar to the size of a small textbook.
+
+The RTX 4090, depending on your PC build will have a much larger footprint.
+
+TK image - compare the footprints of the two machines 
+
+
 Goal: Run several ML tasks and measure performance on each, then collate the results into a report.
 
 ## Requirements
