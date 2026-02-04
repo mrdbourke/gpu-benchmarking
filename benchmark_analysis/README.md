@@ -1,6 +1,36 @@
+# Benchmark Analysis
+
+This folder contains the reporting and analysis tools for `benchmark_results/`.
+
+**Usage**
+1. Generate the report assets:
+```bash
+python benchmark_analysis/generate_report.py
+```
+2. Compare GPUs across similar benchmarks:
+```bash
+python benchmark_analysis/benchmark_compare.py
+```
+3. Collate benchmarks for a single GPU:
+```bash
+python benchmark_analysis/benchmark_singles.py --gpu-name NVIDIA_GB10
+```
+4. Open the interactive report:
+```bash
+open benchmark_analysis/benchmark_report.html
+```
+
+**Files**
+- `benchmark_analysis/README.md`: Generated markdown report (this file).
+- `benchmark_analysis/benchmark_report.html`: Interactive bar-chart report with hover details.
+- `benchmark_analysis/generate_report.py`: Builds the markdown + HTML reports from `benchmark_results/`.
+- `benchmark_analysis/benchmark_compare.py`: Compares GPUs across matching benchmark configs.
+- `benchmark_analysis/benchmark_singles.py`: Summarizes benchmarks for a single GPU.
+- `benchmark_analysis/benchmark_utils.py`: Shared parsing and metric-selection helpers.
+
 # GPU Benchmark Report
 
-Generated: 2026-02-04 10:25:57
+Generated: 2026-02-04 10:53:44
 
 Note: Missing results are shown as NA and assumed to be unavailable because the model did not fit or could not be run on that GPU.
 
