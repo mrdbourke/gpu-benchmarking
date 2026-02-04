@@ -17,13 +17,13 @@ None of these tests assess the *quality* of the outputs created by the models. T
 ## Benchmark overview
 
 * **LLM/VLM inference** - Compare LLM/VLM inference speed with `llama.cpp` and `vLLM` inference engines across various models.
-* **LLM training** - Compare LLM full fine-tuning training speed with a relatively small LLM ([Gemma-3-270M](https://huggingface.co/google/gemma-3-270m-it).
+* **LLM training** - Compare LLM full fine-tuning training speed with a relatively small LLM ([Gemma-3-270M](https://huggingface.co/google/gemma-3-270m-it)).
 * **Image generation** - Compare image generation speeds with [Flux.2-klein-4B](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B) and [Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo).
 * **Object detection** - Fine-tune an object detection model.
 
 ## Summary
 
-**One line:** RTX 4090 faster on training and inference by ~3-4x but cannot run larger models like the DGX Spark (24GB VRAM vs 128GB VRAM).
+**One line:** RTX 4090 faster on training and inference by ~3-4x but cannot run larger models or very long contexts like the DGX Spark (24GB VRAM vs 128GB VRAM).
 
 ### Performance
 
@@ -417,7 +417,7 @@ python bench_train_llm_fine_tune.py
 Run the Flux.2 benchmark:
 
 ```
-python `bench_flux.py`
+python bench_flux.py
 ```
 
 Run the Z-Image-Turbo benchmark:

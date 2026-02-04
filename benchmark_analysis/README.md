@@ -30,11 +30,17 @@ open benchmark_analysis/benchmark_report.html
 
 # GPU Benchmark Report
 
-Generated: 2026-02-04 10:53:44
+Generated: 2026-02-04 13:24:40
 
 Note: Missing results are shown as NA and assumed to be unavailable because the model did not fit or could not be run on that GPU.
 
 # LLM/VLM Inference
+
+**Llama.cpp metrics key**
+- `true_prompt_throughput`: total prompt tokens divided by aggregate prompt time (sum of `prompt_n / prompt_per_sec` per request).
+- `true_gen_throughput`: total generated tokens divided by aggregate generation time (sum of `predicted_n / predicted_per_sec` per request).
+- `avg_prompt_speed`: simple (unweighted) average of per-request `prompt_per_sec` values.
+- `avg_gen_speed`: simple (unweighted) average of per-request `predicted_per_sec` values.
 
 ## llama_server_gpt_oss_20b_UD_Q4_K_XL_gguf_samples_100
 Family: llama_server
@@ -85,6 +91,7 @@ Config: model=openai/gpt-oss-20b, test_type=text_only, num_prompts=100, max_conc
 | Metric | Unit | NVIDIA_GB10 | NVIDIA_GeForce_RTX_4090 |
 | --- | --- | --- | --- |
 | output_token_throughput | tok/s | 230.00 | **584.00** |
+| input_token_throughput | tok/s | 1538.38 | **4848.70** |
 | request_throughput | req/s | 1.69 | **5.18** |
 | total_token_throughput | tok/s | 1768.38 | **5432.70** |
 | ttft_mean | ms | 282.53 | **113.54** |
@@ -98,6 +105,7 @@ Config: model=openai/gpt-oss-120b, test_type=text_only, num_prompts=100, max_con
 | Metric | Unit | NVIDIA_GB10 | NVIDIA_GeForce_RTX_4090 |
 | --- | --- | --- | --- |
 | output_token_throughput | tok/s | **116.00** | NA |
+| input_token_throughput | tok/s | **628.40** | NA |
 | request_throughput | req/s | **0.71** | NA |
 | total_token_throughput | tok/s | **744.40** | NA |
 | ttft_mean | ms | **577.98** | NA |
@@ -111,6 +119,7 @@ Config: model=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8, test_type=text_only, nu
 | Metric | Unit | NVIDIA_GB10 | NVIDIA_GeForce_RTX_4090 |
 | --- | --- | --- | --- |
 | output_token_throughput | tok/s | **230.00** | NA |
+| input_token_throughput | tok/s | **413.34** | NA |
 | request_throughput | req/s | **0.49** | NA |
 | total_token_throughput | tok/s | **643.34** | NA |
 | ttft_mean | ms | **610.81** | NA |
@@ -124,6 +133,7 @@ Config: model=Qwen/Qwen3-VL-8B-Instruct-FP8, num_prompts=100, max_concurrency=10
 | Metric | Unit | NVIDIA_GB10 | NVIDIA_GeForce_RTX_4090 |
 | --- | --- | --- | --- |
 | output_token_throughput | tok/s | 220.00 | **580.00** |
+| input_token_throughput | tok/s | 610.73 | **1575.83** |
 | request_throughput | req/s | 0.63 | **1.64** |
 | total_token_throughput | tok/s | 830.73 | **2155.83** |
 | ttft_mean | ms | 273.10 | **124.11** |
@@ -137,6 +147,7 @@ Config: model=Qwen/Qwen3-VL-8B-Instruct-FP8, num_prompts=100, max_concurrency=10
 | Metric | Unit | NVIDIA_GB10 | NVIDIA_GeForce_RTX_4090 |
 | --- | --- | --- | --- |
 | output_token_throughput | tok/s | 191.00 | **392.00** |
+| input_token_throughput | tok/s | 451.77 | **752.26** |
 | request_throughput | req/s | 0.49 | **0.87** |
 | total_token_throughput | tok/s | 642.77 | **1144.26** |
 | ttft_mean | ms | **714.11** | 4644.34 |
@@ -150,6 +161,7 @@ Config: model=Qwen/Qwen3-VL-30B-A3B-Instruct-FP8, num_prompts=100, max_concurren
 | Metric | Unit | NVIDIA_GB10 | NVIDIA_GeForce_RTX_4090 |
 | --- | --- | --- | --- |
 | output_token_throughput | tok/s | **150.00** | NA |
+| input_token_throughput | tok/s | **369.84** | NA |
 | request_throughput | req/s | **0.40** | NA |
 | total_token_throughput | tok/s | **519.84** | NA |
 | ttft_mean | ms | **338.31** | NA |
@@ -163,6 +175,7 @@ Config: model=Qwen/Qwen3-VL-30B-A3B-Instruct-FP8, num_prompts=100, max_concurren
 | Metric | Unit | NVIDIA_GB10 | NVIDIA_GeForce_RTX_4090 |
 | --- | --- | --- | --- |
 | output_token_throughput | tok/s | **130.00** | NA |
+| input_token_throughput | tok/s | **316.02** | NA |
 | request_throughput | req/s | **0.34** | NA |
 | total_token_throughput | tok/s | **446.02** | NA |
 | ttft_mean | ms | **766.03** | NA |
@@ -176,6 +189,7 @@ Config: model=Qwen/Qwen3-VL-32B-Instruct-FP8, num_prompts=100, max_concurrency=1
 | Metric | Unit | NVIDIA_GB10 | NVIDIA_GeForce_RTX_4090 |
 | --- | --- | --- | --- |
 | output_token_throughput | tok/s | **65.00** | NA |
+| input_token_throughput | tok/s | **166.20** | NA |
 | request_throughput | req/s | **0.18** | NA |
 | total_token_throughput | tok/s | **231.20** | NA |
 | ttft_mean | ms | **1036.98** | NA |
@@ -189,6 +203,7 @@ Config: model=Qwen/Qwen3-VL-32B-Instruct-FP8, num_prompts=100, max_concurrency=1
 | Metric | Unit | NVIDIA_GB10 | NVIDIA_GeForce_RTX_4090 |
 | --- | --- | --- | --- |
 | output_token_throughput | tok/s | **62.00** | NA |
+| input_token_throughput | tok/s | **134.18** | NA |
 | request_throughput | req/s | **0.15** | NA |
 | total_token_throughput | tok/s | **196.18** | NA |
 | ttft_mean | ms | **1877.67** | NA |

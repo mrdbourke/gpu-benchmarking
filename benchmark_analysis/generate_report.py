@@ -126,15 +126,53 @@ def build_report_data(results: List[BenchmarkResult]) -> Dict[str, object]:
         config = build_config_summary(sample.metrics, family)
         config_text = ", ".join(f"{key}={value}" for key, value in config) if config else ""
 
+        metric_names = metric_list_for_group(family, results_map)
+        if family == "vLLM" and "input_token_throughput" not in metric_names:
+            if "output_token_throughput" in metric_names:
+                insert_at = metric_names.index("output_token_throughput") + 1
+            else:
+                insert_at = 0
+            metric_names.insert(insert_at, "input_token_throughput")
+
         metrics = []
-        for metric in metric_list_for_group(family, results_map):
+        for metric in metric_names:
+            if metric == "input_token_throughput" and family == "vLLM":
+                values = {}
+                numbers = {}
+                for gpu in all_gpus:
+                    if gpu not in results_map:
+                        values[gpu] = "NA"
+                        numbers[gpu] = None
+                        continue
+                    total_raw = results_map[gpu].metrics.get("total_token_throughput")
+                    output_raw = results_map[gpu].metrics.get("output_token_throughput")
+                    total_val = parse_number(total_raw or "")
+                    output_val = parse_number(output_raw or "")
+                    if total_val is None or output_val is None:
+                        values[gpu] = "NA"
+                        numbers[gpu] = None
+                        continue
+                    input_val = total_val - output_val
+                    values[gpu] = f"{input_val:.2f}"
+                    numbers[gpu] = input_val
+                metrics.append(
+                    {
+                        "name": "input_token_throughput",
+                        "unit": "tok/s",
+                        "values": values,
+                        "numbers": numbers,
+                        "lower_better": False,
+                    }
+                )
+                continue
+
             unit = ""
             for result in results_map.values():
                 unit = result.units.get(metric, "")
                 if unit:
                     break
-            values: Dict[str, str] = {}
-            numbers: Dict[str, Optional[float]] = {}
+            values = {}
+            numbers = {}
             for gpu in all_gpus:
                 value = results_map.get(gpu).metrics.get(metric) if results_map.get(gpu) else "NA"
                 values[gpu] = value if value not in {None, ""} else "NA"
@@ -224,7 +262,16 @@ def build_markdown(data: Dict[str, object]) -> str:
         lines.append("")
         lines.append(f"# {section_name}")
         lines.append("")
+        llama_key_added = False
         for benchmark in benchmarks:
+            if benchmark["family"] == "llama_server" and not llama_key_added:
+                lines.append("**Llama.cpp metrics key**")
+                lines.append("- `true_prompt_throughput`: total prompt tokens divided by aggregate prompt time (sum of `prompt_n / prompt_per_sec` per request).")
+                lines.append("- `true_gen_throughput`: total generated tokens divided by aggregate generation time (sum of `predicted_n / predicted_per_sec` per request).")
+                lines.append("- `avg_prompt_speed`: simple (unweighted) average of per-request `prompt_per_sec` values.")
+                lines.append("- `avg_gen_speed`: simple (unweighted) average of per-request `predicted_per_sec` values.")
+                lines.append("")
+                llama_key_added = True
             lines.append(f"## {benchmark['id']}")
             lines.append(f"Family: {benchmark['family']}")
             config_text = benchmark.get("config")
