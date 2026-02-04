@@ -1,4 +1,4 @@
-# Comapre GPUs on different tasks
+# Comapre NVIDIA GPUs on different tasks
 
 The main goal of this repo is to benchmark the NVIDIA DGX Spark against the NVIDIA RTX 4090 on a series of ML/AI tasks.
 
@@ -10,7 +10,9 @@ But the tests could easily be extended to other GPUs.
 
 Most of the analysis in `benchmark_analysis/` was performed by GPT-Codex simply to compare the results in `benchmark_results/` (this holds the ground truth for a series of tests in `.csv` files). 
 
-These benchmarks are mostly targeted at single user usage rather than multiple users at the same time. For example, a single developer/researcher working on their own machine.
+These benchmarks are mostly targeted at simple single user usage rather than multiple users at the same time. For example, a single developer/researcher working on their own machine.
+
+None of these tests assess the *quality* of the outputs created by the models. They are only focused on speed.
 
 ## Summary
 
@@ -47,12 +49,39 @@ TK image - compare the footprints of the two machines
 * You: Want to run large models (e.g. >8B parameters) and want lots of context tokens = DGX Spark.
 * You: Want to create large amounts of synthetic data with large models + distill synthetic data into smaller models via fine-tuing = Get both (DGX Spark for synthetic data generation -> RTX 4090 for small model fine-tuning).
 
+## Specs
+
+The two GPUs I'm focused on are the NVIDIA RTX 4090 and NVIDIA DGX Spark.
+
+These are their comparative specs.
+
+Notice the RTX 4090 has more CUDA cores (about 3x) and more memory bandwidth (about 4x) but lower overall memory capacity. 
+
+| Metric (AI/ML oriented) | NVIDIA RTX 4090 | NVIDIA DGX Spark |
+|---|---|---|
+| NVIDIA official specs page | https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4090/ | https://www.nvidia.com/en-au/products/workstations/dgx-spark/ |
+| Device class | Discrete desktop GPU | Desktop AI computer (Grace Blackwell “GB10” superchip system). Source: https://www.nvidia.com/en-au/products/workstations/dgx-spark/ |
+| Peak “AI” advertised throughput | 1321 AI TOPS (as listed on NVIDIA product page). Source: https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4090/ | 1000 AI TOPS (theoretical FP4 using sparsity). Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| Best-supported low precision for tensors | Supports FP8 tensor format (Ada 4th-gen Tensor Cores). Source (Ada architecture PDF): https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf | Supports FP4 (5th-gen Tensor Cores). Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| FP8 peak (vendor-stated) | NVIDIA states “1.3 petaFLOPS” for AI inference with FP8 (Ada architecture PDF). Source: https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf | Not clearly published as FP8 PFLOPS in the official datasheet/user guide (only FP4/TOPS headline is stated). Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| FP32 (non-tensor) peak | 83 TFLOPS (NVIDIA product page). Source: https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4090/ | Not disclosed as a peak FP32 figure in the official datasheet/user guide. Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| GPU memory capacity | 24 GB GDDR6X. Source: https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4090/ | 128 GB unified LPDDR5x (CPU+GPU coherent unified memory). Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| Memory bandwidth (device memory) | 1008 GB/s (reported by major review outlets). Source: https://www.tomshardware.com/reviews/nvidia-geforce-rtx-4090-review | 273 GB/s. Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| Practical “fits large models in memory” angle | VRAM can be a hard limit for bigger LLMs without offload/quantization (24GB VRAM). Source: https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4090/ | Officially positioned for ~200B parameter models on one unit; up to ~405B with two systems linked. Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| CPU / host included | Requires a separate PC/CPU | Built-in 20-core Arm CPU (10 Cortex-X925 + 10 Cortex-A725). Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| Interconnect / scaling | Typical desktop PCIe; RTX 4090 does not include NVLink on the product family page. Source: https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4090/ | Includes ConnectX-7 SmartNIC and is designed to link two DGX Spark units for bigger models. Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| Power | 450W board power/TDP widely reported. Source: https://www.tomshardware.com/reviews/nvidia-geforce-rtx-4090-review | Datasheet lists power consumption as TBD. Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| Storage | Not applicable (GPU only) | 1TB or 4TB NVMe M.2 (self-encryption). Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| Networking | Not applicable (GPU only) | 10 GbE, Wi-Fi 7, ConnectX-7. Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+| Best fit (typical AI workflow) | Strong single-GPU performance for training/fine-tune/inference that fits in 24GB VRAM; high memory bandwidth helps throughput-sensitive workloads. Source: https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4090/ | Best when workloads benefit from large unified memory and an integrated “AI workstation” setup; headline performance tied to FP4+sparsity claims. Source (datasheet PDF): https://www.scan.co.uk/images/infopages/nvidia/dgx/spark/datasheet.pdf |
+
+
 ## Benchmark overview
 
-* LLM/VLM inference - Compare LLM/VLM inference speed with `llama.cpp` and `vLLM` inference engines across various models.
-* LLM training - Compare LLM full fine-tuning training speed with a relatively small LLM ([Gemma-3-270M](https://huggingface.co/google/gemma-3-270m-it)).
-* Image generation - Compare image generation speeds with [Flux.2-klein-4B](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B) and [Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo).
-* Object detection - Fine-tune an object detection model.
+* **LLM/VLM inference** - Compare LLM/VLM inference speed with `llama.cpp` and `vLLM` inference engines across various models.
+* **LLM training** - Compare LLM full fine-tuning training speed with a relatively small LLM ([Gemma-3-270M](https://huggingface.co/google/gemma-3-270m-it)).
+* **Image generation** - Compare image generation speeds with [Flux.2-klein-4B](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B) and [Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo).
+* **Object detection** - Fine-tune an object detection model.
 
 ## Requirements
 
@@ -60,49 +89,25 @@ TK image - compare the footprints of the two machines
      * Setting up llama server - https://github.com/ggml-org/llama.cpp/discussions/16938 
 * Install `vLLM` - https://docs.vllm.ai/en/stable/getting_started/installation/gpu/ 
 * PyTorch, Transformers, Datasets, Diffusers.
-
-Tests:
-
-* LLM inference (tok/s)
-    * 1000x formatting samples and see what each of them look like
-    * Frameworks: llama.cpp + vLLM + transformers
-    * Models:
-        * GPT-OSS-20B / GPT-OSS-120B?
-        * GLM 4.7 Flash? - https://huggingface.co/unsloth/GLM-4.7-Flash-GGUF/blob/main/GLM-4.7-Flash-UD-Q4_K_XL.gguf 
-        * Nemotron v3 nano via vLLM - https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8 
-        * Nemotron v3 via llama.cpp - https://build.nvidia.com/spark/nemotron/instructions 
-            * What's the input/output spec? Fast for now, looks like 50 tok/s outputs
-            * Measure this across 1k samples and see what happens
-        * Qwen3 series 
-            * Qwen3-VL-32B-Instruct - https://huggingface.co/Qwen/Qwen3-VL-32B-Instruct-FP8 
-            * Qwen3-VL-30B-A3B-FP8 - https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Instruct-FP8
-            * Qwen3-VL-8B-Instruct-FP8 - https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct-FP8
-            * Can run via unsloth/GGUF/llama.cpp - https://unsloth.ai/docs/models/qwen3-vl-how-to-run-and-fine-tune 
-* VLM inference (tok/s | samples/s | total time)
-    * Frameworks: llama.cpp + vLLM + transformers 
-        * Qwen3-VL-8B, Qwen3-VL-30B-A3B, Qwen3-VL-32B
-    * VLM benchmark here: https://docs.vllm.ai/en/stable/benchmarking/cli/ 
-* LLM fine-tuning (tok/s | samples/s | total time)
-    * Gemma-3-270M-Base, how long does this take? 
-    * Start with a small dataset: FoodExtract-1k, compare the results? 
-* Image generation (e.g. 1000x images on different prompts, how long per image?)
-    * Models:
-        * Z-Image-Turbo - https://huggingface.co/Tongyi-MAI/Z-Image-Turbo 
-        * Flux.2 collection (all weights of models here):
-            * Flux.2-Flein-9B (flux-non-commercial-license) - https://huggingface.co/black-forest-labs/FLUX.2-klein-9B
-            * Flux.2-Klein-4B (Apache 2.0) - https://huggingface.co/black-forest-labs/FLUX.2-klein-4B 
-                * Flux.2-Klein-4B-NVFP4 - https://huggingface.co/black-forest-labs/FLUX.2-klein-4b-nvfp4 
-                    * Note: Requires ComfyUI, perhaps someone could test that?
-* Object detection model training 
-    * See learnhuggingface.com object detection notebook for more
+* Helpful: DGX Spark user guide and setup settings - https://build.nvidia.com/spark 
 
 ## LLM/VLM Inference
 
 The main goal here is to test token/s throughput and output.
 
-### vLLM benchmarking (text only and image + text)
+We're going to use two different inference engines here.
 
-Steps:
+`vLLM` and `llama.cpp`.
+
+We could use native Hugging Face Transformers, however, this is often much slower than an optimized inference engine. 
+
+If you want to just use an LLM locally, I'd suggest opting for something like `llama-server` as it offers a nice chat interface.
+
+If you want to run large inference jobs and unlock batch inference, use `vLLM`.
+
+## vLLM benchmarking (text only and image + text)
+
+Setup steps: 
 
 * Install Docker
 * Setup vLLM container on GPU via NVIDIA: https://build.nvidia.com/spark/vllm/instructions 
@@ -120,13 +125,14 @@ docker run -it --gpus all -p 8000:8000 nvcr.io/nvidia/vllm:${LATEST_VLLM_VERSION
 ```
 
 Then you can run the tests, these are executed via a bash script `vllm_image_and_text_testing.sh` or `vllm_text_only_testing.sh` which runs a set of tests:
-    * 0 images + random range of input/output tokens
-    * 1 images + random range of input/output tokens (note: images are of various sizes randomly sampled to enable real-world test-like conditions)
-        * These tests are designed to mimic image + text throughput as well as text only throughput
+
+* 0 images + random range of input/output tokens
+* 1 images + random range of input/output tokens (note: images are of various sizes randomly sampled to enable real-world test-like conditions)
+    * These tests are designed to mimic image + text throughput as well as text only throughput
 
 100 prompts each (~1000 input, ~300 output) with 10 warmup prompts (these are not measured in final output performance).
 
-**Nemotron3-Nano-FP8 - 0 images (model is text only)**  
+### Nemotron3-Nano-FP8 (text only)
 
 Source: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8
 
@@ -162,7 +168,7 @@ Run benchmark:
 ./vllm_text_only_testing.sh nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8
 ```
 
-**Qwen3-VL-32B-Instruct-FP8**
+### Qwen3-VL-32B-Instruct-FP8 (text and image)
 
 Note: You could only run this on the NVIDIA DGX Spark (too large for the RTX 4090).
 
@@ -180,9 +186,9 @@ Benchmark:
 ./vllm_image_and_text_testing.sh Qwen/Qwen3-VL-32B-Instruct-FP8
 ```
 
-* ✅ Qwen3-VL-30B-A3B-Instruct-FP8
-    * 0 images 
-    * 1 image
+### Qwen3-VL-30B-A3B-Instruct-FP8 (text and image)
+
+Note: You could only run this on the NVIDIA DGX Spark (too large for the RTX 4090).
 
 Start server: 
 
@@ -196,9 +202,9 @@ Benchmark:
 ./vllm_image_and_text_testing.sh Qwen/Qwen3-VL-30B-A3B-Instruct-FP8
 ```
 
-* ✅ Qwen3-VL-8B-Instruct-FP8 
-    * 0 images 
-    * 1 image
+### Qwen3-VL-8B-Instruct-FP8 (text and image)
+
+Note: This model is compatible with the RTX 4090 and DGX Spark.
 
 Start server: 
 
@@ -212,8 +218,11 @@ Benchmark:
 ./vllm_image_and_text_testing.sh Qwen/Qwen3-VL-8B-Instruct-FP8
 ```
 
-* openai/gpt-oss-20b (RTX 4090 & DGX Spark)
-    * 0 images
+### openai/gpt-oss-20b (text only)
+
+> **Note:** `gpt-oss-20b` & `gpt-oss-120b` models require the OpenAI Harmony package: https://github.com/openai/harmony     
+>
+> This model is compatible with both the RTX 4090 & DGX Spark.
 
 ```
 docker run -it --gpus all -p 8000:8000 nvcr.io/nvidia/vllm:25.12.post1-py3 \
@@ -226,10 +235,9 @@ Benchmark:
 ./vllm_text_only_testing.sh openai/gpt-oss-20b
 ```
 
-* openai/gpt-oss-120b
-    * 0 images
-    
-**Note:** `gpt-oss-120b` requires the OpenAI Harmony package: https://github.com/openai/harmony     
+### openai/gpt-oss-120b (text only)
+
+Note: You could only run this on the NVIDIA DGX Spark (too large for the RTX 4090).
 
 ```
 docker run -it --gpus all -p 8000:8000 nvcr.io/nvidia/vllm:25.12.post1-py3 \
@@ -242,81 +250,14 @@ Benchmark:
 ./vllm_text_only_testing.sh openai/gpt-oss-120b
 ```
 
-## Commands 
-
-* Serving from a docker container: 
-
-```
-docker run -it --gpus all -p 8000:8000 nvcr.io/nvidia/vllm:${LATEST_VLLM_VERSION} vllm serve "Qwen/Qwen2.5-Math-1.5B-Instruct" --gpu-memory-utilization 0.8
-```
-
-* For setting up a server with Nemotron-Nanov3 (after following the steps in: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8#use-it-with-vllm):
-
-```
-docker run -it --gpus all \
-  -p 8000:8000 \
-  -v $(pwd)/nano_v3_reasoning_parser.py:/workspace/nano_v3_reasoning_parser.py \
-  nvcr.io/nvidia/vllm:${LATEST_VLLM_VERSION} vllm serve nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8 \
-  --max-num-seqs 8 \
-  --tensor-parallel-size 1 \
-  --max-model-len 262144 \
-  --port 8000 \
-  --trust-remote-code \
-  --enable-auto-tool-choice \
-  --tool-call-parser qwen3_coder \
-  --reasoning-parser-plugin nano_v3_reasoning_parser.py \
-  --reasoning-parser nano_v3 \
-  --kv-cache-dtype fp8
-```
-
-* Running a benchmark with different settings (or use `vllm_image_and_text_testing.sh`):
-
-```
-docker run -it --network host \
-  nvcr.io/nvidia/vllm:${LATEST_VLLM_VERSION} \
-  vllm bench serve \
-  --backend openai-chat \
-  --model Qwen/Qwen2.5-VL-3B-Instruct \
-  --endpoint /v1/chat/completions \
-  --base-url http://localhost:8000 \
-  --dataset-name random-mm \
-  --num-prompts 500 \
-  --max-concurrency 10 \
-  --num-warmups 10 \
-  --random-prefix-len 0 \
-  --random-input-len 180 \
-  --random-output-len 220 \
-  --random-range-ratio 0.55 \
-  --random-mm-base-items-per-request 1 \
-  --random-mm-num-mm-items-range-ratio 0.5 \
-  --random-mm-limit-mm-per-prompt '{"image": 2, "video": 0}' \
-  --random-mm-bucket-config '{(512, 512, 1): 0.2, (720, 1280, 1): 0.3, (1024, 1024, 1): 0.2, (1080, 1920, 1): 0.3}' \
-  --request-rate inf \
-  --ignore-eos \
-  --seed 42
-```
-
-## LLM inference
-
-* Next: implement inference with pure transformers and compare with vLLM (see: https://build.nvidia.com/spark/vllm)
-    * Make 3 comparisons of the same model: llama.cpp + transformers native + vLLM and see how they all fair
-* Can perform inference with llama.cpp
-    * Can perform multimodal inference with llama.cpp as long as we download the multi modal projector, see example: https://huggingface.co/unsloth/Qwen3-VL-8B-Instruct-GGUF/blob/main/mmproj-BF16.gguf 
-    * See docs:
-        * Unsloth for Qwen3-VL - https://unsloth.ai/docs/models/qwen3-vl-how-to-run-and-fine-tune 
-        * GGUF format - https://github.com/ggml-org/ggml/blob/master/docs/gguf.md 
-        * GGUF format (HF docs) - https://huggingface.co/docs/hub/en/gguf  
-        * llama-server for running LLMs locally - https://github.com/ggml-org/llama.cpp/discussions/16938 
-
-
-### llamma.cpp running in a server
+## llamma.cpp running in a server
 
 **Setup:**
 
 * See the guide for creating a llama.cpp server on DGX Spark: https://build.nvidia.com/spark/nemotron/instructions 
 * See the docs for llama.cpp HTTP Server: https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md 
 
-**gpt-oss-20b**
+### gpt-oss-20b-GGUF (text only)
 
 Link: https://huggingface.co/unsloth/gpt-oss-20b-GGUF/blob/main/gpt-oss-20b-UD-Q4_K_XL.gguf 
 
@@ -348,7 +289,7 @@ Run the text only benchmark:
 python bench_llama_cpp_text_only.py
 ```
 
-**Qwen3-VL-8B-GGUF**
+### Qwen3-VL-8B-GGUF (text and image)
 
 Source: https://huggingface.co/unsloth/Qwen3-VL-8B-Instruct-GGUF/blob/main/Qwen3-VL-8B-Instruct-UD-Q4_K_XL.gguf 
 
@@ -415,11 +356,11 @@ Run the multimodal (text + image) benchmark (requires a multimodal model):
 python bench_llama_cpp_text_and_image.py
 ```
 
-**Nemotron-3-Nano**
+### Nemotron-3-Nano
 
 Source: https://huggingface.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF/blob/main/Nemotron-3-Nano-30B-A3B-UD-Q8_K_XL.gguf 
 
-> **Note:** Requires 40GB download for Q8 model.
+> **Note:** Requires 40GB download for Q8 model. Could use the Q4 model for less memory requirements.
 
 Download a model:
 
@@ -487,8 +428,13 @@ python bench_z_image_turbo.py
 python bench_train_object_detection.py
 ```
 
+## Resources
+
+* EXO can run LLMs with Mac Studio + NVIDIA DGX Spark combined for optimal inference (DGX Spark for prefill, Mac Studio for decode) - https://blog.exolabs.net/nvidia-dgx-spark/ 
+
 ## Notes and potential extensions
 
+* Extension: I have a Mac Mini M4 Pro, I wonder how it goes with MLX? That will be something to look into in the future.
 * Defaults where possible: I tried to use the default settings on all available repos if they were available. In the future, benchmarks would likely take into account different specific settings for different scenarios (e.g. long context input/long context output etc).
 * Extension: Upgrade the amount of tokens used in context to see how the devices perform under higher load (e.g. large codebase in the context window).
 * Extension: Use `llama-bench` for benchmarking `llama.cpp` servers: https://blog.steelph0enix.dev/posts/llama-cpp-guide/#llama-bench
