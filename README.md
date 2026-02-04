@@ -1,6 +1,6 @@
 # Compare NVIDIA GPUs on different tasks
 
-The main goal of this repo is to benchmark the NVIDIA DGX Spark against the NVIDIA RTX 4090 on a series of ML/AI tasks.
+The main goal of this repo is to benchmark the [NVIDIA DGX Spark](https://www.nvidia.com/en-au/products/workstations/dgx-spark/) (also known as GB10) against the [NVIDIA RTX 4090](https://www.nvidia.com/en-au/geforce/graphics-cards/40-series/rtx-4090/) on a series of ML/AI tasks.
 
 Why these two GPUs? 
 
@@ -31,7 +31,7 @@ None of these tests assess the *quality* of the outputs created by the models. T
 
 ### Performance
 
-The NVIDIA DGX Spark is a like a minivan.
+The NVIDIA DGX Spark (GB10) is a like a minivan.
 
 Whereas the NVIDIA RTX 4090 is like Ferrari.
 
@@ -262,7 +262,7 @@ Benchmark:
 ./vllm_text_only_testing.sh openai/gpt-oss-120b
 ```
 
-## llamma.cpp running in a server
+## llama.cpp running in a server
 
 **Setup:**
 
